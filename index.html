@@ -239,15 +239,22 @@ h4{font-variation-settings:"wdth" 100;font-weight:700;font-size:1.0625rem;line-h
 @media (prefers-reduced-motion: no-preference){.btn{transition:box-shadow .4s ease,background .3s ease,color .3s ease}}
 
 /* ---- header ---- */
-.top{border-bottom:1px solid var(--line)}
+.top{border-bottom:1px solid var(--line);position:sticky;top:env(safe-area-inset-top, 0px);z-index:20;background:var(--paper)}
 .top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:12px}
 .wordmark{height:32px;width:auto}
+/* header logo: large at the top of the page, back to 32px once you scroll (JS adds .scrolled) */
+.top .wordmark{height:56px;transition:height .3s ease}
+.top .wrap{transition:padding .3s ease}
+.top.scrolled .wordmark{height:32px}
+.top.scrolled .wrap{padding-block:8px}
+html{scroll-padding-top:72px}
+@media (prefers-reduced-motion: reduce){.top .wordmark,.top .wrap{transition:none}}
 :root[data-theme="dark"] .wordmark{filter:invert(1)}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .wordmark{filter:invert(1)}}
 .nav{display:flex;gap:4px 14px;font-family:var(--font-label);font-size:.78rem;letter-spacing:.03em}
 .nav a{text-decoration:none;padding:12px 2px;white-space:nowrap}
 .nav .lang{border:1px solid var(--line);padding:4px 8px;align-self:center;margin-left:4px}
-@media (max-width:440px){.nav .opt{display:none}.wordmark{height:26px}}
+@media (max-width:440px){.nav .opt{display:none}.top .wordmark{height:42px}.top.scrolled .wordmark{height:26px}}
 
 /* ---- sections ---- */
 main > section > .wrap{padding-block:var(--section-gap) 0;display:grid;gap:clamp(28px,4vw,44px)}
@@ -1185,6 +1192,13 @@ html[lang="hu"] h2{font-size:clamp(1.6rem,.9rem + 3.4vw,3.5rem)}
   document.getElementById('lang-hint-x').addEventListener('click', function(){
     bar.remove(); try { localStorage.setItem('ps-lang-hint', 'no'); } catch (e) {}
   });
+})();
+// Header: the logo is large at the top of the page and shrinks once you scroll.
+(function(){
+  var top = document.querySelector('.top'); if (!top) return;
+  var on = false;
+  function update(){ var y = window.scrollY; if (!on && y > 60){ on = true; top.classList.add('scrolled'); } else if (on && y < 10){ on = false; top.classList.remove('scrolled'); } }
+  update(); window.addEventListener('scroll', update, { passive: true });
 })();
 </script>
 
