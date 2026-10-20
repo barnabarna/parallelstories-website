@@ -1,0 +1,1192 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Parallel Stories Cultural Organization | Augmented reality storytelling, Budapest</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Parallel Stories Cultural Organization works with international experts to explore new ways of storytelling with augmented reality, to engage local communities and shape public conversation.">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "NGO",
+   "@id": "https://parallelstories.org/#org",
+   "name": "Parallel Stories Cultural Organization",
+   "alternateName": [
+    "Párhuzamos Történetek Kulturális Egyesület",
+    "PTKE",
+    "Parhuzamos Tortenetek Kulturalis Egyesulet"
+   ],
+   "url": "https://parallelstories.org/",
+   "logo": "https://parallelstories.org/logos/ps-wordmark.png",
+   "description": "Budapest-based nonprofit that works with international experts to explore new ways of storytelling with augmented reality, to engage local communities and shape public conversation, through education, cultural heritage and co-creation with communities.",
+     "founder": {
+    "@id": "https://parallelstories.org/#barna"
+   },
+   "email": "hello@parallelstories.org",
+   "taxID": "18264038-1-42",
+   "identifier": {
+    "@type": "PropertyValue",
+    "propertyID": "Hungarian civil registry number",
+    "value": "01-02-0013002"
+   },
+   "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Kazinczy utca 7. II/8.",
+    "postalCode": "1075",
+    "addressLocality": "Budapest",
+    "addressCountry": "HU"
+   },
+   "funder": [
+    {
+     "@type": "Organization",
+     "name": "European Union"
+    },
+    {
+     "@type": "Organization",
+     "name": "Claims Conference"
+    },
+    {
+     "@type": "Organization",
+     "name": "U.S. Embassy in Hungary"
+    },
+    {
+     "@type": "Organization",
+     "name": "Foundation EVZ"
+    }
+   ],
+   "sameAs": [
+    "https://if-these-streets.org",
+    "https://www.xrbudapest.hu"
+   ]
+  },
+  {
+   "@type": "Person",
+   "@id": "https://parallelstories.org/#barna",
+   "name": "Barna Szász",
+   "jobTitle": "Founder",
+   "worksFor": {
+    "@id": "https://parallelstories.org/#org"
+   },
+   "description": "Budapest-born documentary filmmaker and AR storyteller; co-created Stanford University's first AR storytelling class.",
+   "alumniOf": [
+    {
+     "@type": "CollegeOrUniversity",
+     "name": "Stanford University"
+    },
+    {
+     "@type": "CollegeOrUniversity",
+     "name": "University of Theatre and Film Arts, Budapest"
+    }
+   ],
+   "url": "https://www.barnaszasz.com",
+   "sameAs": [
+    "https://www.barnaszasz.com"
+   ]
+  },
+  {
+   "@type": "CreativeWork",
+   "name": "If These Streets Could Talk",
+   "url": "https://if-these-streets.org",
+   "genre": "Augmented reality experience",
+   "about": "The history of the people who lived in Budapest's former Jewish quarter",
+   "locationCreated": {
+    "@type": "Place",
+    "name": "Budapest"
+   },
+   "producer": {
+    "@id": "https://parallelstories.org/#org"
+   },
+   "creativeWorkStatus": "In production; full experience planned for 2027"
+  },
+  {
+   "@type": "Project",
+   "name": "These Streets Remember – Budapest, Krakow, Novi Sad, Riga",
+   "alternateName": "TSR-BKNR",
+   "description": "European extension of If These Streets Could Talk, coordinated by Parallel Stories and co-funded by the European Union (CERV-2025-CITIZENS-REM, project 101297607). Runs August 1, 2026 to July 31, 2028.",
+   "parentOrganization": {
+    "@id": "https://parallelstories.org/#org"
+   },
+   "member": [
+    {
+     "@type": "Organization",
+     "name": "Galicia Jewish Museum"
+    },
+    {
+     "@type": "Organization",
+     "name": "Terraforming"
+    },
+    {
+     "@type": "Organization",
+     "name": "Žanis Lipke Memorial"
+    },
+    {
+     "@type": "Organization",
+     "name": "Holocaust Memorial Center"
+    }
+   ]
+  },
+  {
+   "@type": "Event",
+   "name": "These Streets Remember opening conference: Ethical and Participatory Approaches to Holocaust Remembrance in the Digital Age",
+   "startDate": "2026-10-13",
+   "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+   "eventStatus": "https://schema.org/EventScheduled",
+   "location": {
+    "@type": "Place",
+    "name": "Holocaust Memorial Center",
+    "address": "Páva utca 39, Budapest, Hungary"
+   },
+   "organizer": {
+    "@id": "https://parallelstories.org/#org"
+   }
+  },
+  {
+   "@type": "Project",
+   "name": "XR Budapest",
+   "url": "https://www.xrbudapest.hu",
+   "description": "Community connecting Hungary's XR (AR and VR) scene; Hungarian representative of Euromersive.",
+   "parentOrganization": {
+    "@id": "https://parallelstories.org/#org"
+   }
+  }
+ ]
+}
+</script>
+<style>
+/* Layout: one long column. Sections are named by plain nouns in big uppercase type and separated
+   by space. Each project opens with the two-color double rule, so a skimmer reads
+   section → project → detail. Photos carry the color; the cyan / red-orange (and, on interaction,
+   yellow-green) layers come from the If These Streets Could Talk logo.
+   Type roles: h1 headline · h2 SECTION (uppercase, widest) · h3 project title · h4 sub-item ·
+   .meta mono labels · .lead serif dek · body serif · .credit mono captions. */
+:root{
+  --paper:#f4f5f3;
+  --ink:#15181b;
+  --muted:#575e66;
+  --line:#d6d9d6;
+  --card:#ffffff;
+  --accent:#b5341c;
+  --layer-a:#1fbfcf;
+  --layer-b:#ef5a3a;
+  --layer-c:#b9d82a;
+  --logo-bg:#ffffff;
+  --logo-ink:#3d434a;
+  --font-display:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --font-body:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --font-label:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+  --wrap:1080px;
+  --section-gap:clamp(64px,9vw,120px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#121417; --ink:#eceeec; --muted:#a3aab1; --line:#2b3035; --card:#1b1e22;
+    --accent:#ff7357; --layer-a:#2fd0de; --layer-b:#ff6a4a; --layer-c:#cdea3a; --logo-bg:#f4f5f3; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#121417; --ink:#eceeec; --muted:#a3aab1; --line:#2b3035; --card:#1b1e22;
+  --accent:#ff7357; --layer-a:#2fd0de; --layer-b:#ff6a4a; --layer-c:#cdea3a; --logo-bg:#f4f5f3; color-scheme:dark;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+body{
+  margin:0;background:var(--paper); color:var(--ink);
+  font-family:var(--font-body); font-size:1.0625rem; line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;height:auto;display:block}
+main{overflow-x:clip}
+a{color:inherit;text-decoration-thickness:1px;text-underline-offset:3px}
+@media (hover:hover){a:hover{color:var(--accent)}}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+p{margin:0;max-width:65ch}
+figure{margin:0}
+
+.wrap{
+  max-width:var(--wrap); margin-inline:auto;
+  padding-left:max(16px, env(safe-area-inset-left, 0px));
+  padding-right:max(16px, env(safe-area-inset-right, 0px));
+}
+@media (min-width:700px){
+  .wrap{padding-left:max(32px, env(safe-area-inset-left, 0px));padding-right:max(32px, env(safe-area-inset-right, 0px))}
+}
+
+/* ---- type scale ---- */
+h1,h2,h3,h4{font-family:var(--font-display);text-wrap:balance;margin:0}
+h1{font-variation-settings:"wdth" 125;font-weight:800;font-size:clamp(2.25rem,1rem + 5.2vw,4.25rem);line-height:1.02;letter-spacing:-.02em}
+h2{font-variation-settings:"wdth" 125;font-weight:800;font-size:clamp(2.125rem,1.3rem + 3.4vw,3.5rem);line-height:1;letter-spacing:.005em;text-transform:uppercase}
+h3{font-variation-settings:"wdth" 112;font-weight:700;font-size:clamp(1.375rem,1rem + 1.6vw,2rem);line-height:1.1;letter-spacing:-.01em}
+h4{font-variation-settings:"wdth" 100;font-weight:700;font-size:1.0625rem;line-height:1.3}
+.meta{font-family:var(--font-label);font-size:.75rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);line-height:1.5;max-width:none}
+.nw{white-space:nowrap}
+.lead{font-size:clamp(1.1875rem,1rem + .8vw,1.375rem);line-height:1.45}
+.muted{color:var(--muted)}
+.credit{font-family:var(--font-label);font-size:.75rem;line-height:1.5;color:var(--muted)}
+
+/* ---- buttons: primary (contact actions) and secondary (external links) ---- */
+.btn{display:inline-flex;align-items:center;gap:8px;justify-self:start;min-height:44px;
+  font-family:var(--font-label);font-size:.85rem;font-weight:500;letter-spacing:.03em;
+  border:1px solid var(--ink);color:var(--ink);background:transparent;padding:10px 16px;text-decoration:none;cursor:pointer}
+@media (hover:hover){.btn:hover{background:var(--ink);color:var(--paper)}}
+.btn.primary{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.btn.primary:focus-visible{box-shadow:-4px -4px 0 color-mix(in srgb, var(--layer-a) 85%, transparent),4px 4px 0 color-mix(in srgb, var(--layer-b) 85%, transparent),5px 1px 0 color-mix(in srgb, var(--layer-c) 85%, transparent)}
+@media (hover:hover){.btn.primary:hover{color:var(--paper);background:var(--ink);box-shadow:-4px -4px 0 color-mix(in srgb, var(--layer-a) 85%, transparent),4px 4px 0 color-mix(in srgb, var(--layer-b) 85%, transparent),5px 1px 0 color-mix(in srgb, var(--layer-c) 85%, transparent)}}
+@media (prefers-reduced-motion: no-preference){.btn{transition:box-shadow .4s ease,background .3s ease,color .3s ease}}
+
+/* ---- header ---- */
+.top{border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:12px}
+.wordmark{height:32px;width:auto}
+:root[data-theme="dark"] .wordmark{filter:invert(1)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .wordmark{filter:invert(1)}}
+.nav{display:flex;gap:4px 14px;font-family:var(--font-label);font-size:.78rem;letter-spacing:.03em}
+.nav a{text-decoration:none;padding:12px 2px;white-space:nowrap}
+.nav .lang{border:1px solid var(--line);padding:4px 8px;align-self:center;margin-left:4px}
+@media (max-width:440px){.nav .opt{display:none}.wordmark{height:26px}}
+
+/* ---- sections ---- */
+main > section > .wrap{padding-block:var(--section-gap) 0;display:grid;gap:clamp(28px,4vw,44px)}
+main > section:last-child > .wrap{padding-bottom:var(--section-gap)}
+.sec-head{display:grid;gap:14px}
+.sec-head .lead{color:var(--muted)}
+
+/* ---- the two-color motif ---- */
+/* Two full frames (cyan, red-orange) slid diagonally apart behind an image at half opacity.
+   On hover, or on touch screens when the element reaches the middle of the screen, the frames
+   spread, strengthen, and a third layer (the logo's yellow-green) appears. */
+.layered{position:relative;isolation:isolate;--o:10px;--ink-o:.5;margin:var(--o)}
+.layered > img{position:relative;display:block}
+.layered::before,.layered::after{content:"";position:absolute;inset:0;z-index:-1;opacity:var(--ink-o);mix-blend-mode:multiply}
+.layered::before{background:var(--layer-a);transform:translate(calc(var(--o) * -1),calc(var(--o) * -1))}
+.layered::after{background:var(--layer-b);transform:translate(var(--o),var(--o))}
+/* third layer is a real element (not a shadow), so it blends with both other colors */
+.layered > .lc{position:absolute;inset:0;z-index:-1;background:var(--layer-c);opacity:0;mix-blend-mode:multiply;transform:translate(0,0)}
+.layered.small{--o:7px}
+:root[data-theme="dark"] .layered::before,:root[data-theme="dark"] .layered::after{mix-blend-mode:screen}
+:root[data-theme="dark"] .layered > .lc{mix-blend-mode:screen}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .layered::before,:root:not([data-theme="light"]) .layered::after,:root:not([data-theme="light"]) .layered > .lc{mix-blend-mode:screen}}
+.layered.is-active::before{transform:translate(calc(var(--o) * -1.9),calc(var(--o) * -1.9));opacity:calc(var(--ink-o) + .2)}
+.layered.is-active::after{transform:translate(calc(var(--o) * 1.9),calc(var(--o) * 1.9));opacity:calc(var(--ink-o) + .2)}
+.layered.is-active > .lc{opacity:calc(var(--ink-o) + .2);transform:translate(calc(var(--o) * 1.35),calc(var(--o) * -1.1))}
+.layered + figcaption{margin-top:calc(var(--o) * 1.2)}
+
+/* big tokens with offset color edges, like the ITS logo lettering */
+.big{font-family:var(--font-display);font-variation-settings:"wdth" 125;font-weight:800;font-size:2.75rem;line-height:1;color:var(--ink);
+  text-shadow:-3px 0 color-mix(in srgb, var(--layer-a) 75%, transparent),3px 0 color-mix(in srgb, var(--layer-b) 75%, transparent)}
+.proof > div.is-active .big{text-shadow:-6px -2px 0 color-mix(in srgb, var(--layer-a) 85%, transparent),6px 2px 0 color-mix(in srgb, var(--layer-b) 85%, transparent),0 6px 0 color-mix(in srgb, var(--layer-c) 85%, transparent)}
+
+/* double rule: marks the start of a project, and sets off the 1% note */
+/* Bars and rules use the same three overprinted inks. At rest: cyan + red-orange, overlapping.
+   On interaction they fan out, like the 140+ lettering, and the yellow-green joins, still overlapping
+   so every pair of colors blends. */
+.double-rule{position:relative;height:11px;isolation:isolate}
+.double-rule::before,.double-rule::after,.double-rule > .lc{content:"";position:absolute;left:0;right:0;top:0;height:5px;opacity:.85;mix-blend-mode:multiply}
+.double-rule::before{background:var(--layer-a)}
+.double-rule::after{top:3px;background:var(--layer-b)}
+.double-rule > .lc{top:3px;background:var(--layer-c);opacity:0}
+.project.is-active .double-rule::before,.one-percent.is-active .double-rule::before{transform:translateX(-6px)}
+.project.is-active .double-rule > .lc,.one-percent.is-active .double-rule > .lc{top:6px;opacity:.85;transform:translateX(6px)}
+
+.quote{margin:0;padding-left:24px;display:grid;gap:8px;position:relative;isolation:isolate}
+.quote::before,.quote::after,.quote > .lc{content:"";position:absolute;top:4px;bottom:4px;left:0;width:5px;opacity:.85;mix-blend-mode:multiply}
+.quote::before{background:var(--layer-a)}
+.quote::after{left:3px;background:var(--layer-b)}
+.quote > .lc{left:3px;background:var(--layer-c);opacity:0}
+.quote.is-active::before{transform:translateY(-5px)}
+.quote.is-active > .lc{left:6px;opacity:.85;transform:translateY(5px)}
+:root[data-theme="dark"] :is(.double-rule,.quote) > .lc{mix-blend-mode:screen}
+:root[data-theme="dark"] .double-rule::before,:root[data-theme="dark"] .double-rule::after,:root[data-theme="dark"] .quote::before,:root[data-theme="dark"] .quote::after{mix-blend-mode:screen}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]) :is(.double-rule,.quote) > .lc{mix-blend-mode:screen}
+  :root:not([data-theme="light"]) .double-rule::before,:root:not([data-theme="light"]) .double-rule::after,:root:not([data-theme="light"]) .quote::before,:root:not([data-theme="light"]) .quote::after{mix-blend-mode:screen}
+}
+.quote p{font-style:italic;font-size:clamp(1.125rem,1rem + .5vw,1.25rem);line-height:1.45}
+.quote.lg p{font-size:clamp(1.25rem,1rem + 1.2vw,1.625rem);line-height:1.4;max-width:46ch}
+.quote cite{font-style:normal}
+
+@media (prefers-reduced-motion: no-preference){
+  .layered::before,.layered::after,.layered > .lc{transition:transform .6s cubic-bezier(.2,.7,.2,1),opacity .6s ease}
+  .quote::before,.quote::after,.quote > .lc,.double-rule::before,.double-rule::after,.double-rule > .lc{transition:left .5s ease,top .5s ease,transform .5s ease,opacity .5s ease}
+  .big{transition:text-shadow .5s ease}
+}
+
+/* ---- hero ---- */
+.hero .wrap{display:grid;gap:28px;padding-block:clamp(36px,6vw,64px) 0}
+/* the headline gets the offset-color edges as a whole, only on hover / mid-screen, so no single phrase outranks the others */
+/* Headline "lens": only the letters near the cursor (or finger) split into the three inks,
+   stronger the closer they are. --k runs from 0 (far) to 1 (under the cursor). */
+@property --k{syntax:"<number>";inherits:false;initial-value:0}
+.lens .w{display:inline-block;white-space:nowrap}
+.lens .ch{--k:0;display:inline-block;
+  /* offsets scale with the type size (5px on the desktop headline), so smaller titles get a proportional effect */
+  text-shadow:calc(-.075em * var(--k)) calc(-.022em * var(--k)) 0 color-mix(in srgb, var(--layer-a) 80%, transparent),
+              calc(.075em * var(--k)) calc(.022em * var(--k)) 0 color-mix(in srgb, var(--layer-b) 80%, transparent),
+              calc(.015em * var(--k)) calc(.075em * var(--k)) 0 color-mix(in srgb, var(--layer-c) 85%, transparent)}
+@media (prefers-reduced-motion: no-preference){.lens .ch{transition:--k .25s ease-out}}
+.hero-figure{display:grid;gap:18px}
+.hero-figure img{width:100%;aspect-ratio:16/8;object-fit:cover}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px 16px;align-items:center}
+.proof{display:grid;gap:1px;background:var(--line);border:1px solid var(--line)}
+.proof > div{background:var(--paper);padding:22px 20px;display:grid;gap:8px;align-content:start;min-width:0}
+@media (min-width:900px){.proof{grid-template-columns:repeat(3,1fr)}}
+.logo-strip{background:var(--logo-bg);border:1px solid var(--line);padding:16px 18px;display:grid;gap:14px;
+  grid-template-columns:repeat(2,minmax(0,1fr));align-items:center;justify-items:center}
+.logo-strip .meta{color:#575e66;grid-column:1/-1;justify-self:start}
+.logo-strip img{height:calc(var(--h) * 1.25);width:auto;max-width:100%;object-fit:contain}
+.logo-strip a.meta{justify-self:end;text-decoration:none;padding:10px 0}
+@media (hover:hover){.logo-strip a.meta:hover{color:#b5341c}}
+@media (min-width:900px){
+  .logo-strip{display:flex;flex-wrap:wrap;gap:14px 28px}
+  .logo-strip a.meta{margin-left:auto}
+}
+
+/* ---- about ---- */
+.about-grid{display:grid;gap:28px}
+.about-text{display:grid;gap:16px;min-width:0}
+@media (min-width:860px){.about-grid{grid-template-columns:1.1fr .9fr;align-items:start}}
+
+/* ---- projects ---- */
+.projects{display:grid;gap:clamp(56px,8vw,96px)}
+.project{display:grid;gap:24px}
+.project-head{display:grid;gap:12px}
+.project-head .lead{color:var(--muted)}
+.project-body{display:grid;gap:18px;min-width:0;align-content:start}
+.facts{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.facts li{padding-left:18px;position:relative;max-width:65ch}
+.facts li::before{content:"";position:absolute;left:0;top:.72em;width:8px;height:2px;background:var(--layer-b)}
+.its-logo{width:88px}
+.gallery{display:grid;gap:10px;grid-template-columns:repeat(2,minmax(0,1fr))}
+.gallery img{width:100%;height:100%;aspect-ratio:4/3;object-fit:cover}
+.gallery .tall{grid-row:span var(--span,2)}
+.gallery .tall img{aspect-ratio:auto}
+.gallery figcaption{grid-column:1/-1}
+.video{display:grid;gap:10px}
+.video a.thumb{position:relative;display:block;text-decoration:none}
+.video a.thumb img{width:100%;aspect-ratio:16/9;object-fit:cover}
+.play{position:absolute;left:14px;top:14px;display:flex;align-items:center;gap:10px;
+  background:var(--ink);color:var(--paper);padding:10px 16px 10px 12px;
+  font-family:var(--font-label);font-size:.8rem;letter-spacing:.04em}
+.play svg{width:18px;height:18px;fill:currentColor}
+@media (hover:hover){.video a.thumb:hover .play{background:var(--accent);color:#fff}}
+.eu{display:grid;gap:12px;background:var(--logo-bg);color:#15181b;padding:18px;border:1px solid var(--line);align-content:start}
+.eu img{width:260px}
+.eu p{font-size:.85rem;line-height:1.5;color:var(--logo-ink)}
+@media (min-width:860px){
+  .project-main{display:grid;grid-template-columns:1fr 1fr;column-gap:44px;align-items:start}
+  .its-logo{width:110px}
+}
+
+/* ---- partners ---- */
+.logos{background:var(--logo-bg);border:1px solid var(--line);padding:clamp(20px,4vw,40px);display:grid;gap:26px}
+.logo-wall{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:30px 40px;--s:1.35}
+.logo-wall img{height:calc(var(--h) * var(--s));width:auto;max-width:min(44vw,300px);object-fit:contain}
+@media (max-width:600px){.logo-wall{--s:1;gap:22px 26px}}
+.partner-names{font-size:.9rem;color:var(--logo-ink)}
+
+/* ---- sharing ---- */
+.share-grid{display:grid;gap:36px}
+@media (min-width:860px){.share-grid{grid-template-columns:.95fr 1.05fr;align-items:start}}
+.book{border:1px solid var(--line);background:var(--card);padding:22px;display:grid;gap:12px}
+.book ol{margin:0;padding-left:1.2em;display:grid;gap:6px}
+.talks{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.talks li{display:grid;grid-template-columns:3.4rem minmax(0,1fr);gap:12px;padding:12px 0;border-bottom:1px solid var(--line)}
+.talks .yr{font-family:var(--font-label);font-size:.85rem;color:var(--muted);font-variant-numeric:tabular-nums;padding-top:2px}
+.talks b{font-weight:600}
+
+/* ---- work with us: the one dark band ---- */
+main > section.work{background:var(--ink);color:var(--paper);margin-top:var(--section-gap)}
+main > section.work > .wrap{padding-block:var(--section-gap)}
+.work .meta,.work .muted,.work .credit,.work .sec-head .lead{color:color-mix(in srgb, var(--paper) 72%, transparent)}
+.work .btn{border-color:var(--paper);color:var(--paper)}
+@media (hover:hover){.work .btn:hover{background:var(--paper);color:var(--ink)}}
+.work .btn.primary{background:var(--paper);border-color:var(--paper);color:var(--ink)}
+.work-grid{display:grid;gap:32px}
+@media (min-width:860px){.work-grid{grid-template-columns:1fr 1fr;align-items:center}}
+.offers{display:grid;gap:14px;margin:0;padding:0;list-style:none}
+.offers li{border-top:1px solid color-mix(in srgb, var(--paper) 25%, transparent);padding-top:12px;display:grid;gap:4px}
+.mail{display:flex;flex-wrap:wrap;align-items:center;gap:10px}
+.mail .addr{font-family:var(--font-label);font-size:1rem;word-break:break-all}
+
+/* ---- support ---- */
+.support-grid{display:grid;gap:28px}
+@media (min-width:860px){.support-grid{grid-template-columns:1.6fr 1fr;align-items:start}}
+.one-percent{display:grid;gap:10px;align-content:start}
+
+/* ---- founder ---- */
+.founder{display:grid;gap:28px}
+.founder img{width:100%;aspect-ratio:1;object-fit:cover;object-position:50% 30%}
+.founder-text{display:grid;gap:14px;min-width:0}
+@media (min-width:760px){.founder{grid-template-columns:300px 1fr;align-items:start}}
+
+/* ---- footer ---- */
+footer{border-top:1px solid var(--line);font-size:.92rem;margin-top:0}
+footer .wrap{padding-block:44px;display:grid;gap:28px}
+footer .wordmark{height:28px}
+.facts-dl{display:grid;grid-template-columns:minmax(0,6.5rem) minmax(0,1fr);gap:6px 14px;margin:0;font-size:.9rem}
+.facts-dl dt{font-family:var(--font-label);font-size:.75rem;letter-spacing:.04em;color:var(--muted);padding-top:2px}
+.facts-dl dd{margin:0;min-width:0}
+@media (min-width:760px){footer .wrap{grid-template-columns:minmax(0,1fr) minmax(0,1.4fr)}}
+
+
+/* ---- project anatomy (same for every project): rule → head → main media → facts | side → photo strip → link ---- */
+.project{display:grid;gap:26px}
+.project > .btn{justify-self:start}
+.project-head{display:grid;gap:12px}
+.project-head.has-logo{grid-template-columns:minmax(0,1fr) auto;align-items:start;gap:12px 32px}
+.project-title{display:grid;gap:12px;min-width:0}
+.two-col{display:grid;gap:28px}
+.two-col > .col{display:grid;gap:14px;min-width:0;align-content:start}
+@media (min-width:860px){.two-col{grid-template-columns:1fr 1fr;column-gap:44px}}
+.strip{display:grid;gap:10px;grid-template-columns:repeat(2,minmax(0,1fr))}
+.strip img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.strip figcaption{grid-column:1/-1}
+.strip[style*="--n:3"] img:last-of-type{grid-column:1/-1;aspect-ratio:16/9}
+@media (min-width:700px){.strip{grid-template-columns:repeat(var(--n),minmax(0,1fr))}.strip[style*="--n:3"] img:last-of-type{grid-column:auto;aspect-ratio:4/3}}
+.video a.thumb img{aspect-ratio:16/9}
+@media (max-width:600px){.project-head.has-logo{grid-template-columns:1fr}.project-head.has-logo .its-logo{width:72px}}
+
+
+/* ---- LL corner frame for project titles ----
+   From the wordmark: in "PARALLEL" the two L's are identical and the second is shifted up and to the
+   right. Here a short LL pair sits at the title's bottom-left, and the same pair turned 180° at its
+   top-right. Each pseudo-element draws one L of both pairs with background bars, so the second L can be
+   offset in mirrored directions. Ink at rest; on interaction cyan + red-orange, spreading only slightly
+   so the two L's stay a pair. */
+@property --c{syntax:"<color>";inherits:false;initial-value:#15181b}
+@property --dx{syntax:"<length>";inherits:false;initial-value:0px}
+@property --dy{syntax:"<length>";inherits:false;initial-value:0px}
+.project h3{position:relative;width:fit-content;max-width:100%;padding:.45em .7em .45em .62em;
+  --st:clamp(4px,.15em,7px);--lh:.8em;--lw:.55em}
+.project h3::before,.project h3::after{content:"";position:absolute;inset:0;pointer-events:none;--c:var(--ink);
+  background-repeat:no-repeat;
+  background-image:linear-gradient(var(--c),var(--c)),linear-gradient(var(--c),var(--c)),linear-gradient(var(--c),var(--c)),linear-gradient(var(--c),var(--c));
+  background-size:var(--st) var(--lh),var(--lw) var(--st),var(--st) var(--lh),var(--lw) var(--st);
+  background-position:left var(--dx) bottom var(--dy),left var(--dx) bottom var(--dy),right var(--dx) top var(--dy),right var(--dx) top var(--dy)}
+/* the second L sits up and to the right, by the same steps as in the wordmark (≈1.9 and 1.45 strokes) */
+.project h3::after{--dx:calc(var(--st) * 1.9);--dy:calc(var(--st) * 1.45)}
+
+
+/* ---- dark-mode polish ---- */
+:root[data-theme="dark"]{--logo-bg:#e3e5e2}
+:root[data-theme="dark"] .layered{--ink-o:.8}
+:root[data-theme="dark"] main > section.work{background:#08090b;color:var(--ink);border-block:1px solid var(--line)}
+:root[data-theme="dark"] .work :is(.meta,.muted,.credit,.sec-head .lead){color:var(--muted)}
+:root[data-theme="dark"] .work .btn{border-color:var(--ink);color:var(--ink)}
+:root[data-theme="dark"] .work .btn.primary{background:var(--ink);color:#08090b}
+:root[data-theme="dark"] .eu{background:transparent;color:var(--ink)}
+:root[data-theme="dark"] .eu img{background:#fff;padding:10px}
+:root[data-theme="dark"] .eu p{color:var(--muted)}
+:root[data-theme="dark"] .proof > div.is-active .big{text-shadow:-4px -1px 0 color-mix(in srgb, var(--layer-a) 80%, transparent),4px 1px 0 color-mix(in srgb, var(--layer-b) 80%, transparent),0 4px 0 color-mix(in srgb, var(--layer-c) 80%, transparent)}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){--logo-bg:#e3e5e2}
+  :root:not([data-theme="light"]) .layered{--ink-o:.8}
+  :root:not([data-theme="light"]) main > section.work{background:#08090b;color:var(--ink);border-block:1px solid var(--line)}
+  :root:not([data-theme="light"]) .work :is(.meta,.muted,.credit,.sec-head .lead){color:var(--muted)}
+  :root:not([data-theme="light"]) .work .btn{border-color:var(--ink);color:var(--ink)}
+  :root:not([data-theme="light"]) .work .btn.primary{background:var(--ink);color:#08090b}
+  :root:not([data-theme="light"]) .eu{background:transparent;color:var(--ink)}
+  :root:not([data-theme="light"]) .eu img{background:#fff;padding:10px}
+  :root:not([data-theme="light"]) .eu p{color:var(--muted)}
+  :root:not([data-theme="light"]) .proof > div.is-active .big{text-shadow:-4px -1px 0 color-mix(in srgb, var(--layer-a) 80%, transparent),4px 1px 0 color-mix(in srgb, var(--layer-b) 80%, transparent),0 4px 0 color-mix(in srgb, var(--layer-c) 80%, transparent)}
+}
+/* focus ring readable on the dark band */
+.work :focus-visible{outline-color:var(--layer-a)}
+/* grid alignment fixes */
+.two-col{align-items:start}
+.work-grid{align-items:start}
+.h4{font-family:var(--font-display);font-variation-settings:"wdth" 100;font-weight:700;font-size:1.0625rem;line-height:1.3;letter-spacing:0;text-transform:none;margin:0}
+@media (min-width:860px){#learn .two-col > .col:last-child{padding-top:23px}}
+.learn-photo{width:100%;max-height:340px;object-fit:cover;object-position:50% 45%}
+.mail button{min-width:13ch}
+/* the LL frame hangs into the gutter, so the title text lines up with the meta and lead */
+.project h3{margin-left:-.62em}
+@media (max-width:699px){.project h3{padding-left:.6em;margin-left:-.6em}}
+@media (max-width:600px){.logo-wall{justify-content:space-evenly}}
+
+
+/* ---- photo viewer: click any photo to see it large ---- */
+.zoomable{cursor:zoom-in}
+.viewer{position:fixed;inset:0;z-index:50;display:grid;place-items:center;
+  padding:max(16px, env(safe-area-inset-top, 0px)) max(16px, env(safe-area-inset-right, 0px)) max(16px, env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px));
+  background:#0a0b0d;cursor:zoom-out}
+.viewer[hidden]{display:none}
+.viewer figure{margin:0;display:grid;gap:10px;justify-items:center;max-width:min(1400px,100%)}
+.viewer img{max-width:100%;max-height:calc(100vh - 120px);width:auto;height:auto;object-fit:contain;box-shadow:-8px -8px 0 color-mix(in srgb, var(--layer-a) 70%, transparent),8px 8px 0 color-mix(in srgb, var(--layer-b) 70%, transparent)}
+.viewer figcaption{font-family:var(--font-label);font-size:.8rem;color:#c9ced2;text-align:center;max-width:70ch}
+.viewer .close{position:absolute;top:calc(12px + env(safe-area-inset-top, 0px));right:calc(12px + env(safe-area-inset-right, 0px));
+  font-family:var(--font-label);font-size:.85rem;background:#f4f5f3;color:#15181b;border:0;min-height:44px;padding:10px 16px;cursor:pointer}
+.viewer .nav-btn{position:absolute;top:50%;transform:translateY(-50%);width:52px;height:52px;border:0;cursor:pointer;
+  background:rgba(244,245,243,.92);color:#15181b;font-family:var(--font-display);font-size:1.4rem;font-weight:700;line-height:1}
+.viewer .nav-btn:hover{background:#fff}
+.viewer .prev{left:calc(12px + env(safe-area-inset-left, 0px))}
+.viewer .next{right:calc(12px + env(safe-area-inset-right, 0px))}
+.viewer .count{color:#8f969c;white-space:nowrap;margin-left:.5em}
+.viewer img{cursor:pointer}
+@media (max-width:600px){.viewer .nav-btn{top:auto;bottom:calc(14px + env(safe-area-inset-bottom, 0px));transform:none;width:48px;height:48px}.viewer img{max-height:calc(100vh - 190px)}}
+@media (prefers-reduced-motion: no-preference){.viewer.swap img{animation:pop .25s ease-out}@keyframes pop{from{transform:scale(.97);opacity:.6}}}
+
+/* hint bar offering the Hungarian page to Hungarian-language browsers */
+.lang-hint{background:var(--ink);color:var(--paper);font-family:var(--font-label);font-size:.8rem}
+.lang-hint .wrap{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-block:6px}
+.lang-hint a{color:inherit}
+.lang-hint button{background:none;border:0;color:inherit;font:inherit;min-height:44px;min-width:44px;cursor:pointer}
+
+/* long words (Hungarian compounds) must never push the layout wider than the screen */
+.top .wrap > a:first-child{flex:none}
+h1,h2,h3{overflow-wrap:break-word;hyphens:auto}
+main > section > .wrap > *,.work-grid > *,.about-grid > *{min-width:0}
+@media (max-width:440px){.nav{gap:4px 10px;font-size:.72rem}}
+@media (max-width:420px){.nav .opt2{display:none}}
+html[lang="hu"] h2{font-size:clamp(1.6rem,.9rem + 3.4vw,3.5rem)}
+@media (max-width:600px){.hero h1{font-size:1.95rem;font-variation-settings:"wdth" 112}}
+@media (max-width:600px){html[lang="hu"] .hero h1{font-size:1.9rem}}
+
+.hero-sub{color:var(--muted);max-width:46ch;margin-top:-6px}
+
+/* phone tweaks (kept last so they win) */
+@media (max-width:600px){.hero-figure img{aspect-ratio:4/3;object-position:72% 50%}.layered{--o:8px}}
+</style>
+
+<link rel="canonical" href="https://parallelstories.org/">
+<link rel="alternate" hreflang="en" href="https://parallelstories.org/">
+<link rel="alternate" hreflang="hu" href="https://parallelstories.org/hu/">
+<link rel="alternate" hreflang="x-default" href="https://parallelstories.org/">
+<link rel="icon" type="image/png" href="favicon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Parallel Stories">
+<meta property="og:title" content="Parallel Stories Cultural Organization | Augmented reality storytelling, Budapest">
+<meta property="og:description" content="Parallel Stories Cultural Organization works with international experts to explore new ways of storytelling with augmented reality, to engage local communities and shape public conversation.">
+<meta property="og:url" content="https://parallelstories.org/">
+<meta property="og:image" content="https://parallelstories.org/img/01-hero-its-ar-on-ipad.jpg">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="fonts/Archivo-normal-latin-b42cd5.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 500 800;
+  font-stretch: 100% 125%;
+  font-display: swap;
+  src: url(fonts/Archivo-normal-latin-ext-831240.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 500 800;
+  font-stretch: 100% 125%;
+  font-display: swap;
+  src: url(fonts/Archivo-normal-latin-b42cd5.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/IBMPlexMono-normal-latin-ext-9994c1.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/IBMPlexMono-normal-latin-d77319.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(fonts/IBMPlexMono-normal-latin-ext-60d1ee.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(fonts/IBMPlexMono-normal-latin-8d0aea.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Source Serif 4';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/SourceSerif4-italic-latin-ext-02de22.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Source Serif 4';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(fonts/SourceSerif4-italic-latin-699434.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Source Serif 4';
+  font-style: normal;
+  font-weight: 400 600;
+  font-display: swap;
+  src: url(fonts/SourceSerif4-normal-latin-ext-7fe287.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Source Serif 4';
+  font-style: normal;
+  font-weight: 400 600;
+  font-display: swap;
+  src: url(fonts/SourceSerif4-normal-latin-554d1c.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+</head>
+<body>
+<div class="lang-hint" id="lang-hint" hidden><div class="wrap"><a href="hu/" lang="hu">Magyarul olvasnád? Tovább a magyar változatra →</a><button type="button" id="lang-hint-x" aria-label="Bezárás">✕</button></div></div>
+<header class="top">
+  <div class="wrap">
+    <a href="#top" aria-label="Parallel Stories, back to top"><img class="wordmark" src="logos/ps-wordmark.png" alt="Parallel Stories" width="520" height="207"></a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#projects" class="opt2">Projects</a>
+      <a href="#work">Work with us</a>
+      <a href="#support" class="opt">Support</a>
+      <a href="#contact">Contact</a>
+      <a href="hu/" class="lang" lang="hu" hreflang="hu" title="Magyar változat">HU</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="wrap">
+      <p class="meta">Parallel Stories Cultural Organization · <span class="nw">Budapest</span></p>
+      <h1 id="headline" class="lens">Together with international experts, we explore new ways of storytelling with augmented reality, to engage local communities and shape public conversation.</h1>
+      <p class="lead hero-sub">We stimulate new approaches to education, to uncovering and interpreting cultural heritage, and to engaging new audiences.</p>
+      <figure class="hero-figure">
+        <div class="layered"><span class="lc" aria-hidden="true"></span><img src="img/01-hero-its-ar-on-ipad.jpg" srcset="img/01-hero-its-ar-on-ipad-800.jpg 800w, img/01-hero-its-ar-on-ipad.jpg 1600w" sizes="(max-width: 700px) 100vw, 1080px" alt="A visitor holds an iPad on a Budapest street. On the screen, two characters from the past stand in the same street." width="1600" height="711" fetchpriority="high"></div>
+        <figcaption class="credit">A scene from the Two Breads prototype of If These Streets Could Talk, on a Budapest street. Photo: Parallel Stories</figcaption>
+      </figure>
+      <div class="hero-cta">
+        <a class="btn primary" href="#contact">Get in touch</a>
+        <span class="muted">Planning an AR project, or want to support our work?</span>
+      </div>
+      <div class="proof" role="list" aria-label="Highlights">
+        <div role="listitem"><span class="big">140+</span><p>professionals at the launch of our four-country EU project, with speakers from the MIT Open Documentary Lab, the Auschwitz-Birkenau Memorial and Museum and UCL.</p></div>
+        <div role="listitem"><span class="big">1st</span><p>AR storytelling class at Stanford University, co-created by our founder, Barna Szász. It has been our sandbox for years, and our methods grew out of that continuous experimenting.</p></div>
+        <div role="listitem"><span class="big">10</span><p>countries where we've given workshops and talks, including at the Warsaw Ghetto Museum, NYU and DOK Leipzig.</p></div>
+      </div>
+      <div class="logo-strip" aria-label="Supported by">
+        <span class="meta">Supported by</span>
+        <img src="logos/eu.png" alt="Co-funded by the European Union" style="--h:38px">
+        <img src="logos/claims.png" alt="Claims Conference" style="--h:50px">
+        <img src="logos/usembassy.png" alt="U.S. Embassy Hungary" style="--h:56px">
+        <img src="logos/evz.png" alt="Foundation EVZ" style="--h:32px">
+        <a href="#partners" class="meta">All partners ↓</a>
+      </div>
+      <blockquote class="quote lg"><span class="lc" aria-hidden="true"></span>
+        <p>“I don't think I'll walk through these streets with the same lens on anymore. It's really vivid and moving to be on the exact streets where the Jewish ghetto was.”</p>
+        <cite class="credit">Caroline Savage, Chargé d'Affaires a.i., U.S. Embassy Budapest, after trying If These Streets Could Talk</cite>
+      </blockquote>
+    </div>
+  </div>
+
+  <section id="about" aria-labelledby="about-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 id="about-h">About</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-text">
+          <p class="lead">Parallel Stories Cultural Organization (Párhuzamos Történetek Kulturális Egyesület) promotes new, story-based ways to understand and better our society. We work mostly with augmented reality. An AR layer changes how we think, feel and behave in a real place. It also reaches new audiences in new ways.</p>
+          <p>We work hand in hand with the communities whose stories we tell, and we create with them. We care about what we tell, but just as much about how we tell it.</p>
+          <p>Founder Barna Szász co-created Stanford University's first AR storytelling class. We work closely with Prof. Victoria Grace Richardson-Walden, founder of the Landecker Digital Memory Lab, and with creative producers Noémi Szakonyi and Máté Vincze of Match Frame Productions.</p>
+          <p>From single workshops to long-term international projects, we share what we learn. That includes our research, our upcoming guidebook, the EU co-funded These Streets Remember project, and workshops in Europe and the US.</p>
+        </div>
+        <figure style="display:grid;gap:8px">
+          <img src="img/02-about-its-group-test.jpg" srcset="img/02-about-its-group-test-800.jpg 800w, img/02-about-its-group-test.jpg 1600w" sizes="(max-width: 700px) 100vw, 1080px" alt="Barna Szász shows an AR scene on an iPad to a group of people on a Budapest street." width="1600" height="1067" loading="lazy">
+          <figcaption class="credit">Street test with a group of visitors. Photo: Parallel Stories</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" aria-labelledby="projects-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 id="projects-h">Projects</h2>
+        <p class="lead">Three projects: our flagship in Budapest, its European extension, and a community for immersive media in Hungary.</p>
+      </div>
+
+      <div class="projects">
+        <article class="project" aria-labelledby="its-h">
+          <div class="project-head has-logo">
+            <div class="project-title">
+              <p class="meta">Flagship · Budapest · Launch 2027</p>
+              <h3 id="its-h" class="lens">If These Streets Could Talk</h3>
+              <p class="lead">An augmented reality experience in Budapest's former Jewish quarter. Visitors walk the streets with an iPad and meet the people who lived there, in the places where their stories happened.</p>
+            </div>
+            <img class="its-logo" src="logos/its-logo.png" alt="If These Streets Could Talk logo" width="365" height="260" loading="lazy">
+          </div>
+          <div class="video">
+            <a class="thumb" href="https://www.youtube.com/watch?v=V-aaacaM0mc" target="_blank" rel="noopener">
+              <img src="img/video-thumb.jpg" srcset="img/video-thumb-800.jpg 800w, img/video-thumb.jpg 1280w" sizes="(max-width: 700px) 100vw, 1080px" alt="Video still: U.S. Chargé d'Affaires Caroline Savage tries the AR experience." width="1280" height="720" loading="lazy">
+              <span class="play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Watch on YouTube · 2 min</span>
+            </a>
+            <p class="credit">U.S. Chargé d'Affaires Caroline Savage tries the prototype on Holocaust Remembrance Day. Video: U.S. Embassy Budapest</p>
+          </div>
+          <div class="two-col">
+            <div class="col">
+              <h4>Key facts</h4>
+              <ul class="facts">
+                <li>Three prototypes: Vanczák Béla's Mission, Gingerbread and Two Breads.</li>
+                <li>Tested on the street with more than 200 people.</li>
+                <li>A research study with 60 participants, approved by the University of Sussex ethics committee.</li>
+                <li>Prototype filming at Origo Studios.</li>
+                <li>The full experience is planned for 2027.</li>
+              </ul>
+            </div>
+            <div class="col">
+              <blockquote class="quote"><span class="lc" aria-hidden="true"></span>
+                <p>“I know these streets very well, or so I thought. But there's so much that I don't know.”</p>
+                <cite class="credit">Tester who has lived in the neighborhood for at least 10 years</cite>
+              </blockquote>
+            </div>
+          </div>
+          <figure class="strip" style="--n:4">
+            <img src="img/03-its-greenscreen-shoot.jpg" srcset="img/03-its-greenscreen-shoot-800.jpg 800w, img/03-its-greenscreen-shoot.jpg 1600w" sizes="(max-width: 700px) 100vw, 1080px" alt="Actors in period costume on a green-screen set during prototype filming." width="1600" height="1066" loading="lazy">
+            <img src="img/06-its-cocreation-workshop.jpg" srcset="img/06-its-cocreation-workshop-800.jpg 800w, img/06-its-cocreation-workshop.jpg 1066w" sizes="(max-width: 700px) 100vw, 1080px" alt="A participant smiles during a co-creation workshop." width="1066" height="1600" loading="lazy" style="object-position:50% 25%">
+            <img src="img/04-its-street-testing.jpg" srcset="img/04-its-street-testing-800.jpg 800w, img/04-its-street-testing.jpg 1600w" sizes="(max-width: 700px) 100vw, 1080px" alt="A tester holds an iPad on a Budapest street." width="1600" height="1066" loading="lazy">
+            <img src="img/05-its-research-interview.jpg" srcset="img/05-its-research-interview-800.jpg 800w, img/05-its-research-interview.jpg 1600w" sizes="(max-width: 700px) 100vw, 1080px" alt="A researcher interviews a tester after the experience." width="1600" height="1066" loading="lazy">
+            <figcaption class="credit">Filming, co-creation workshop, street testing and research interviews. Photos: Parallel Stories</figcaption>
+          </figure>
+          <a class="btn" href="https://if-these-streets.org" target="_blank" rel="noopener">Visit if-these-streets.org ↗</a>
+        </article>
+
+        <article class="project" aria-labelledby="tsr-h">
+          <div class="project-head">
+            <p class="meta">Extension of If These Streets Could Talk · Budapest · Kraków · Novi Sad · Riga · <span class="nw">2026–2028</span></p>
+            <h3 id="tsr-h" class="lens">These Streets Remember</h3>
+            <p class="lead">We bring our method to partners in three more cities. In each city, local teams take part in a workshop series and develop their own AR pilot for a neighborhood they know. Parallel Stories coordinates the project.</p>
+          </div>
+          <div class="two-col">
+            <div class="col">
+              <h4>Key facts</h4>
+              <ul class="facts">
+                <li>Partners: Galicia Jewish Museum (Kraków), Terraforming (Novi Sad), Žanis Lipke Memorial (Riga). Associated partner: Holocaust Memorial Center (Budapest).</li>
+                <li>Opening conference on October 13, 2026, at the Holocaust Memorial Center in Budapest, with more than 140 professionals.</li>
+                <li>Runs from August 1, 2026, to July 31, 2028.</li>
+                <li>Results so far: the opening conference in Budapest. Next: workshop series in Riga, Novi Sad and Kraków.</li>
+              </ul>
+            </div>
+            <div class="col eu">
+              <img src="logos/eu.png" alt="Co-funded by the European Union" width="520" height="111" loading="lazy">
+              <p>Co-funded by the European Union. Views and opinions expressed are however those of the author(s) only and do not necessarily reflect those of the European Union or the European Education and Culture Executive Agency (EACEA). Neither the European Union nor the granting authority can be held responsible for them.</p>
+            </div>
+          </div>
+          <p class="credit">Full title: These Streets Remember – Budapest, Krakow, Novi Sad, Riga (TSR-BKNR) · CERV-2025-CITIZENS-REM · Project 101297607 · Coordinator: Parallel Stories, <a href="mailto:hello@parallelstories.org">hello@parallelstories.org</a></p>
+        </article>
+
+        <article class="project" aria-labelledby="xr-h">
+          <div class="project-head">
+            <p class="meta">Community · Hungary</p>
+            <h3 id="xr-h" class="lens">XR Budapest</h3>
+            <p class="lead">A community that connects everyone in Hungary's XR scene, from curious beginners to professionals.</p>
+          </div>
+          <div class="two-col">
+            <div class="col">
+              <h4>Key facts</h4>
+              <ul class="facts">
+                <li>In-person gatherings that show the most exciting Hungarian XR projects, where visitors can try the demos.</li>
+                <li>Online channels that share news, events and opportunities, and connect people in the field.</li>
+                <li>The Hungarian representative of Euromersive.</li>
+              </ul>
+            </div>
+          </div>
+          <figure class="strip" style="--n:3">
+            <img src="img/10-xrbudapest-lecture-adapter.jpg" srcset="img/10-xrbudapest-lecture-adapter-800.jpg 800w, img/10-xrbudapest-lecture-adapter.jpg 1200w" sizes="(max-width: 700px) 100vw, 1080px" alt="Barna Szász speaks at a lectern while an audience member raises a hand." width="1200" height="960" loading="lazy">
+            <img src="img/11-xrbudapest-audience-adapter.jpg" srcset="img/11-xrbudapest-audience-adapter-800.jpg 800w, img/11-xrbudapest-audience-adapter.jpg 1200w" sizes="(max-width: 700px) 100vw, 1080px" alt="A full room listens to a talk." width="1200" height="960" loading="lazy">
+            <img src="img/13-xrbudapest-ar-glasses-street.jpg" srcset="img/13-xrbudapest-ar-glasses-street-800.jpg 800w, img/13-xrbudapest-ar-glasses-street.jpg 1200w" sizes="(max-width: 700px) 100vw, 1080px" alt="A woman tries AR glasses on a city street at night." width="1200" height="1600" loading="lazy" style="object-position:50% 30%">
+            <figcaption class="credit">Photos: Adaptér; AR glasses: Parallel Stories</figcaption>
+          </figure>
+          <a class="btn" href="https://xrbudapest.hu" target="_blank" rel="noopener">Visit xrbudapest.hu ↗</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="partners" aria-labelledby="partners-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 id="partners-h">Partners and funders</h2>
+      </div>
+      <div class="logos">
+        <div class="logo-wall">
+          <img src="logos/eu.png" alt="Co-funded by the European Union (These Streets Remember)" style="--h:44px" loading="lazy">
+          <img src="logos/claims.png" alt="Claims Conference" style="--h:58px" loading="lazy">
+          <img src="logos/usembassy.png" alt="U.S. Embassy Hungary" style="--h:66px" loading="lazy">
+          <img src="logos/evz.png" alt="Foundation EVZ" style="--h:35px" loading="lazy">
+          <img src="logos/bmf.png" alt="German Federal Ministry of Finance" style="--h:80px" loading="lazy">
+          <img src="logos/bga.png" alt="Bethlen Gábor Alapkezelő" style="--h:64px" loading="lazy">
+          <img src="logos/hdke.png" alt="Holocaust Memorial Center Budapest" style="--h:64px" loading="lazy">
+          <img src="logos/sussex.png" alt="University of Sussex" style="--h:64px" loading="lazy">
+          <img src="logos/ldml.png" alt="Landecker Digital Memory Lab" style="--h:64px" loading="lazy">
+          <img src="logos/tar.png" alt="Foundation for the Jewish Heritage of Elizabethtown Museum" style="--h:58px" loading="lazy">
+          <img src="logos/mozaik.png" alt="JDC Mozaik Jewish Community Hub" style="--h:33px" loading="lazy">
+          <img src="logos/matchframe.png" alt="Match Frame Productions" style="--h:54px" loading="lazy">
+          <img src="logos/origo.png" alt="Origo Studios" style="--h:62px" loading="lazy">
+          <img src="logos/marom.png" alt="Marom Budapest" style="--h:64px" loading="lazy">
+          <img src="logos/propclub.png" alt="Propclub" style="--h:42px" loading="lazy">
+          <img src="logos/giff.png" alt="GIFF GDM" style="--h:50px" loading="lazy">
+          <img src="logos/idfa.png" alt="IDFA DocLab Forum, official selection 2022" style="--h:52px" loading="lazy">
+          <img src="logos/eastdoc.png" alt="East Doc Platform" style="--h:43px" loading="lazy">
+          <img src="logos/newimages.png" alt="NewImages Festival XR Development Market 2022, selected" style="--h:48px" loading="lazy">
+          <img src="logos/goeast.png" alt="goEast 2022, special mention, Merck Award for Innovation in XR" style="--h:58px" loading="lazy">
+        </div>
+        <p class="partner-names">European partners in These Streets Remember: Galicia Jewish Museum (Kraków), Terraforming (Novi Sad), Žanis Lipke Memorial (Riga).</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="learn" aria-labelledby="learn-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 id="learn-h">Sharing what we learn</h2>
+        <p class="lead">We're a nonprofit, and we share what we learn openly. Our projects become a method others can use.</p>
+      </div>
+      <figure style="display:grid;gap:8px">
+        <img src="img/14-stanford-ar-whales-class.jpg" srcset="img/14-stanford-ar-whales-class-800.jpg 800w, img/14-stanford-ar-whales-class.jpg 1600w" sizes="(max-width: 700px) 100vw, 1080px" alt="Students in a Stanford classroom, with AR whales floating above the desks." width="1600" height="662" loading="lazy" class="learn-photo">
+        <figcaption class="credit">AR class at Stanford University. Photo: Barna Szász</figcaption>
+      </figure>
+      <div class="two-col">
+        <div class="col">
+          <div class="book">
+            <p class="meta">Open-access guidebook · Winter 2026</p>
+            <h3 class="h4">Ethical, site-based AR</h3>
+            <p>A free, open-access two-volume guidebook by Barna Szász and Prof. Victoria Grace Richardson-Walden, based on If These Streets Could Talk.</p>
+            <ol>
+              <li><b>Volume I:</b> the ethics. Why AR, how to co-create with communities, and what 60 user interviews tell us.</li>
+              <li><b>Volume II:</b> the craft. How to find the story in the streets, write for a visitor who walks and chooses, and test until it works.</li>
+            </ol>
+            <p class="muted">Want a copy when it comes out? Write to <a href="mailto:hello@parallelstories.org?subject=Guidebook">hello@parallelstories.org</a> with “Guidebook” in the subject.</p>
+          </div>
+        </div>
+        <div class="col">
+          <h3 class="h4">Selected workshops and talks</h3>
+          <ul class="talks">
+            <li><span class="yr">2026</span><span><b>Warsaw Ghetto Museum</b>, Immersive Histories workshop, Warsaw</span></li>
+            <li><span class="yr">2026</span><span><b>Washington, DC</b>, talk co-presented with Nancy Gillette of the U.S. Holocaust Memorial Museum</span></li>
+            <li><span class="yr">2025</span><span><b>Claims Conference</b>, presentation and panel at the National Holocaust Museum, Amsterdam. Next: Film and New Media Forum, Berlin, November 2026</span></li>
+            <li><span class="yr">2025</span><span><b>University of Sussex</b>, workshop at the Connective Holocaust Commemoration Expo</span></li>
+            <li><span class="yr">2024</span><span><b>NYU Tisch School of the Arts</b>, artist talk, New York</span></li>
+            <li><span class="yr">2023</span><span><b>DOK Leipzig</b>, keynote at DOK Exchange XR</span></li>
+          </ul>
+          <a class="btn" href="https://www.barnaszasz.com/talks-workshops-consulting" target="_blank" rel="noopener">Full list of talks ↗</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="work" class="work" aria-labelledby="work-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 id="work-h">Work with us</h2>
+        <p class="lead">Bring augmented reality to your institution.</p>
+      </div>
+      <div class="work-grid">
+        <div style="display:grid;gap:22px;min-width:0">
+          <p>We help museums, memorial sites, universities and festivals use AR well. Recent hosts include the Warsaw Ghetto Museum, the Claims Conference and the University of Sussex. We work in English and Hungarian, in person or online.</p>
+          <ul class="offers">
+            <li><h3 class="h4">Workshops</h3><span>Hands-on, from one day to a full series. Your team leaves with a concept for your own site.</span></li>
+            <li><h3 class="h4">Consulting</h3><span>For institutions planning an AR project. We cover story, ethics, technology and testing.</span></li>
+            <li><h3 class="h4">Talks</h3><span>On AR, storytelling and memory, for conferences and classrooms.</span></li>
+          </ul>
+          <div style="display:grid;gap:10px">
+            <p class="muted">Planning something? Write to us.</p>
+            <div class="mail">
+              <a class="addr" href="mailto:hello@parallelstories.org">hello@parallelstories.org</a>
+              <button type="button" class="btn" id="copy-mail">Copy address</button><span id="copy-status" role="status" class="credit"></span>
+            </div>
+          </div>
+        </div>
+        <figure style="display:grid;gap:8px">
+          <img src="img/07-workwithus-handson-adapter.jpg" srcset="img/07-workwithus-handson-adapter-800.jpg 800w, img/07-workwithus-handson-adapter.jpg 1200w" sizes="(max-width: 700px) 100vw, 1080px" alt="Barna Szász shows a participant an AR scene on a phone during a workshop." width="1200" height="960" loading="lazy">
+          <figcaption class="credit">Hands-on AR workshop, Budapest. Photo: Adaptér</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="support" aria-labelledby="support-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 id="support-h">Support</h2>
+        <p class="lead">Help us launch If These Streets Could Talk in 2027.</p>
+      </div>
+      <div class="support-grid">
+        <div style="display:grid;gap:16px;min-width:0">
+          <p>If These Streets Could Talk is in main production for its 2027 launch. Our main supporter matches the gifts we raise, so your support counts twice.</p>
+          <ul class="facts">
+            <li>Gifts fund concrete parts of the work: research and 3D reconstruction of a single address, LiDAR scans of the quarter, the education program, the open AR platform other cities can use, and the volumetric shoot that brings the characters to life.</li>
+            <li><b>Donors in the US</b> can give tax-deductibly through our fiscal sponsor, Edge of Discovery, a 501(c)(3) public charity.</li>
+            <li><b>Considering a larger gift?</b> Meet Barna Szász for 30 minutes, in person or on Zoom.</li>
+          </ul>
+          <a class="btn primary" href="mailto:hello@parallelstories.org?subject=Supporting%20If%20These%20Streets%20Could%20Talk">Write to us about giving</a>
+          <p class="credit">hello@parallelstories.org</p>
+        </div>
+        <div class="one-percent">
+          <h3 class="h4" lang="hu">Támogasd a munkánkat az adód 1%-ával!</h3>
+          <p class="muted" lang="hu">Kedvezményezett adószáma: 18264038-1-42</p>
+          <p class="muted">Hungarian taxpayers can give 1% of their personal income tax to us.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="founder-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 id="founder-h">Founder</h2>
+      </div>
+      <div class="founder">
+        <figure style="display:grid;gap:8px;max-width:340px">
+          <div class="layered small"><span class="lc" aria-hidden="true"></span><img src="img/16-founder-headshot.jpg" srcset="img/16-founder-headshot-800.jpg 800w, img/16-founder-headshot.jpg 1600w" sizes="(max-width: 700px) 100vw, 1080px" alt="Portrait of Barna Szász." width="1600" height="1540" loading="lazy"></div>
+          <figcaption class="credit">Photo: Barna Szász</figcaption>
+        </figure>
+        <div class="founder-text">
+          <h3>Barna Szász</h3>
+          <p>Barna Szász works with new media and the social impact of new technologies. Since 2019 he has taught augmented reality courses at Stanford University, where he co-created the university's first AR storytelling class. In Budapest, he is developing a large-scale interactive AR documentary experience in the streets of the Jewish quarter.</p>
+          <p>After graduating from the University of Theatre and Film Arts, Budapest, he worked as a video journalist and later Head of Video at Index.hu. He moved to the U.S. in 2017 on a Fulbright and earned an MFA from Stanford University in 2019, focusing on documentary and interactive media. His work has been acquired by PBS's POV Shorts and The Guardian, Staff Picked at Vimeo, and screened at DOC NYC, DOK Leipzig and CPH:DOX. He has taught video journalism at MOME Budapest and given guest lectures at Rutgers and NYU.</p>
+          <a class="btn" href="https://www.barnaszasz.com" target="_blank" rel="noopener">barnaszasz.com ↗</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer id="contact">
+  <div class="wrap">
+    <div style="display:grid;gap:12px;min-width:0;align-content:start">
+      <img class="wordmark" src="logos/ps-wordmark.png" alt="Parallel Stories" width="520" height="207">
+      <p><b>Parallel Stories Cultural Organization</b><br>Párhuzamos Történetek Kulturális Egyesület</p>
+      <p><a href="mailto:hello@parallelstories.org">hello@parallelstories.org</a></p>
+      <p class="credit">This site uses no cookies and no tracking.</p>
+    </div>
+    <div style="display:grid;gap:10px;min-width:0">
+      <h2 class="h4">Key facts</h2>
+      <dl class="facts-dl">
+        <dt>Type</dt><dd>Nonprofit association (egyesület), Budapest</dd>
+        <dt>Founder</dt><dd>Barna Szász</dd>
+        <dt>Registry no.</dt><dd>01-02-0013002</dd>
+        <dt>Tax no.</dt><dd>18264038-1-42</dd>
+        <dt>Address</dt><dd>1075 Budapest, Kazinczy utca 7. II/8.</dd>
+        <dt>Reports</dt><dd><a href="reports/">Official annual reports (beszámolók)</a></dd>
+      </dl>
+    </div>
+  </div>
+</footer>
+
+<div class="viewer" id="viewer" hidden role="dialog" aria-modal="true" aria-label="Photo">
+  <button type="button" class="close" id="viewer-close">Close ✕</button>
+  <button type="button" class="nav-btn prev" id="viewer-prev" aria-label="Previous photo">←</button>
+  <button type="button" class="nav-btn next" id="viewer-next" aria-label="Next photo">→</button>
+  <figure><img id="viewer-img" alt=""><figcaption><span id="viewer-cap"></span> <span class="count" id="viewer-count"></span></figcaption></figure>
+</div>
+
+<script>
+// Copy address: one timer, stable button width, result announced through a separate status line.
+(function(){
+  var btn = document.getElementById('copy-mail'), status = document.getElementById('copy-status'), timer;
+  if (!btn) return;
+  function done(msg){ clearTimeout(timer); btn.textContent = msg; if (status) status.textContent = msg;
+    timer = setTimeout(function(){ btn.textContent = 'Copy address'; if (status) status.textContent = ''; }, 1800); }
+  function fallback(){
+    var el = document.querySelector('.mail .addr'), r = document.createRange();
+    r.selectNodeContents(el); var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+    done('Selected');
+  }
+  btn.addEventListener('click', function(){
+    try { navigator.clipboard.writeText('hello@parallelstories.org').then(function(){ done('Copied'); }, fallback); }
+    catch (err) { fallback(); }
+  });
+})();
+
+// Two-color states. With a mouse: on hover. On touch screens: while the element is in the middle of the screen.
+// (CSS uses only .is-active, so states never get stuck on phones the way :hover does.)
+(function(){
+  var sel = '.layered, .proof > div, .quote, .project, .one-percent';
+  var canHover = window.matchMedia && window.matchMedia('(hover: hover)').matches;
+  if (canHover){
+    document.querySelectorAll(sel).forEach(function(el){
+      el.addEventListener('mouseenter', function(){ el.classList.add('is-active'); });
+      el.addEventListener('mouseleave', function(){ el.classList.remove('is-active'); });
+    });
+    return;
+  }
+  if (!('IntersectionObserver' in window)) return;
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){ en.target.classList.toggle('is-active', en.isIntersecting); });
+  }, { rootMargin: '-30% 0px -30% 0px' });
+  document.querySelectorAll('.layered, .proof > div, .quote, .one-percent').forEach(function(el){ io.observe(el); });
+  // a project lights up while its head is mid-screen
+  var io2 = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){ en.target.closest('.project').classList.toggle('is-active', en.isIntersecting); });
+  }, { rootMargin: '-30% 0px -30% 0px' });
+  document.querySelectorAll('.project-head').forEach(function(el){ io2.observe(el); });
+})();
+
+// Lens: split a heading into letters (words stay unbroken; screen readers get the plain text via aria-label),
+// then give each letter a strength based on its distance from the pointer. Used rarely: headline and project titles.
+(function(){
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var touch = window.matchMedia && window.matchMedia('(hover: none)').matches;
+  document.querySelectorAll('.lens').forEach(function(h){
+    var text = h.textContent, words = text.split(' ');
+    h.setAttribute('aria-label', text);
+    h.textContent = '';
+    var letters = [];
+    words.forEach(function(word, i){
+      var w = document.createElement('span'); w.className = 'w'; w.setAttribute('aria-hidden','true');
+      for (var j = 0; j < word.length; j++){ var c = document.createElement('span'); c.className = 'ch'; c.textContent = word[j]; w.appendChild(c); letters.push(c); }
+      h.appendChild(w);
+      if (i < words.length - 1) h.appendChild(document.createTextNode(' '));
+    });
+    var centres = [], last = [], R = 0;
+    // measure once (and on resize / font load), never inside the animation frame
+    function measure(){
+      if (h.closest('.project')){
+        h.style.width = '';
+        var left = h.getBoundingClientRect().left, right = 0;
+        letters.forEach(function(c){ right = Math.max(right, c.getBoundingClientRect().right); });
+        h.style.width = Math.ceil(right - left + (parseFloat(getComputedStyle(h).paddingRight) || 0)) + 'px';
+      }
+      centres = letters.map(function(c){ var r = c.getBoundingClientRect(); return [r.left + r.width/2 + scrollX, r.top + r.height/2 + scrollY]; });
+      R = parseFloat(getComputedStyle(h).fontSize) * 2.6;
+    }
+    measure();
+    window.addEventListener('resize', measure);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(measure);
+
+    var raf = 0, px = -1e5, py = -1e5;
+    function paint(){
+      raf = 0;
+      for (var i = 0; i < letters.length; i++){
+        var dx = centres[i][0] - scrollX - px, dy = centres[i][1] - scrollY - py;
+        var k = Math.max(0, 1 - Math.sqrt(dx*dx + dy*dy) / R);
+        var v = Math.round(k*k*(3-2*k) * 100) / 100;
+        if (v !== last[i]){ last[i] = v; letters[i].style.setProperty('--k', v); }
+      }
+    }
+    function aim(x, y){ px = x; py = y; if (!raf) raf = requestAnimationFrame(paint); }
+    var zone = h.closest('.hero, .project') || h, resetT;
+    zone.addEventListener('pointermove', function(e){ clearTimeout(resetT); aim(e.clientX, e.clientY); });
+    zone.addEventListener('pointerdown', function(e){ clearTimeout(resetT); aim(e.clientX, e.clientY); });
+    zone.addEventListener('pointerleave', function(e){
+      // on touch, leave the effect visible briefly after the finger lifts
+      if (e.pointerType === 'touch'){ resetT = setTimeout(function(){ aim(-1e5, -1e5); }, 700); }
+      else aim(-1e5, -1e5);
+    });
+    // Phones have no cursor: when the heading comes into view, the lens sweeps across it once (max ~2.4 s).
+    if (touch && !reduce && 'IntersectionObserver' in window){
+      var done = false;
+      new IntersectionObserver(function(en){
+        if (done || !en[0].isIntersecting) return; done = true;
+        var tops = {}; letters.forEach(function(c){ tops[Math.round(c.getBoundingClientRect().top)] = 1; });
+        var lines = Math.max(1, Object.keys(tops).length), dur = Math.min(2400, 650 * lines), t0 = performance.now();
+        (function step(t){
+          var p = Math.min(1, (t - t0) / dur), b = h.getBoundingClientRect();
+          var row = Math.min(lines - 1, Math.floor(p * lines)), q = (p * lines) % 1;
+          aim(b.left + q * b.width, b.top + (row + .5) * b.height / lines);
+          if (p < 1) requestAnimationFrame(step); else aim(-1e5, -1e5);
+        })(t0);
+      }, { threshold: .6 }).observe(h);
+    }
+  });
+})();
+
+// Video: on the real site, clicking the thumbnail swaps in the YouTube player (privacy-enhanced mode,
+// loaded only on click). In the preview sandbox, embeds are blocked, so the link opens YouTube instead.
+(function(){
+  var a = document.querySelector('.video a.thumb'); if (!a) return;
+  var canEmbed = /(^|\.)parallelstories\.org$|(^|\.)parhuzamostortenetek\.org$|^localhost$|^127\.0\.0\.1$|\.pages\.dev$|\.github\.io$/.test(location.hostname);
+  if (!canEmbed) return;
+  a.querySelector('.play').lastChild.textContent = 'Play video · 2 min';
+  a.addEventListener('click', function(e){
+    e.preventDefault();
+    var f = document.createElement('iframe');
+    f.src = 'https://www.youtube-nocookie.com/embed/V-aaacaM0mc?autoplay=1&rel=0';
+    f.title = "Chargé d'Affaires Caroline Savage's AR experience on Holocaust Remembrance Day";
+    f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+    f.style.cssText = 'width:100%;aspect-ratio:16/9;border:0;display:block';
+    a.replaceWith(f); f.focus();
+  });
+})();
+// Photo viewer: click (or Enter on) any photo to see it large, then browse all photos with the arrow
+// buttons, the keyboard arrows, a click on the photo, or a swipe. Esc, Close or a click on the dark area closes it.
+(function(){
+  var v = document.getElementById('viewer'), vi = document.getElementById('viewer-img'), vc = document.getElementById('viewer-cap'),
+      count = document.getElementById('viewer-count'), close = document.getElementById('viewer-close'),
+      prev = document.getElementById('viewer-prev'), next = document.getElementById('viewer-next'), last = null, cur = 0;
+  var hu = document.documentElement.lang === 'hu';
+  var imgs = [].filter.call(document.querySelectorAll('main figure img, .about-grid img, .work-grid img'), function(img){ return !img.closest('.video'); });
+  function show(i){
+    cur = (i + imgs.length) % imgs.length;
+    var img = imgs[cur];
+    vi.src = img.currentSrc || img.src; vi.alt = img.alt;
+    var fig = img.closest('figure'), cap = fig && fig.querySelector('figcaption');
+    vc.textContent = cap ? cap.textContent : img.alt;
+    count.textContent = (cur + 1) + ' / ' + imgs.length;
+    v.classList.remove('swap'); void v.offsetWidth; v.classList.add('swap');
+  }
+  function open(i){ last = imgs[i]; show(i); v.hidden = false; document.body.style.overflow = 'hidden'; next.focus(); }
+  function shut(){ v.hidden = true; document.body.style.overflow = ''; if (last) last.focus(); }
+  imgs.forEach(function(img, i){
+    img.classList.add('zoomable'); img.tabIndex = 0; img.setAttribute('role','button');
+    img.setAttribute('aria-label', (hu ? 'Nagyítás: ' : 'Enlarge photo: ') + img.alt);
+    img.addEventListener('click', function(){ open(i); });
+    img.addEventListener('keydown', function(e){ if (e.key === 'Enter' || e.key === ' '){ e.preventDefault(); open(i); } });
+  });
+  prev.addEventListener('click', function(e){ e.stopPropagation(); show(cur - 1); });
+  next.addEventListener('click', function(e){ e.stopPropagation(); show(cur + 1); });
+  vi.addEventListener('click', function(e){ e.stopPropagation(); show(cur + 1); });
+  close.addEventListener('click', function(e){ e.stopPropagation(); shut(); });
+  v.addEventListener('click', shut);
+  document.addEventListener('keydown', function(e){
+    if (v.hidden) return;
+    if (e.key === 'Escape') shut();
+    else if (e.key === 'ArrowRight'){ e.preventDefault(); show(cur + 1); }
+    else if (e.key === 'ArrowLeft'){ e.preventDefault(); show(cur - 1); }
+  });
+  // swipe left / right on touch screens
+  var x0 = null;
+  v.addEventListener('touchstart', function(e){ x0 = e.touches[0].clientX; }, { passive: true });
+  v.addEventListener('touchend', function(e){
+    if (x0 === null) return; var dx = e.changedTouches[0].clientX - x0; x0 = null;
+    if (Math.abs(dx) > 45){ show(cur + (dx < 0 ? 1 : -1)); }
+  });
+})();
+// Language: on the English page, offer the Hungarian version to visitors whose browser prefers Hungarian.
+(function(){
+  var PAGE_LANG = 'en';
+  var bar = document.getElementById('lang-hint'); if (!bar) return;
+  if (PAGE_LANG !== 'en') { bar.remove(); return; }
+  var langs = (navigator.languages || [navigator.language || '']).join(',').toLowerCase();
+  var dismissed = false; try { dismissed = localStorage.getItem('ps-lang-hint') === 'no'; } catch (e) {}
+  if (/(^|,)hu/.test(langs) && !dismissed) bar.hidden = false;
+  document.getElementById('lang-hint-x').addEventListener('click', function(){
+    bar.remove(); try { localStorage.setItem('ps-lang-hint', 'no'); } catch (e) {}
+  });
+})();
+</script>
+
+</body>
+</html>
