@@ -329,11 +329,13 @@ main > section:last-child > .wrap{padding-bottom:var(--section-gap)}
    stronger the closer they are. --k runs from 0 (far) to 1 (under the cursor). */
 @property --k{syntax:"<number>";inherits:false;initial-value:0}
 .lens .w{display:inline-block;white-space:nowrap}
+.lens{--lo:.095em}
+.project .lens{--lo:.2em} /* smaller titles need a stronger split to read */
 .lens .ch{--k:0;display:inline-block;
-  /* offsets scale with the type size (5px on the desktop headline), so smaller titles get a proportional effect */
-  text-shadow:calc(-.075em * var(--k)) calc(-.022em * var(--k)) 0 color-mix(in srgb, var(--layer-a) 80%, transparent),
-              calc(.075em * var(--k)) calc(.022em * var(--k)) 0 color-mix(in srgb, var(--layer-b) 80%, transparent),
-              calc(.015em * var(--k)) calc(.075em * var(--k)) 0 color-mix(in srgb, var(--layer-c) 85%, transparent)}
+  /* --lo = how far the inks split, in em: about 6.5px on the desktop headline and on desktop project titles alike */
+  text-shadow:calc(-1 * var(--lo) * var(--k)) calc(-.3 * var(--lo) * var(--k)) 0 color-mix(in srgb, var(--layer-a) 80%, transparent),
+              calc(var(--lo) * var(--k)) calc(.3 * var(--lo) * var(--k)) 0 color-mix(in srgb, var(--layer-b) 80%, transparent),
+              calc(.2 * var(--lo) * var(--k)) calc(var(--lo) * var(--k)) 0 color-mix(in srgb, var(--layer-c) 85%, transparent)}
 @media (prefers-reduced-motion: no-preference){.lens .ch{transition:--k .25s ease-out}}
 .hero-figure{display:grid;gap:18px}
 .hero-figure img{width:100%;aspect-ratio:16/8;object-fit:cover}
