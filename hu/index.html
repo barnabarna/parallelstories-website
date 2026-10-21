@@ -438,6 +438,19 @@ main > section.work > .wrap{padding-block:var(--section-gap)}
 .founder img{width:100%;aspect-ratio:1;object-fit:cover;object-position:50% 30%}
 .founder-text{display:grid;gap:14px;min-width:0}
 @media (min-width:760px){.founder{grid-template-columns:300px 1fr;align-items:start}}
+/* creative producers: two people side by side, smaller portraits than the founder's */
+.producers{display:grid;gap:22px;margin-top:clamp(44px,6vw,72px)}
+.producers-head{display:grid;gap:8px;max-width:62ch}
+.producer-grid{display:grid;gap:30px}
+.person{display:grid;grid-template-columns:150px 1fr;gap:22px;align-items:start}
+.person figure{margin:0}
+.person img{width:100%;aspect-ratio:1;object-fit:cover}
+.person .layered{--o:6px}
+.person-text{display:grid;gap:10px;min-width:0}
+.person-text h3{margin:0;font-size:clamp(1.3rem,2.2vw,1.6rem)}
+.person-text p{margin:0}
+@media (min-width:900px){.producer-grid{grid-template-columns:1fr 1fr;gap:40px}}
+@media (max-width:440px){.person{grid-template-columns:1fr;gap:14px}.person figure{max-width:180px}}
 
 /* ---- footer ---- */
 footer{border-top:1px solid var(--line);font-size:.92rem;margin-top:0}
@@ -972,7 +985,7 @@ html[lang="hu"] h2{font-size:clamp(1.6rem,.9rem + 3.4vw,3.5rem)}
   <section aria-labelledby="founder-h">
     <div class="wrap">
       <div class="sec-head">
-        <h2 id="founder-h">Alapító</h2>
+        <h2 id="founder-h">Alapító és producerek</h2>
       </div>
       <div class="founder">
         <figure style="display:grid;gap:8px;max-width:340px">
@@ -985,6 +998,29 @@ html[lang="hu"] h2{font-size:clamp(1.6rem,.9rem + 3.4vw,3.5rem)}
           <p>A Színház- és Filmművészeti Egyetem elvégzése után az Index.hu videósa, majd videós rovatának vezetője volt. 2017-ben Fulbright-ösztöndíjjal költözött az Egyesült Államokba, és 2019-ben a Stanford Egyetemen szerzett Master of Fine Arts diplomát, dokumentumfilmre és interaktív médiára koncentrálva. Munkái megjelentek a Guardianben, a PBS-en, Staff Pickként a Vimeón, és többek között a DOC NYC, a DOK Leipzig és a CPH:DOX fesztiválon. Korábban a MOME-n videóújságírást tanított, és vendégelőadásokat tartott a Rutgers és a New York-i Egyetemen.</p>
           <a class="btn" href="https://www.barnaszasz.com" target="_blank" rel="noopener">barnaszasz.com ↗</a>
         </div>
+      </div>
+      <div class="producers">
+        <div class="producers-head">
+          <p class="meta">Kreatív producerek</p>
+          <p class="lead">Szakonyi Noémi és Vincze Máté kreatív producerként dolgozik velünk a projektjeinken, többek között a Ha ezek az utcák mesélhetnének című projekten. Saját budapesti cégüket, a <a href="https://www.instagram.com/matchframeproductions/" target="_blank" rel="noopener">Match Frame Productions</a>-t vezetik.</p>
+        </div>
+        <div class="producer-grid">
+          <div class="person">
+            <figure><div class="layered small"><span class="lc" aria-hidden="true"></span><img src="../img/17-noemi-szakonyi.jpg" alt="Szakonyi Noémi portréja." width="900" height="900" loading="lazy"></div></figure>
+            <div class="person-text">
+              <h3>Szakonyi Noémi</h3>
+              <p>Rendező és producer, a Match Frame Productions társalapítója. Filmet a Pekingi Filmakadémián, a budapesti Színház- és Filmművészeti Egyetemen és a New York-i Egyetem Tisch School of the Arts karán tanult. Háromszor nyerte el a Sundance Documentary Film Program támogatását. Az általa producerként jegyzett dokumentumfilmek, köztük A boldogság ügynöke és a Her Mothers, a Sundance, a Hot Docs és a CPH:DOX fesztiválon mutatkoztak be.</p>
+            </div>
+          </div>
+          <div class="person">
+            <figure><div class="layered small"><span class="lc" aria-hidden="true"></span><img src="../img/18-mate-vincze.jpg" alt="Vincze Máté portréja." width="900" height="900" loading="lazy"></div></figure>
+            <div class="person-text">
+              <h3>Vincze Máté</h3>
+              <p>Rendező és producer. A budapesti Színház- és Filmművészeti Egyetemen, majd a New York-i Egyetem Tisch School of the Arts karán végzett (MFA). 2014-ben Noémivel megalapította a Match Frame Productionst. A boldogság ügynöke című dokumentumfilmjük 2024-ben a Sundance-en mutatkozott be, Missing 10 Hours című alkotásuk, az első nagyszabású narratív VR-mű Magyarországon, pedig elnyerte a legjobb nemzetközi VR-mű díját az új-zélandi Doc Edge fesztiválon.</p>
+            </div>
+          </div>
+        </div>
+        <p class="credit">Fotók: Match Frame Productions</p>
       </div>
     </div>
   </section>

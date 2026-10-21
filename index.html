@@ -436,6 +436,19 @@ main > section.work > .wrap{padding-block:var(--section-gap)}
 .founder img{width:100%;aspect-ratio:1;object-fit:cover;object-position:50% 30%}
 .founder-text{display:grid;gap:14px;min-width:0}
 @media (min-width:760px){.founder{grid-template-columns:300px 1fr;align-items:start}}
+/* creative producers: two people side by side, smaller portraits than the founder's */
+.producers{display:grid;gap:22px;margin-top:clamp(44px,6vw,72px)}
+.producers-head{display:grid;gap:8px;max-width:62ch}
+.producer-grid{display:grid;gap:30px}
+.person{display:grid;grid-template-columns:150px 1fr;gap:22px;align-items:start}
+.person figure{margin:0}
+.person img{width:100%;aspect-ratio:1;object-fit:cover}
+.person .layered{--o:6px}
+.person-text{display:grid;gap:10px;min-width:0}
+.person-text h3{margin:0;font-size:clamp(1.3rem,2.2vw,1.6rem)}
+.person-text p{margin:0}
+@media (min-width:900px){.producer-grid{grid-template-columns:1fr 1fr;gap:40px}}
+@media (max-width:440px){.person{grid-template-columns:1fr;gap:14px}.person figure{max-width:180px}}
 
 /* ---- footer ---- */
 footer{border-top:1px solid var(--line);font-size:.92rem;margin-top:0}
@@ -971,7 +984,7 @@ html[lang="hu"] h2{font-size:clamp(1.6rem,.9rem + 3.4vw,3.5rem)}
   <section aria-labelledby="founder-h">
     <div class="wrap">
       <div class="sec-head">
-        <h2 id="founder-h">Founder</h2>
+        <h2 id="founder-h">Founder and producers</h2>
       </div>
       <div class="founder">
         <figure style="display:grid;gap:8px;max-width:340px">
@@ -984,6 +997,29 @@ html[lang="hu"] h2{font-size:clamp(1.6rem,.9rem + 3.4vw,3.5rem)}
           <p>After graduating from the University of Theatre and Film Arts, Budapest, he worked as a video journalist and later Head of Video at Index.hu. He moved to the U.S. in 2017 on a Fulbright and earned an MFA from Stanford University in 2019, focusing on documentary and interactive media. His work has been acquired by PBS's POV Shorts and The Guardian, Staff Picked at Vimeo, and screened at DOC NYC, DOK Leipzig and CPH:DOX. He has taught video journalism at MOME Budapest and given guest lectures at Rutgers and NYU.</p>
           <a class="btn" href="https://www.barnaszasz.com" target="_blank" rel="noopener">barnaszasz.com ↗</a>
         </div>
+      </div>
+      <div class="producers">
+        <div class="producers-head">
+          <p class="meta">Creative producers</p>
+          <p class="lead">Noémi Szakonyi and Máté Vincze produce our projects with us, including If These Streets Could Talk. They run their own company, <a href="https://www.instagram.com/matchframeproductions/" target="_blank" rel="noopener">Match Frame Productions</a>, in Budapest.</p>
+        </div>
+        <div class="producer-grid">
+          <div class="person">
+            <figure><div class="layered small"><span class="lc" aria-hidden="true"></span><img src="img/17-noemi-szakonyi.jpg" alt="Portrait of Noémi Szakonyi." width="900" height="900" loading="lazy"></div></figure>
+            <div class="person-text">
+              <h3>Noémi Szakonyi</h3>
+              <p>Director and producer, and co-founder of Match Frame Productions. She studied film at the Beijing Film Academy, the University of Theatre and Film Arts in Budapest and NYU Tisch. A three-time Sundance Documentary Film Program grantee, she has produced documentaries that premiered at Sundance, Hot Docs and CPH:DOX, including Agent of Happiness and Her Mothers.</p>
+            </div>
+          </div>
+          <div class="person">
+            <figure><div class="layered small"><span class="lc" aria-hidden="true"></span><img src="img/18-mate-vincze.jpg" alt="Portrait of Máté Vincze." width="900" height="900" loading="lazy"></div></figure>
+            <div class="person-text">
+              <h3>Máté Vincze</h3>
+              <p>Director and producer. He graduated from the University of Theatre and Film Arts in Budapest and earned an MFA in filmmaking at NYU Tisch. In 2014 he co-founded Match Frame Productions with Noémi. Their documentary Agent of Happiness premiered at Sundance in 2024, and their Missing 10 Hours, the first large-scale narrative VR work made in Hungary, won Best International VR at Doc Edge in New Zealand.</p>
+            </div>
+          </div>
+        </div>
+        <p class="credit">Photos courtesy of Match Frame Productions</p>
       </div>
     </div>
   </section>
