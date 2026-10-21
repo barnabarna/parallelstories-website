@@ -460,7 +460,8 @@ main > section:last-child > .wrap{padding-bottom:var(--section-gap)}
 }
 .quote p{font-style:italic;font-size:clamp(1.125rem,1rem + .5vw,1.25rem);line-height:1.45}
 .quote.lg p{font-size:clamp(1.25rem,1rem + 1.2vw,1.625rem);line-height:1.4;max-width:46ch}
-.quote cite{font-style:normal}
+.quote cite{font-style:normal;display:grid;gap:2px}
+.quote cite .who{font-family:var(--font-display);font-weight:700;font-size:1.0625rem;letter-spacing:0;color:var(--ink);text-transform:none}
 
 @media (prefers-reduced-motion: no-preference){
   .layered::before,.layered::after,.layered > .lc{transition:transform .6s cubic-bezier(.2,.7,.2,1),opacity .6s ease}
@@ -895,7 +896,7 @@ html[lang="hu"] h2:not(.h4){font-size:clamp(1.6rem,.9rem + 3.4vw,3.5rem)}
       </div>
       <blockquote class="quote lg"><span class="lc" aria-hidden="true"></span>
         <p>“I don't think I'll walk through these streets with the same lens on anymore. It's really vivid and moving to be on the exact streets where the Jewish ghetto was.”</p>
-        <cite class="credit">Caroline Savage, Chargé d'Affaires a.i., U.S. Embassy Budapest, after trying If These Streets Could Talk</cite>
+        <cite class="credit"><b class="who">Caroline Savage</b><span>Chargé d'Affaires, U.S. Embassy Budapest, after trying If These Streets Could Talk</span></cite>
       </blockquote>
     </div>
   </div>
@@ -1363,7 +1364,7 @@ html[lang="hu"] h2:not(.h4){font-size:clamp(1.6rem,.9rem + 3.4vw,3.5rem)}
     e.preventDefault();
     var f = document.createElement('iframe');
     f.src = 'https://www.youtube-nocookie.com/embed/V-aaacaM0mc?autoplay=1&rel=0';
-    f.title = hu ? 'Caroline Savage ideiglenes ügyvivő AR-élménye a holokauszt nemzetközi emléknapján' : "Chargé d'Affaires Caroline Savage's AR experience on Holocaust Remembrance Day";
+    f.title = hu ? 'Caroline Savage ügyvivő AR-élménye a holokauszt nemzetközi emléknapján' : "Chargé d'Affaires Caroline Savage's AR experience on Holocaust Remembrance Day";
     f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
     f.style.cssText = 'width:100%;aspect-ratio:16/9;border:0;display:block';
     a.replaceWith(f); f.focus();
