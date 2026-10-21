@@ -373,6 +373,8 @@ main > section:last-child > .wrap{padding-bottom:var(--section-gap)}
 .facts li::before{content:"";position:absolute;left:0;top:.72em;width:8px;height:2px;background:var(--layer-b)}
 .its-logo{width:88px}
 .title-link{text-decoration:none;color:inherit}
+/* linked project titles stay ink on hover: the lens inks are their hover, red would clash */
+@media (hover:hover){a.title-link:hover{color:inherit}}
 .title-link:focus-visible{outline-offset:6px}
 .gallery{display:grid;gap:10px;grid-template-columns:repeat(2,minmax(0,1fr))}
 .gallery img{width:100%;height:100%;aspect-ratio:4/3;object-fit:cover}
