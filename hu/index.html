@@ -248,19 +248,30 @@ h4{font-variation-settings:"wdth" 100;font-weight:700;font-size:1.0625rem;line-h
 .top .wordmark{height:56px;transition:height .3s ease}
 .top .wrap{transition:padding .3s ease}
 .top.scrolled .wordmark{height:32px}
-/* Header logo in the motif's inks: a cyan copy up-left and a red-orange copy down-right sit behind
-   the black logo while it is large; hover spreads them and brings in the yellow-green (offset so no
-   two edges line up). The layers use the logo itself as a mask (--mark is set by the script). */
-.mark{position:relative;display:inline-flex;isolation:isolate;--mo:3px}
+/* Header logo in the motif's inks, kept quiet: at rest the logo is plain black. Every few seconds a
+   soft band of "passing light" slides slowly across it, and only inside the band do the cyan (up-left)
+   and red-orange (down-right) copies separate, then it settles back. Hover shows all three inks.
+   The layers use the logo itself as a mask (--mark is set by the script); the band is a second mask. */
+@property --sweep{syntax:"<percentage>";inherits:true;initial-value:-60%}
+.mark{position:relative;display:inline-flex;isolation:isolate;--mo:3px;--sweep:-60%}
 .mark .wordmark{position:relative}
 .mark::before,.mark::after,.mark .lc{content:"";position:absolute;inset:0;z-index:-1;opacity:0;mix-blend-mode:multiply;
-  -webkit-mask:var(--mark) center/contain no-repeat;mask:var(--mark) center/contain no-repeat;
+  --band:linear-gradient(100deg, transparent calc(var(--sweep) - 28%), #000 var(--sweep), transparent calc(var(--sweep) + 28%));
+  -webkit-mask:var(--mark) center/contain no-repeat, var(--band);-webkit-mask-composite:source-in;
+  mask:var(--mark) center/contain no-repeat, var(--band);mask-composite:intersect;
   transition:opacity .3s ease,transform .3s ease}
 .mark::before{background:var(--layer-a);transform:translate(calc(var(--mo) * -1),calc(var(--mo) * -1))}
 .mark::after{background:var(--layer-b);transform:translate(var(--mo),var(--mo))}
-.mark .lc{background:var(--layer-c)}
+.mark .lc{background:var(--layer-c);-webkit-mask:var(--mark) center/contain no-repeat;mask:var(--mark) center/contain no-repeat}
 .top:not(.scrolled) .mark.ready::before,.top:not(.scrolled) .mark.ready::after{opacity:.6}
+@media (prefers-reduced-motion: no-preference){
+  .top:not(.scrolled) .mark.ready{animation:pass 9s ease-in-out 1.2s infinite}
+}
+/* one slow pass (about 3 s), then about 6 s of plain black */
+@keyframes pass{0%{--sweep:-60%}34%{--sweep:160%}100%{--sweep:160%}}
 @media (hover:hover){
+  .top:not(.scrolled) .mark.ready:hover{animation-play-state:paused}
+  .top:not(.scrolled) .mark.ready:hover::before,.top:not(.scrolled) .mark.ready:hover::after{-webkit-mask:var(--mark) center/contain no-repeat;mask:var(--mark) center/contain no-repeat}
   .top:not(.scrolled) .mark.ready:hover::before{transform:translate(calc(var(--mo) * -1.7),calc(var(--mo) * -1.7));opacity:.75}
   .top:not(.scrolled) .mark.ready:hover::after{transform:translate(calc(var(--mo) * 1.7),calc(var(--mo) * 1.7));opacity:.75}
   .top:not(.scrolled) .mark.ready:hover .lc{transform:translate(calc(var(--mo) * 1.35),calc(var(--mo) * -1.1));opacity:.7}
