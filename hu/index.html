@@ -636,12 +636,14 @@ main > section.work > .wrap{padding-block:var(--section-gap)}
 @media (hover:hover){.work .btn:hover{background:var(--paper);color:var(--ink)}}
 .work .btn.primary{background:var(--paper);border-color:var(--paper);color:var(--ink)}
 .work-grid{display:grid;gap:32px}
+.two-col:has(> .col:only-child){grid-template-columns:1fr}
 @media (min-width:860px){.work-grid{grid-template-columns:1fr 1fr;align-items:center}}
 .offers{display:grid;gap:14px;margin:0;padding:0;list-style:none}
 .offers li p{margin:0}
 .offers li{border-top:1px solid color-mix(in srgb, var(--paper) 25%, transparent);padding-top:12px;display:grid;gap:4px}
 .mail{display:flex;flex-wrap:wrap;align-items:center;gap:10px}
 .mail .addr{font-family:var(--font-label);font-size:1rem;word-break:break-all}
+.mail .btn.addr{text-decoration:none;font-size:.95rem;text-transform:none;letter-spacing:0}
 
 /* ---- support ---- */
 .support-grid{display:grid;gap:28px}
@@ -696,7 +698,7 @@ html[lang="hu"] .facts-dl{grid-template-columns:minmax(0,9.5rem) minmax(0,1fr)}
 @media (min-width:700px){.strip{grid-template-columns:repeat(var(--n),minmax(0,1fr))}.strip[style*="--n:3"] img:last-of-type{grid-column:auto;aspect-ratio:4/3}}
 .video a.thumb img{aspect-ratio:16/9}
 /* phones: the ITS logo sits in the top-right corner beside the meta line; the text keeps the full width */
-@media (max-width:600px){.project-head.has-logo{grid-template-columns:1fr;position:relative}.project-head.has-logo .its-link{position:absolute;top:0;right:0}.project-head.has-logo .its-logo{width:56px}.project-head.has-logo .meta{padding-right:68px}}
+@media (max-width:600px){.project-head.has-logo{grid-template-columns:1fr}.project-head.has-logo .its-link{display:none}}
 
 
 /* ---- LL corner frame for project titles ----
@@ -722,11 +724,11 @@ html[lang="hu"] .facts-dl{grid-template-columns:minmax(0,9.5rem) minmax(0,1fr)}
 /* ---- dark-mode polish ---- */
 :root[data-theme="dark"]{--logo-bg:#d6d9d6}
 :root[data-theme="dark"] .layered{--ink-o:.8}
-:root[data-theme="dark"] main > section.work{background:#1c2025;color:var(--ink);border-block:1px solid var(--line)}
+:root[data-theme="dark"] main > section.work{background:#2a3139;color:var(--ink);border-block:1px solid #3a424b}
 :root[data-theme="dark"] .work .offers li{border-top-color:var(--line)}
 :root[data-theme="dark"] .work :is(.meta,.muted,.credit,.sec-head .lead){color:var(--muted)}
 :root[data-theme="dark"] .work .btn{border-color:var(--ink);color:var(--ink)}
-:root[data-theme="dark"] .work .btn.primary{background:var(--ink);color:#1c2025}
+:root[data-theme="dark"] .work .btn.primary{background:var(--ink);color:#2a3139}
 :root[data-theme="dark"] .eu{background:transparent;color:var(--ink)}
 :root[data-theme="dark"] .eu img{background:#fff;padding:10px}
 :root[data-theme="dark"] .eu p{color:var(--muted)}
@@ -734,11 +736,11 @@ html[lang="hu"] .facts-dl{grid-template-columns:minmax(0,9.5rem) minmax(0,1fr)}
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){--logo-bg:#d6d9d6}
   :root:not([data-theme="light"]) .layered{--ink-o:.8}
-  :root:not([data-theme="light"]) main > section.work{background:#1c2025;color:var(--ink);border-block:1px solid var(--line)}
+  :root:not([data-theme="light"]) main > section.work{background:#2a3139;color:var(--ink);border-block:1px solid #3a424b}
   :root:not([data-theme="light"]) .work .offers li{border-top-color:var(--line)}
   :root:not([data-theme="light"]) .work :is(.meta,.muted,.credit,.sec-head .lead){color:var(--muted)}
   :root:not([data-theme="light"]) .work .btn{border-color:var(--ink);color:var(--ink)}
-  :root:not([data-theme="light"]) .work .btn.primary{background:var(--ink);color:#1c2025}
+  :root:not([data-theme="light"]) .work .btn.primary{background:var(--ink);color:#2a3139}
   :root:not([data-theme="light"]) .eu{background:transparent;color:var(--ink)}
   :root:not([data-theme="light"]) .eu img{background:#fff;padding:10px}
   :root:not([data-theme="light"]) .eu p{color:var(--muted)}
@@ -920,6 +922,7 @@ html[lang="hu"] h2:not(.h4){font-size:clamp(1.6rem,.9rem + 3.4vw,3.5rem)}
 </style>
 </head>
 <body>
+<a class="skip" href="#about">Ugrás a tartalomra</a>
 <header class="top">
   <div class="wrap">
     <a href="#top" aria-label="Párhuzamos Történetek, vissza az oldal tetejére"><img class="wordmark" src="../logos/ps-wordmark.png" alt="Párhuzamos Történetek" width="520" height="207"></a>
@@ -934,10 +937,9 @@ html[lang="hu"] h2:not(.h4){font-size:clamp(1.6rem,.9rem + 3.4vw,3.5rem)}
 </header>
 
 <main id="top">
-<a class="skip" href="#about">Ugrás a tartalomra</a>
   <div class="hero">
     <div class="wrap">
-      <p class="meta">Párhuzamos Történetek Kulturális Egyesület · Nonprofit · <span class="nw">Budapest</span></p>
+      <p class="meta">Párhuzamos Történetek Kulturális Egyesület · Nonprofit · <span class="nw">Budapest</span></p>
       <h1 id="headline" class="lens">A történetmesélés új formáit kutatjuk, helyi közösségekkel alkotunk együtt – új közönséghez juttatva el a történelmet és a kortárs társadalmi kérdéseket.</h1>
       <p class="lead hero-sub">Vezető nemzetközi szakértőkkel együtt a kiterjesztett valóság (AR) segítségével gondoljuk újra, hogyan kapcsolódunk a kulturális örökséghez – és formáljuk a közbeszédet.</p>
       <div class="hero-cta">
@@ -946,16 +948,16 @@ html[lang="hu"] h2:not(.h4){font-size:clamp(1.6rem,.9rem + 3.4vw,3.5rem)}
       </div>
       <figure class="hero-figure">
         <div class="layered"><span class="lc" aria-hidden="true"></span><img src="../img/01-hero-its-ar-on-ipad.jpg" srcset="../img/01-hero-its-ar-on-ipad-800.jpg 800w, ../img/01-hero-its-ar-on-ipad.jpg 1600w" sizes="(max-width: 700px) 100vw, 1080px" alt="Egy látogató iPadet tart egy budapesti utcán. A képernyőn két múltbeli szereplő áll ugyanabban az utcában." width="1600" height="711" fetchpriority="high"></div>
-        <figcaption class="credit">Jelenet az If These Streets Could Talk Két kenyér című prototípusából, egy budapesti utcán. Fotó: Párhuzamos Történetek</figcaption>
+        <figcaption class="credit">Jelenet az If These Streets Could Talk egyik prototípusából, a Két kenyérből, egy budapesti utcán. Fotó: Párhuzamos Történetek</figcaption>
       </figure>
       <div class="proof" role="list" aria-label="Kiemelt adatok">
         <div role="listitem"><span class="big">140+</span><p>szakember vett részt négy országot összekötő uniós projektünk nyitókonferenciáján, ahol többek között az MIT Open Documentary Lab, az Auschwitz-Birkenau Állami Múzeum és a UCL munkatársai adtak elő.</p></div>
-        <div role="listitem"><span class="big">Az első</span><p>AR-történetmesélési kurzus a Stanford Egyetemen, amelynek alapítónk, Szász Barna az egyik megalkotója. Évek óta ez a kísérleti terepünk, és módszereink ebből a folyamatos kísérletezésből nőttek ki.</p></div>
-        <div role="listitem"><span class="big">10</span><p>országban tartottunk workshopot és előadást, többek között a Varsói Gettó Múzeumban, a New York-i Egyetemen (NYU) és a DOK Leipzigen.</p></div>
+        <div role="listitem"><span class="big">Az első</span><p>AR-történetmesélési kurzus a Stanford Egyetemen, amelynek egyik megalkotója alapítónk, Szász Barna. Évek óta ez a kísérleti terepünk, és módszereink ebből a folyamatos kísérletezésből nőttek ki.</p></div>
+        <div role="listitem"><span class="big">10</span><p>országban tartottunk workshopot és előadást, többek között a Varsói Gettó Múzeumban, a New York-i Egyetemen (NYU) és a DOK Leipzig fesztiválon.</p></div>
       </div>
       <div class="logo-strip" aria-label="Támogatóink">
         <span class="meta">Támogatóink</span>
-        <a class="logo-link" href="https://commission.europa.eu/funding-and-tenders/find-funding/eu-funding-programmes/citizens-equality-rights-and-values-programme_en" target="_blank" rel="noopener"><img width="520" height="111" src="../logos/eu.png" alt="Az Európai Unió társfinanszírozásával" style="--h:38px"></a>
+        <a class="logo-link" href="https://commission.europa.eu/funding-and-tenders/find-funding/eu-funding-programmes/citizens-equality-rights-and-values-programme_en" target="_blank" rel="noopener"><img width="520" height="111" src="../logos/eu.png" alt="Az Európai Unió társfinanszírozásával (These Streets Remember)" style="--h:56px"></a>
         <a class="logo-link" href="https://www.claimscon.org" target="_blank" rel="noopener"><img width="520" height="218" src="../logos/claims.png" alt="Claims Conference" style="--h:50px"></a>
         <a class="logo-link" href="https://hu.usembassy.gov" target="_blank" rel="noopener"><img width="260" height="260" src="../logos/usembassy.png" alt="Az Egyesült Államok budapesti nagykövetsége" style="--h:56px"></a>
         <a class="logo-link" href="https://www.stiftung-evz.de/en/" target="_blank" rel="noopener"><img width="520" height="124" src="../logos/evz.png" alt="Foundation EVZ" style="--h:32px"></a>
@@ -963,7 +965,7 @@ html[lang="hu"] h2:not(.h4){font-size:clamp(1.6rem,.9rem + 3.4vw,3.5rem)}
       </div>
       <blockquote class="quote lg"><span class="lc" aria-hidden="true"></span>
         <p>„Azt hiszem, ezeken az utcákon már nem fogok ugyanazzal a szemmel végigmenni. Nagyon eleven és megrendítő élmény pont azokon az utcákon járni, ahol a zsidó gettó volt.”</p>
-        <cite class="credit"><b class="who">Caroline Savage</b><span>az Egyesült Államok budapesti nagykövetségének ügyvivője, miután kipróbálta az If These Streets Could Talk élményt (angolból fordítva)</span></cite>
+        <cite class="credit"><b class="who">Caroline Savage</b><span>az Egyesült Államok budapesti nagykövetségének ügyvivője, miután kipróbálta az If These Streets Could Talk című élményt (angolból fordítva)</span></cite>
       </blockquote>
     </div>
   </div>
@@ -976,9 +978,9 @@ html[lang="hu"] h2:not(.h4){font-size:clamp(1.6rem,.9rem + 3.4vw,3.5rem)}
       <div class="about-grid">
         <div class="about-text">
           <p class="lead">A Párhuzamos Történetek Kulturális Egyesület (Parallel Stories Cultural Organization) budapesti nonprofit szervezet, amely új, történeteken alapuló megközelítéseket népszerűsít, hogy jobban megértsük és jobbá tegyük a társadalmunkat. Leginkább kiterjesztett valósággal dolgozunk, az oktatásban, a kulturális örökség feltárásában és a közösségek bevonásában. Egy AR-réteg megváltoztatja, hogyan gondolkodunk, mit érzünk és hogyan viselkedünk egy valós helyen. Emellett új módon, új közönségeket is elér.</p>
-          <p>Szorosan együttműködünk azokkal a közösségekkel, akiknek a történetét elmeséljük, és velük együtt alkotunk. Fontos, hogy mit mesélünk el, de ugyanilyen fontos, hogy hogyan.</p>
-          <p>Munkánkban állandó partnerünk Prof. Victoria Grace Richardson-Walden, a <a href="https://www.digitalmemorylab.com" target="_blank" rel="noopener">Landecker Digital Memory Lab</a> alapítója, valamint Szakonyi Noémi és Vincze Máté kreatív producerek (<a href="https://www.instagram.com/matchframeproductions/" target="_blank" rel="noopener">Match Frame Productions</a>).</p>
-          <p>Az egyszeri workshopoktól a hosszú távú nemzetközi projektekig megosztjuk, amit tanulunk: a kutatásainkat, a hamarosan megjelenő kézikönyvünket, az EU által társfinanszírozott These Streets Remember projektet és a workshopjainkat Európában és az Egyesült Államokban.</p>
+          <p>Szorosan együttműködünk azokkal a közösségekkel, amelyeknek a történetét elmeséljük, és velük alkotunk. Fontos, hogy mit mesélünk el, de ugyanilyen fontos, hogy hogyan.</p>
+          <p>Munkánkban állandó partnereink Prof. Victoria Grace Richardson-Walden, a <a href="https://www.digitalmemorylab.com" target="_blank" rel="noopener">Landecker Digital Memory Lab</a> alapítója, valamint Szakonyi Noémi és Vincze Máté kreatív producerek (<a href="https://www.instagram.com/matchframeproductions/" target="_blank" rel="noopener">Match Frame Productions</a>).</p>
+          <p>Az egyszeri workshopoktól a hosszú távú nemzetközi projektekig megosztjuk, amit tanulunk: kutatásainkban, a hamarosan megjelenő kézikönyvünkben, az EU által társfinanszírozott These Streets Remember projektben, valamint európai és egyesült államokbeli workshopjainkon.</p>
         </div>
         <figure style="display:grid;gap:8px">
           <img src="../img/02-about-its-group-test.jpg" srcset="../img/02-about-its-group-test-800.jpg 800w, ../img/02-about-its-group-test.jpg 1600w" sizes="(max-width: 700px) 100vw, 1080px" alt="Szász Barna egy AR-jelenetet mutat iPaden egy csoportnak egy budapesti utcán." width="1600" height="1067" loading="lazy">
@@ -999,16 +1001,16 @@ html[lang="hu"] h2:not(.h4){font-size:clamp(1.6rem,.9rem + 3.4vw,3.5rem)}
         <article class="project" aria-labelledby="its-h">
           <div class="project-head has-logo">
             <div class="project-title">
-              <p class="meta">Zászlóshajó · Budapest · Bemutató: 2027</p>
+              <p class="meta">Zászlóshajó · Budapest · Bemutató: 2027</p>
               <h3 id="its-h" class="lens"><a class="title-link" href="https://if-these-streets.org" target="_blank" rel="noopener">If These Streets Could Talk</a></h3>
               <p class="lead">Ha ezek az utcák mesélhetnének: kiterjesztett valóságon alapuló várostörténeti élmény Budapest egykori zsidónegyedében. A résztvevők egy iPaddel járják az utcákat, és azokon a helyeken találkoznak az egykor itt élt emberekkel, ahol a történeteik megtörténtek.</p>
             </div>
-            <a class="logo-link its-link" href="https://if-these-streets.org" target="_blank" rel="noopener"><img class="its-logo" src="../logos/its-logo.png" alt="If These Streets Could Talk website" width="365" height="260" loading="lazy"></a>
+            <a class="logo-link its-link" href="https://if-these-streets.org" target="_blank" rel="noopener"><img class="its-logo" src="../logos/its-logo.png" alt="Az If These Streets Could Talk honlapja" width="365" height="260" loading="lazy"></a>
           </div>
           <div class="video">
             <a class="thumb" href="https://www.youtube.com/watch?v=V-aaacaM0mc" target="_blank" rel="noopener">
-              <img src="../img/video-thumb.jpg" srcset="../img/video-thumb-800.jpg 800w, ../img/video-thumb.jpg 1280w" sizes="(max-width: 700px) 100vw, 1080px" alt="Állókép a videóból: Caroline Savage, az Egyesült Államok ügyvivője kipróbálja az AR-élményt." width="1280" height="720" loading="lazy">
-              <span class="play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Megnézem a YouTube-on · 2 perc</span>
+              <img src="../img/video-thumb.jpg" srcset="../img/video-thumb-800.jpg 800w, ../img/video-thumb.jpg 1280w" sizes="(max-width: 700px) 100vw, 1080px" alt="Állókép a videóból: Caroline Savage, az Egyesült Államok budapesti nagykövetségének ügyvivője, kipróbálja az AR-élményt." width="1280" height="720" loading="lazy">
+              <span class="play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Megnézem a YouTube-on · 2 perc</span>
             </a>
             <p class="credit">Caroline Savage, az Egyesült Államok budapesti nagykövetségének ügyvivője, a holokauszt nemzetközi emléknapján kipróbálja a prototípust. Videó: az Egyesült Államok budapesti nagykövetsége</p>
           </div>
@@ -1019,8 +1021,8 @@ html[lang="hu"] h2:not(.h4){font-size:clamp(1.6rem,.9rem + 3.4vw,3.5rem)}
                 <li>Három prototípus: Vanczák Béla küldetése, Mézeskalács és Két kenyér.</li>
                 <li>Több mint 200 emberrel teszteltük az utcán.</li>
                 <li>Kutatás 60 résztvevővel, a Sussexi Egyetem etikai bizottságának jóváhagyásával.</li>
-                <li>Prototípus-forgatás az <a href="https://origostudios.com" target="_blank" rel="noopener">Origo Filmstúdióban</a>.</li>
-                <li>Bekerült az IDFA DocLab Forum és a NewImages XR Development Market válogatásába, a goEast fesztiválon pedig elismerő említést kapott (Merck Award for Innovation in XR) – mindhárom 2022-ben.</li>
+                <li>A prototípusok forgatása az <a href="https://origostudios.com" target="_blank" rel="noopener">Origo Filmstúdióban</a>.</li>
+                <li>Bekerült az IDFA DocLab Forum és a NewImages XR Development Market válogatásába, a goEast fesztiválon pedig külön dicséretben részesült (Merck Award for Innovation in XR) – mindhárom 2022-ben.</li>
                 <li>A teljes élmény bemutatója 2027-re várható.</li>
               </ul>
             </div>
@@ -1038,17 +1040,17 @@ html[lang="hu"] h2:not(.h4){font-size:clamp(1.6rem,.9rem + 3.4vw,3.5rem)}
             <img src="../img/05-its-research-interview.jpg" srcset="../img/05-its-research-interview-800.jpg 800w, ../img/05-its-research-interview.jpg 1600w" sizes="(max-width: 700px) 100vw, 1080px" alt="Daoud Dániel forgatókönyvíró interjút készít egy tesztelővel az élmény után." width="1600" height="1066" loading="lazy">
             <figcaption class="credit">Forgatás, közösségi alkotóműhely, utcai tesztelés és kutatási interjúk. Fotók: Párhuzamos Történetek</figcaption>
           </figure>
-          <a class="btn" href="https://if-these-streets.org" target="_blank" rel="noopener">Tovább az if-these-streets.org oldalra ↗</a>
+          <a class="btn" href="https://if-these-streets.org" target="_blank" rel="noopener">if-these-streets.org ↗</a>
         </article>
 
         <article class="project" aria-labelledby="tsr-h">
           <div class="project-head">
-            <p class="meta">Az If These Streets Could Talk kiterjesztése · Budapest · Krakkó · Újvidék · Riga · <span class="nw">2026–2028</span></p>
+            <p class="meta">Az If These Streets Could Talk kiterjesztése · Budapest · Krakkó · Újvidék · Riga · <span class="nw">2026–2028</span></p>
             <h3 id="tsr-h" class="lens">These Streets Remember</h3>
             <p class="lead">Módszerünket további három város partnereihez visszük el, hogy a kiterjesztett valóság segítségével felszínre hozzuk a helyi történeteket. Minden városban helyi csapatok vesznek részt egy workshopsorozaton, és saját kísérleti AR-projektet fejlesztenek egy általuk jól ismert városrészre. A projektet a Párhuzamos Történetek koordinálja.</p>
           </div>
           <figure class="tsr-hall">
-            <img src="../img/21-tsr-conference-hall.jpg" srcset="../img/21-tsr-conference-hall-800.jpg 800w, ../img/21-tsr-conference-hall.jpg 1600w" sizes="(max-width: 700px) 100vw, 1080px" alt="Szász Barna előad a Holokauszt Emlékközpont egykori zsinagógatermében; mellette a These Streets Remember molinói, a vásznon egy jelenet a Ha ezek az utcák mesélhetnének-ből." width="1600" height="1067" loading="lazy">
+            <img src="../img/21-tsr-conference-hall.jpg" srcset="../img/21-tsr-conference-hall-800.jpg 800w, ../img/21-tsr-conference-hall.jpg 1600w" sizes="(max-width: 700px) 100vw, 1080px" alt="Szász Barna előad a Holokauszt Emlékközpont egykori zsinagógatermében; mellette a These Streets Remember molinói, a vásznon egy jelenet az If These Streets Could Talk című élményből." width="1600" height="1067" loading="lazy">
             <figcaption class="credit">A These Streets Remember nyitókonferenciája a budapesti Holokauszt Emlékközpontban, 2026. október 13. Fotó: Szarka Dávid</figcaption>
           </figure>
           <div class="two-col">
@@ -1069,16 +1071,16 @@ html[lang="hu"] h2:not(.h4){font-size:clamp(1.6rem,.9rem + 3.4vw,3.5rem)}
           <figure class="strip" style="--n:4">
             <img src="../img/22-tsr-panel-banner.jpg" srcset="../img/22-tsr-panel-banner-800.jpg 800w, ../img/22-tsr-panel-banner.jpg 1600w" sizes="(max-width: 700px) 100vw, 1080px" alt="Panelbeszélgetés a These Streets Remember molinója előtt." width="1600" height="1067" loading="lazy" style="object-position:62% 50%">
             <img src="../img/23-tsr-panel.jpg" srcset="../img/23-tsr-panel-800.jpg 800w, ../img/23-tsr-panel.jpg 1600w" sizes="(max-width: 700px) 100vw, 1080px" alt="Prof. Victoria Grace Richardson-Walden (Landecker Digital Memory Lab), Prof. Dr. Anja Ballis (LMU München, Németország), Paweł Sawicki (Auschwitz-Birkenau Állami Múzeum, Lengyelország) és dr. Félix Anikó (Haver Alapítvány, Magyarország) a These Streets Remember nyitókonferenciáján." width="1600" height="1288" loading="lazy">
-            <img src="../img/24-tsr-audience.jpg" srcset="../img/24-tsr-audience-800.jpg 800w, ../img/24-tsr-audience.jpg 1600w" sizes="(max-width: 700px) 100vw, 1080px" alt="Hallgatók a nyitókonferencián." width="1600" height="1067" loading="lazy">
+            <img src="../img/24-tsr-audience.jpg" srcset="../img/24-tsr-audience-800.jpg 800w, ../img/24-tsr-audience.jpg 1600w" sizes="(max-width: 700px) 100vw, 1080px" alt="Közönség a nyitókonferencián." width="1600" height="1067" loading="lazy">
             <img src="../img/25-tsr-speakers.jpg" srcset="../img/25-tsr-speakers-800.jpg 800w, ../img/25-tsr-speakers.jpg 1600w" sizes="(max-width: 700px) 100vw, 1080px" alt="A konferencia előadói és partnerei a színpadon." width="1600" height="1067" loading="lazy">
             <figcaption class="credit">Panelbeszélgetések, közönség és előadók a nyitókonferencián. Fotók: Szarka Dávid</figcaption>
           </figure>
-          <p class="credit ids">TSR-BKNR · CERV-2025-CITIZENS-REM · Projektszám: 101297607 · Koordinátor: Párhuzamos Történetek</p>
+          <p class="credit ids">TSR-BKNR · CERV-2025-CITIZENS-REM · Projektszám: 101297607 · Koordinátor: Párhuzamos Történetek (hello@parallelstories.org)</p>
         </article>
 
         <article class="project" aria-labelledby="xr-h">
           <div class="project-head">
-            <p class="meta">Közösség · Magyarország</p>
+            <p class="meta">Közösség · Magyarország</p>
             <h3 id="xr-h" class="lens"><a class="title-link" href="https://www.xrbudapest.hu/" target="_blank" rel="noopener">XR Budapest</a></h3>
             <p class="lead">A magyar AR-, VR- és MR-közösség: összeköt mindenkit, aki a hazai XR-szcénához tartozik, a kíváncsi kezdőktől a szakemberekig.</p>
           </div>
@@ -1093,10 +1095,10 @@ html[lang="hu"] h2:not(.h4){font-size:clamp(1.6rem,.9rem + 3.4vw,3.5rem)}
             </div>
           </div>
           <figure class="strip" style="--n:3">
-            <img src="../img/10-xrbudapest-lecture-adapter.jpg" srcset="../img/10-xrbudapest-lecture-adapter-800.jpg 800w, ../img/10-xrbudapest-lecture-adapter.jpg 1200w" sizes="(max-width: 700px) 100vw, 1080px" alt="Előadás az XR Budapest eseményén." width="1200" height="960" loading="lazy">
-            <img src="../img/11-xrbudapest-audience-adapter.jpg" srcset="../img/11-xrbudapest-audience-adapter-800.jpg 800w, ../img/11-xrbudapest-audience-adapter.jpg 1200w" sizes="(max-width: 700px) 100vw, 1080px" alt="Közönség az XR Budapest eseményén." width="1200" height="960" loading="lazy">
+            <img src="../img/10-xrbudapest-lecture-adapter.jpg" srcset="../img/10-xrbudapest-lecture-adapter-800.jpg 800w, ../img/10-xrbudapest-lecture-adapter.jpg 1200w" sizes="(max-width: 700px) 100vw, 1080px" alt="Előadás az XR Budapest egyik eseményén." width="1200" height="960" loading="lazy">
+            <img src="../img/11-xrbudapest-audience-adapter.jpg" srcset="../img/11-xrbudapest-audience-adapter-800.jpg 800w, ../img/11-xrbudapest-audience-adapter.jpg 1200w" sizes="(max-width: 700px) 100vw, 1080px" alt="Közönség az XR Budapest egyik eseményén." width="1200" height="960" loading="lazy">
             <img src="../img/13-xrbudapest-ar-glasses-street.jpg" srcset="../img/13-xrbudapest-ar-glasses-street-800.jpg 800w, ../img/13-xrbudapest-ar-glasses-street.jpg 1200w" sizes="(max-width: 700px) 100vw, 1080px" data-credit="" alt="Az XR Budapest-találkozó egy résztvevője AR-szemüveget próbál ki egy esti városi utcán." width="1200" height="1600" loading="lazy" style="object-position:50% 30%">
-            <figcaption class="credit">Előadás és közönség az XR Budapest eseményén. Fotók: Adaptér</figcaption>
+            <figcaption class="credit">Előadás és közönség az XR Budapest egyik eseményén. Fotók: Adaptér</figcaption>
           </figure>
           <a class="btn" href="https://www.xrbudapest.hu/" target="_blank" rel="noopener">Tovább az xrbudapest.hu oldalra ↗</a>
         </article>
@@ -1111,7 +1113,7 @@ html[lang="hu"] h2:not(.h4){font-size:clamp(1.6rem,.9rem + 3.4vw,3.5rem)}
       </div>
       <div class="logos">
         <div class="logo-wall">
-          <a class="logo-link" href="https://commission.europa.eu/funding-and-tenders/find-funding/eu-funding-programmes/citizens-equality-rights-and-values-programme_en" target="_blank" rel="noopener"><img width="520" height="111" src="../logos/eu.png" alt="Az Európai Unió társfinanszírozásával (These Streets Remember)" style="--h:44px" loading="lazy"></a>
+          <a class="logo-link" href="https://commission.europa.eu/funding-and-tenders/find-funding/eu-funding-programmes/citizens-equality-rights-and-values-programme_en" target="_blank" rel="noopener"><img width="520" height="111" src="../logos/eu.png" alt="Az Európai Unió társfinanszírozásával (These Streets Remember)" style="--h:66px" loading="lazy"></a>
           <a class="logo-link" href="https://www.claimscon.org" target="_blank" rel="noopener"><img width="520" height="218" src="../logos/claims.png" alt="Claims Conference" style="--h:58px" loading="lazy"></a>
           <a class="logo-link" href="https://hu.usembassy.gov" target="_blank" rel="noopener"><img width="260" height="260" src="../logos/usembassy.png" alt="Az Egyesült Államok budapesti nagykövetsége" style="--h:66px" loading="lazy"></a>
           <a class="logo-link" href="https://www.stiftung-evz.de/en/" target="_blank" rel="noopener"><img width="520" height="124" src="../logos/evz.png" alt="Foundation EVZ" style="--h:35px" loading="lazy"></a>
@@ -1123,7 +1125,7 @@ html[lang="hu"] h2:not(.h4){font-size:clamp(1.6rem,.9rem + 3.4vw,3.5rem)}
           <a class="logo-link" href="https://www.erzsitt.hu" target="_blank" rel="noopener"><img width="364" height="260" src="../logos/tar.png" alt="Erzsébetvárosi Zsidó Történeti Tár" style="--h:58px" loading="lazy"></a>
           <a class="logo-link" href="https://mozaikhub.hu" target="_blank" rel="noopener"><img width="520" height="107" src="../logos/mozaik.png" alt="JDC Mozaik Jewish Community Hub" style="--h:33px" loading="lazy"></a>
           <a class="logo-link" href="https://www.instagram.com/matchframeproductions/" target="_blank" rel="noopener"><img width="423" height="260" src="../logos/matchframe.png" alt="Match Frame Productions" style="--h:54px" loading="lazy"></a>
-          <a class="logo-link" href="https://origostudios.com" target="_blank" rel="noopener"><img width="265" height="260" src="../logos/origo.png" alt="Origo Studios" style="--h:62px" loading="lazy"></a>
+          <a class="logo-link" href="https://origostudios.com" target="_blank" rel="noopener"><img width="265" height="260" src="../logos/origo.png" alt="Origo Filmstúdió" style="--h:62px" loading="lazy"></a>
           <a class="logo-link" href="https://www.marom.hu" target="_blank" rel="noopener"><img width="193" height="260" src="../logos/marom.png" alt="Marom Budapest" style="--h:64px" loading="lazy"></a>
           <a class="logo-link" href="https://propclub.hu" target="_blank" rel="noopener"><img width="520" height="177" src="../logos/propclub.png" alt="Propclub" style="--h:42px" loading="lazy"></a>
           <a class="logo-link" href="https://www.giff.ch" target="_blank" rel="noopener"><img width="204" height="260" src="../logos/giff.png" alt="GIFF GDM" style="--h:50px" loading="lazy"></a>
@@ -1149,12 +1151,12 @@ html[lang="hu"] h2:not(.h4){font-size:clamp(1.6rem,.9rem + 3.4vw,3.5rem)}
       <div class="two-col">
         <div class="col">
           <div class="book">
-            <p class="meta">Nyílt hozzáférésű kézikönyv · Megjelenik 2026 telén</p>
+            <p class="meta">Nyílt hozzáférésű kézikönyv · Megjelenik 2026 telén</p>
             <h3 class="h4">Etikus, helyszínhez kötött AR</h3>
             <p>Ingyenes, nyílt hozzáférésű, kétkötetes kézikönyv Szász Barna és Prof. Victoria Grace Richardson-Walden tollából, az If These Streets Could Talk tapasztalataira építve.</p>
             <ol>
               <li><b>I. kötet:</b> az etika. Miért éppen AR, hogyan alkossunk együtt a közösségekkel, és mit tanultunk 60 felhasználói interjúból.</li>
-              <li><b>II. kötet:</b> a mesterség. Hogyan találjuk meg a történetet az utcákon, hogyan írjunk olyan résztvevőnek, aki sétál és dönt, és hogyan teszteljünk, amíg jól nem működik.</li>
+              <li><b>II. kötet:</b> a mesterség. Hogyan találjuk meg a történetet az utcákon, hogyan írjunk olyan résztvevő számára, aki sétál és dönt, és hogyan teszteljünk, amíg jól nem működik.</li>
             </ol>
             <p class="muted">Szeretnél egy példányt, amikor megjelenik? Írj a <a href="mailto:hello@parallelstories.org?subject=Guidebook">hello@parallelstories.org</a> címre „Kézikönyv” tárggyal.</p>
           </div>
@@ -1163,7 +1165,7 @@ html[lang="hu"] h2:not(.h4){font-size:clamp(1.6rem,.9rem + 3.4vw,3.5rem)}
           <h3 class="h4">Válogatott workshopok és előadások</h3>
           <ul class="talks">
             <li><span class="yr">2026</span><span><b><a href="https://1943.pl/en/" target="_blank" rel="noopener">Varsói Gettó Múzeum</a></b>, Immersive Histories workshop, Varsó</span></li>
-            <li><span class="yr">2026</span><span><b>Washington, DC</b>, közös előadás Nancy Gillette-tel, a <a href="https://www.ushmm.org" target="_blank" rel="noopener">washingtoni Holokauszt Emlékmúzeum (USHMM)</a> munkatársával</span></li>
+            <li><span class="yr">2026</span><span><b>Washington, D.C.</b>, közös előadás Nancy Gillette-tel, a <a href="https://www.ushmm.org" target="_blank" rel="noopener">washingtoni Holokauszt Emlékmúzeum (USHMM)</a> munkatársával</span></li>
             <li><span class="yr">2025</span><span><b><a href="https://www.claimscon.org" target="_blank" rel="noopener">Claims Conference</a></b>, előadás és panelbeszélgetés az amszterdami Nemzeti Holokauszt Múzeumban. Következik: Film and New Media Forum, Berlin, 2026. november</span></li>
             <li><span class="yr">2025</span><span><b><a href="https://www.sussex.ac.uk" target="_blank" rel="noopener">Sussexi Egyetem</a></b>, workshop a Connective Holocaust Commemoration Expón</span></li>
             <li><span class="yr">2024</span><span><b><a href="https://tisch.nyu.edu" target="_blank" rel="noopener">NYU Tisch School of the Arts</a></b>, alkotói előadás, New York</span></li>
@@ -1183,7 +1185,7 @@ html[lang="hu"] h2:not(.h4){font-size:clamp(1.6rem,.9rem + 3.4vw,3.5rem)}
       </div>
       <div class="work-grid">
         <div style="display:grid;gap:22px;min-width:0">
-          <p>Segítünk múzeumoknak, emlékhelyeknek, egyetemeknek és fesztiváloknak abban, hogy jól használják az AR-t és más immerzív technológiákat. Magyarul és angolul, személyesen vagy online is dolgozunk.</p>
+          <p>Segítünk múzeumoknak, emlékhelyeknek, egyetemeknek és fesztiváloknak abban, hogy jól használják az AR-t és más immerzív technológiákat. Magyarul és angolul dolgozunk, személyesen vagy online.</p>
           <ul class="offers">
             <li><h3 class="h4">Workshopok</h3><p>Gyakorlati alkalmak, egy naptól a teljes sorozatig. A csapatotok a saját helyszínetekre szabott koncepcióval távozik.</p></li>
             <li><h3 class="h4">Tanácsadás</h3><p>Mindenkinek, aki az immerzív médiában gondolkodik, az első lépéseiket tevő kis szervezetektől az ilyen munkát támogató alapítványokig és állami szervekig. Tudjuk, mitől lesz ezeknek a technológiáknak értelmes a használata, így az erőforrások olyan munkába kerülnek, amely megszólítja és megérinti a közönségét.</p></li>
@@ -1192,7 +1194,7 @@ html[lang="hu"] h2:not(.h4){font-size:clamp(1.6rem,.9rem + 3.4vw,3.5rem)}
           <div id="contact" style="display:grid;gap:10px">
             <p class="muted">Terveztek valamit? Írjatok nekünk!</p>
             <div class="mail">
-              <a class="addr" href="mailto:hello@parallelstories.org">hello@parallelstories.org</a>
+              <a class="btn primary addr" href="mailto:hello@parallelstories.org">hello@parallelstories.org</a>
               <button type="button" class="btn" id="copy-mail">Cím másolása</button><span id="copy-status" role="status" class="credit"></span>
             </div>
           </div>
@@ -1209,13 +1211,13 @@ html[lang="hu"] h2:not(.h4){font-size:clamp(1.6rem,.9rem + 3.4vw,3.5rem)}
     <div class="wrap">
       <div class="sec-head">
         <h2 id="support-h">Támogatás</h2>
-        <p class="lead">Segíts, hogy 2027-ben bemutathassuk az If These Streets Could Talkot!</p>
+        <p class="lead">Segíts, hogy az If These Streets Could Talk 2027-ben közönség elé kerülhessen!</p>
       </div>
       <div class="support-grid">
         <div style="display:grid;gap:16px;min-width:0">
           <p>Az If These Streets Could Talk gyártása javában zajlik, a bemutató 2027-ben lesz. Fő támogatónk az általunk gyűjtött adományokat azonos összeggel kiegészíti, így a támogatásod kétszeresen számít.</p>
           <ul class="facts">
-            <li>Az adományok a munka konkrét részeit finanszírozzák: egy-egy cím kutatását és 3D-rekonstrukcióját, a negyed LiDAR-szkennelését, az oktatási programot, a más városok által is használható nyílt AR-platformot, és a volumetrikus forgatást, amely életre kelti a szereplőket.</li>
+            <li>Az adományok a munka konkrét részeit finanszírozzák: egy-egy cím kutatását és 3D-rekonstrukcióját, a negyed LiDAR-szkennelését, az oktatási programot, a más városok által is használható nyílt AR-platformot és a volumetrikus forgatást, amely életre kelti a szereplőket.</li>
             <li><b>Az Egyesült Államokból</b> adóból leírható módon támogathatsz minket amerikai befogadó szervezetünkön, az <a href="https://www.edgeofdiscovery.org" target="_blank" rel="noopener">Edge of Discovery</a> 501(c)(3) közhasznú szervezeten keresztül.</li>
             <li><b>Nagyobb összegű támogatást fontolgatsz?</b> Beszélgess fél órát Szász Barnával, személyesen vagy Zoomon.</li>
           </ul>
@@ -1231,7 +1233,7 @@ html[lang="hu"] h2:not(.h4){font-size:clamp(1.6rem,.9rem + 3.4vw,3.5rem)}
     </div>
   </section>
 
-  <section aria-labelledby="founder-h">
+  <section id="founder" aria-labelledby="founder-h">
     <div class="wrap">
       <div class="sec-head">
         <h2 id="founder-h">Alapító és producerek</h2>
@@ -1265,7 +1267,7 @@ html[lang="hu"] h2:not(.h4){font-size:clamp(1.6rem,.9rem + 3.4vw,3.5rem)}
             <figure><div class="layered small"><span class="lc" aria-hidden="true"></span><img src="../img/18-mate-vincze.jpg" alt="Vincze Máté portréja." width="480" height="480" loading="lazy"></div></figure>
             <div class="person-text">
               <h3>Vincze Máté</h3>
-              <p>Rendező és producer. A budapesti Színház- és Filmművészeti Egyetemen, majd a New York-i Egyetem Tisch School of the Arts karán végzett (MFA). 2014-ben Noémivel megalapította a <a href="https://www.instagram.com/matchframeproductions/" target="_blank" rel="noopener">Match Frame Productions</a>-t. A boldogság ügynöke című dokumentumfilmjük 2024-ben a Sundance-en mutatkozott be, Missing 10 Hours című alkotásuk, az első nagyszabású narratív VR-mű Magyarországon, pedig elnyerte a legjobb nemzetközi VR-mű díját az új-zélandi Doc Edge fesztiválon.</p>
+              <p>Rendező és producer. A budapesti Színház- és Filmművészeti Egyetemen, majd a New York-i Egyetem Tisch School of the Arts karán végzett (MFA). 2014-ben Noémivel közösen alapította meg a <a href="https://www.instagram.com/matchframeproductions/" target="_blank" rel="noopener">Match Frame Productions</a> nevű produkciós céget. A boldogság ügynöke című dokumentumfilmjük 2024-ben a Sundance-en mutatkozott be, a Missing 10 Hours című alkotásuk pedig – az első nagyszabású narratív VR-mű Magyarországon – elnyerte a legjobb nemzetközi VR-mű díját az új-zélandi Doc Edge fesztiválon.</p>
             </div>
           </div>
         </div>
@@ -1281,7 +1283,7 @@ html[lang="hu"] h2:not(.h4){font-size:clamp(1.6rem,.9rem + 3.4vw,3.5rem)}
       <img class="wordmark" src="../logos/ps-wordmark.png" alt="Párhuzamos Történetek" width="520" height="207">
       <p><b>Parallel Stories Cultural Organization</b><br>Párhuzamos Történetek Kulturális Egyesület</p>
       <p><a href="mailto:hello@parallelstories.org">hello@parallelstories.org</a></p>
-      <p class="credit">Ez az oldal nem használ sütiket. A látogatásokat névtelenül, sütik nélkül számoljuk (GoatCounter).</p>
+      <p class="credit">Ez az oldal nem használ sütiket. A látogatásokat névtelenül számoljuk (GoatCounter).</p>
     </div>
     <div style="display:grid;gap:10px;min-width:0">
       <h2 class="h4">Röviden</h2>
@@ -1289,7 +1291,7 @@ html[lang="hu"] h2:not(.h4){font-size:clamp(1.6rem,.9rem + 3.4vw,3.5rem)}
         <dt>Jogi forma</dt><dd>Egyesület, Budapest</dd>
         <dt>Nyilvántartási szám</dt><dd>01-02-0013002</dd>
         <dt>Adószám</dt><dd>18264038-1-42</dd>
-        <dt>Székhely</dt><dd>1075 Budapest, Kazinczy utca 7. II/8.</dd>
+        <dt>Székhely</dt><dd>1075 Budapest, Kazinczy utca 7. II/8.</dd>
         <dt>Beszámolók</dt><dd><a href="../reports/">Hivatalos éves beszámolók</a></dd>
       </dl>
     </div>
@@ -1423,7 +1425,7 @@ html[lang="hu"] h2:not(.h4){font-size:clamp(1.6rem,.9rem + 3.4vw,3.5rem)}
   var canEmbed = /(^|\.)parallelstories\.org$|(^|\.)parhuzamostortenetek\.org$|^localhost$|^127\.0\.0\.1$|\.pages\.dev$|\.github\.io$/.test(location.hostname);
   if (!canEmbed) return;
   var hu = document.documentElement.lang === 'hu';
-  a.querySelector('.play').lastChild.textContent = hu ? 'Videó lejátszása · 2 perc' : 'Play video · 2 min';
+  a.querySelector('.play').lastChild.textContent = hu ? 'Videó lejátszása · 2 perc' : 'Play video · 2 min';
   a.addEventListener('click', function(e){
     e.preventDefault();
     var f = document.createElement('iframe');
@@ -1450,6 +1452,7 @@ html[lang="hu"] h2:not(.h4){font-size:clamp(1.6rem,.9rem + 3.4vw,3.5rem)}
     var fig = img.closest('figure'), cap = fig && fig.querySelector('figcaption'), text = cap ? cap.textContent.trim() : img.alt;
     if (fig && cap && fig.querySelectorAll('img').length > 1){
       var cr = img.hasAttribute('data-credit') ? img.getAttribute('data-credit') : ((text.match(/(Photos?|Fotók?):.*$/) || [''])[0]);
+      cr = cr.replace(/^Photos:/, 'Photo:').replace(/^Fotók:/, 'Fotó:');
       text = img.alt + (cr ? ' ' + cr : '');
     }
     vc.textContent = text;
@@ -1497,10 +1500,16 @@ html[lang="hu"] h2:not(.h4){font-size:clamp(1.6rem,.9rem + 3.4vw,3.5rem)}
     bar.remove(); try { localStorage.setItem('ps-lang-hint', 'no'); } catch (e) {}
   });
 })();
-// Language switch: keep the reader's place (same section ids in both languages).
+// Language switch: land on the section being read (same ids in both languages). Switching away from
+// Hungarian is an explicit choice, so the English page will not offer Hungarian again.
 (function(){
   var l = document.querySelector('.nav .lang'); if (!l) return;
-  l.addEventListener('click', function(){ if (location.hash) l.href = l.href.split('#')[0] + location.hash; });
+  l.addEventListener('click', function(){
+    var cur = null;
+    [].forEach.call(document.querySelectorAll('main section[id]'), function(sec){ if (sec.getBoundingClientRect().top < 140) cur = sec.id; });
+    l.href = l.href.split('#')[0] + (cur ? '#' + cur : '');
+    if (document.documentElement.lang === 'hu'){ try { localStorage.setItem('ps-lang-hint', 'no'); } catch (e) {} }
+  });
 })();
 
 // Header: the logo is large at the top of the page and shrinks once you scroll.
