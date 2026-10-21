@@ -246,6 +246,26 @@ h4{font-variation-settings:"wdth" 100;font-weight:700;font-size:1.0625rem;line-h
 .top .wordmark{height:56px;transition:height .3s ease}
 .top .wrap{transition:padding .3s ease}
 .top.scrolled .wordmark{height:32px}
+/* Header logo in the motif's inks: a cyan copy up-left and a red-orange copy down-right sit behind
+   the black logo while it is large; hover spreads them and brings in the yellow-green (offset so no
+   two edges line up). The layers use the logo itself as a mask (--mark is set by the script). */
+.mark{position:relative;display:inline-flex;isolation:isolate;--mo:3px}
+.mark .wordmark{position:relative}
+.mark::before,.mark::after,.mark .lc{content:"";position:absolute;inset:0;z-index:-1;opacity:0;mix-blend-mode:multiply;
+  -webkit-mask:var(--mark) center/contain no-repeat;mask:var(--mark) center/contain no-repeat;
+  transition:opacity .3s ease,transform .3s ease}
+.mark::before{background:var(--layer-a);transform:translate(calc(var(--mo) * -1),calc(var(--mo) * -1))}
+.mark::after{background:var(--layer-b);transform:translate(var(--mo),var(--mo))}
+.mark .lc{background:var(--layer-c)}
+.top:not(.scrolled) .mark.ready::before,.top:not(.scrolled) .mark.ready::after{opacity:.6}
+@media (hover:hover){
+  .top:not(.scrolled) .mark.ready:hover::before{transform:translate(calc(var(--mo) * -1.7),calc(var(--mo) * -1.7));opacity:.75}
+  .top:not(.scrolled) .mark.ready:hover::after{transform:translate(calc(var(--mo) * 1.7),calc(var(--mo) * 1.7));opacity:.75}
+  .top:not(.scrolled) .mark.ready:hover .lc{transform:translate(calc(var(--mo) * 1.35),calc(var(--mo) * -1.1));opacity:.7}
+}
+:root[data-theme="dark"] .mark::before,:root[data-theme="dark"] .mark::after,:root[data-theme="dark"] .mark .lc{mix-blend-mode:screen}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .mark::before,:root:not([data-theme="light"]) .mark::after,:root:not([data-theme="light"]) .mark .lc{mix-blend-mode:screen}}
+@media (prefers-reduced-motion: reduce){.mark::before,.mark::after,.mark .lc{transition:none}}
 .top.scrolled .wrap{padding-block:8px}
 html{scroll-padding-top:72px}
 @media (prefers-reduced-motion: reduce){.top .wordmark,.top .wrap{transition:none}}
@@ -254,7 +274,7 @@ html{scroll-padding-top:72px}
 .nav{display:flex;gap:4px 14px;font-family:var(--font-label);font-size:.78rem;letter-spacing:.03em}
 .nav a{text-decoration:none;padding:12px 2px;white-space:nowrap}
 .nav .lang{border:1px solid var(--line);padding:4px 8px;align-self:center;margin-left:4px}
-@media (max-width:440px){.nav .opt{display:none}.top .wordmark{height:42px}.top.scrolled .wordmark{height:26px}}
+@media (max-width:440px){.nav .opt{display:none}.mark{--mo:2.4px}.top .wordmark{height:42px}.top.scrolled .wordmark{height:26px}}
 
 /* ---- sections ---- */
 main > section > .wrap{padding-block:var(--section-gap) 0;display:grid;gap:clamp(28px,4vw,44px)}
@@ -667,7 +687,7 @@ html[lang="hu"] h2{font-size:clamp(1.6rem,.9rem + 3.4vw,3.5rem)}
 <div class="lang-hint" id="lang-hint" hidden><div class="wrap"><a href="hu/" lang="hu">Magyarul olvasnád? Tovább a magyar változatra →</a><button type="button" id="lang-hint-x" aria-label="Bezárás">✕</button></div></div>
 <header class="top">
   <div class="wrap">
-    <a href="#top" aria-label="Parallel Stories, back to top"><img class="wordmark" src="logos/ps-wordmark.png" alt="Parallel Stories" width="520" height="207"></a>
+    <a href="#top" class="mark" aria-label="Parallel Stories, back to top"><span class="lc" aria-hidden="true"></span><img class="wordmark" src="logos/ps-wordmark.png" alt="Parallel Stories" width="520" height="207"></a>
     <nav class="nav" aria-label="Sections">
       <a href="#projects" class="opt2">Projects</a>
       <a href="#work">Work with us</a>
@@ -1205,6 +1225,12 @@ html[lang="hu"] h2{font-size:clamp(1.6rem,.9rem + 3.4vw,3.5rem)}
   var on = false;
   function update(){ var y = window.scrollY; if (!on && y > 60){ on = true; top.classList.add('scrolled'); } else if (on && y < 10){ on = false; top.classList.remove('scrolled'); } }
   update(); window.addEventListener('scroll', update, { passive: true });
+})();
+// Header logo colors: give the ink layers the logo's own shape as a mask (works on every page depth).
+(function(){
+  var m = document.querySelector('.top .mark'), img = m && m.querySelector('img'); if (!img) return;
+  function set(){ m.style.setProperty('--mark', 'url("' + (img.currentSrc || img.src) + '")'); m.classList.add('ready'); }
+  if (img.complete) set(); else img.addEventListener('load', set);
 })();
 </script>
 
