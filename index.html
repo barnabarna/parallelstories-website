@@ -346,6 +346,7 @@ main > section:last-child > .wrap{padding-bottom:var(--section-gap)}
 .logo-strip{background:var(--logo-bg);border:1px solid var(--line);padding:16px 18px;display:grid;gap:14px;
   grid-template-columns:repeat(2,minmax(0,1fr));align-items:center;justify-items:center}
 .logo-strip .meta{color:#575e66;grid-column:1/-1;justify-self:start}
+.logo-link{display:flex;align-items:center;max-width:100%;border-radius:2px}
 .logo-strip img{height:calc(var(--h) * 1.25);width:auto;max-width:100%;object-fit:contain}
 .logo-strip a.meta{justify-self:end;text-decoration:none;padding:10px 0}
 @media (hover:hover){.logo-strip a.meta:hover{color:#b5341c}}
@@ -369,6 +370,8 @@ main > section:last-child > .wrap{padding-bottom:var(--section-gap)}
 .facts li{padding-left:18px;position:relative;max-width:65ch}
 .facts li::before{content:"";position:absolute;left:0;top:.72em;width:8px;height:2px;background:var(--layer-b)}
 .its-logo{width:88px}
+.title-link{text-decoration:none;color:inherit}
+.title-link:focus-visible{outline-offset:6px}
 .gallery{display:grid;gap:10px;grid-template-columns:repeat(2,minmax(0,1fr))}
 .gallery img{width:100%;height:100%;aspect-ratio:4/3;object-fit:cover}
 .gallery .tall{grid-row:span var(--span,2)}
@@ -696,10 +699,10 @@ html[lang="hu"] h2{font-size:clamp(1.6rem,.9rem + 3.4vw,3.5rem)}
       </div>
       <div class="logo-strip" aria-label="Supported by">
         <span class="meta">Supported by</span>
-        <img src="logos/eu.png" alt="Co-funded by the European Union" style="--h:38px">
-        <img src="logos/claims.png" alt="Claims Conference" style="--h:50px">
-        <img src="logos/usembassy.png" alt="U.S. Embassy Hungary" style="--h:56px">
-        <img src="logos/evz.png" alt="Foundation EVZ" style="--h:32px">
+        <a class="logo-link" href="https://commission.europa.eu/funding-and-tenders/find-funding/eu-funding-programmes/citizens-equality-rights-and-values-programme_en" target="_blank" rel="noopener"><img src="logos/eu.png" alt="Co-funded by the European Union" style="--h:38px"></a>
+        <a class="logo-link" href="https://www.claimscon.org" target="_blank" rel="noopener"><img src="logos/claims.png" alt="Claims Conference" style="--h:50px"></a>
+        <a class="logo-link" href="https://hu.usembassy.gov" target="_blank" rel="noopener"><img src="logos/usembassy.png" alt="U.S. Embassy Hungary" style="--h:56px"></a>
+        <a class="logo-link" href="https://www.stiftung-evz.de/en/" target="_blank" rel="noopener"><img src="logos/evz.png" alt="Foundation EVZ" style="--h:32px"></a>
         <a href="#partners" class="meta">All partners ↓</a>
       </div>
       <blockquote class="quote lg"><span class="lc" aria-hidden="true"></span>
@@ -718,7 +721,7 @@ html[lang="hu"] h2{font-size:clamp(1.6rem,.9rem + 3.4vw,3.5rem)}
         <div class="about-text">
           <p class="lead">Parallel Stories Cultural Organization (Párhuzamos Történetek Kulturális Egyesület) promotes new, story-based ways to understand and better our society. We work mostly with augmented reality. An AR layer changes how we think, feel and behave in a real place. It also reaches new audiences in new ways.</p>
           <p>We work hand in hand with the communities whose stories we tell, and we create with them. We care about what we tell, but just as much about how we tell it.</p>
-          <p>Founder Barna Szász co-created Stanford University's first AR storytelling class. We work closely with Prof. Victoria Grace Richardson-Walden, founder of the Landecker Digital Memory Lab, and with creative producers Noémi Szakonyi and Máté Vincze of Match Frame Productions.</p>
+          <p>Founder Barna Szász co-created Stanford University's first AR storytelling class. We work closely with Prof. Victoria Grace Richardson-Walden, founder of the <a href="https://www.digitalmemorylab.com" target="_blank" rel="noopener">Landecker Digital Memory Lab</a>, and with creative producers Noémi Szakonyi and Máté Vincze of <a href="https://www.instagram.com/matchframeproductions/" target="_blank" rel="noopener">Match Frame Productions</a>.</p>
           <p>From single workshops to long-term international projects, we share what we learn. That includes our research, our upcoming guidebook, the EU co-funded These Streets Remember project, and workshops in Europe and the US.</p>
         </div>
         <figure style="display:grid;gap:8px">
@@ -741,10 +744,10 @@ html[lang="hu"] h2{font-size:clamp(1.6rem,.9rem + 3.4vw,3.5rem)}
           <div class="project-head has-logo">
             <div class="project-title">
               <p class="meta">Flagship · Budapest · Launch 2027</p>
-              <h3 id="its-h" class="lens">If These Streets Could Talk</h3>
+              <h3 id="its-h" class="lens"><a class="title-link" href="https://if-these-streets.org" target="_blank" rel="noopener">If These Streets Could Talk</a></h3>
               <p class="lead">An augmented reality experience in Budapest's former Jewish quarter. Visitors walk the streets with an iPad and meet the people who lived there, in the places where their stories happened.</p>
             </div>
-            <img class="its-logo" src="logos/its-logo.png" alt="If These Streets Could Talk logo" width="365" height="260" loading="lazy">
+            <a class="logo-link its-link" href="https://if-these-streets.org" target="_blank" rel="noopener"><img class="its-logo" src="logos/its-logo.png" alt="If These Streets Could Talk website" width="365" height="260" loading="lazy"></a>
           </div>
           <div class="video">
             <a class="thumb" href="https://www.youtube.com/watch?v=V-aaacaM0mc" target="_blank" rel="noopener">
@@ -760,7 +763,7 @@ html[lang="hu"] h2{font-size:clamp(1.6rem,.9rem + 3.4vw,3.5rem)}
                 <li>Three prototypes: Vanczák Béla's Mission, Gingerbread and Two Breads.</li>
                 <li>Tested on the street with more than 200 people.</li>
                 <li>A research study with 60 participants, approved by the University of Sussex ethics committee.</li>
-                <li>Prototype filming at Origo Studios.</li>
+                <li>Prototype filming at <a href="https://origostudios.com" target="_blank" rel="noopener">Origo Studios</a>.</li>
                 <li>The full experience is planned for 2027.</li>
               </ul>
             </div>
@@ -791,14 +794,14 @@ html[lang="hu"] h2{font-size:clamp(1.6rem,.9rem + 3.4vw,3.5rem)}
             <div class="col">
               <h4>Key facts</h4>
               <ul class="facts">
-                <li>Partners: Galicia Jewish Museum (Kraków), Terraforming (Novi Sad), Žanis Lipke Memorial (Riga). Associated partner: Holocaust Memorial Center (Budapest).</li>
+                <li>Partners: <a href="https://galiciajewishmuseum.org/en/" target="_blank" rel="noopener">Galicia Jewish Museum</a> (Kraków), <a href="https://terraforming.org/en/" target="_blank" rel="noopener">Terraforming</a> (Novi Sad), <a href="https://lipke.lv/en/" target="_blank" rel="noopener">Žanis Lipke Memorial</a> (Riga). Associated partner: <a href="https://www.hdke.hu/en" target="_blank" rel="noopener">Holocaust Memorial Center</a> (Budapest).</li>
                 <li>Opening conference on October 13, 2026, at the Holocaust Memorial Center in Budapest, with more than 140 professionals.</li>
                 <li>Runs from August 1, 2026, to July 31, 2028.</li>
                 <li>Results so far: the opening conference in Budapest. Next: workshop series in Riga, Novi Sad and Kraków.</li>
               </ul>
             </div>
             <div class="col eu">
-              <img src="logos/eu.png" alt="Co-funded by the European Union" width="520" height="111" loading="lazy">
+              <a class="logo-link" href="https://commission.europa.eu/funding-and-tenders/find-funding/eu-funding-programmes/citizens-equality-rights-and-values-programme_en" target="_blank" rel="noopener"><a class="logo-link" href="https://commission.europa.eu/funding-and-tenders/find-funding/eu-funding-programmes/citizens-equality-rights-and-values-programme_en" target="_blank" rel="noopener"><img src="logos/eu.png" alt="Co-funded by the European Union" width="520" height="111" loading="lazy"></a></a>
               <p>Co-funded by the European Union. Views and opinions expressed are however those of the author(s) only and do not necessarily reflect those of the European Union or the European Education and Culture Executive Agency (EACEA). Neither the European Union nor the granting authority can be held responsible for them.</p>
             </div>
           </div>
@@ -808,7 +811,7 @@ html[lang="hu"] h2{font-size:clamp(1.6rem,.9rem + 3.4vw,3.5rem)}
         <article class="project" aria-labelledby="xr-h">
           <div class="project-head">
             <p class="meta">Community · Hungary</p>
-            <h3 id="xr-h" class="lens">XR Budapest</h3>
+            <h3 id="xr-h" class="lens"><a class="title-link" href="https://xrbudapest.hu" target="_blank" rel="noopener">XR Budapest</a></h3>
             <p class="lead">A community that connects everyone in Hungary's XR scene, from curious beginners to professionals.</p>
           </div>
           <div class="two-col">
@@ -817,7 +820,7 @@ html[lang="hu"] h2{font-size:clamp(1.6rem,.9rem + 3.4vw,3.5rem)}
               <ul class="facts">
                 <li>In-person gatherings that show the most exciting Hungarian XR projects, where visitors can try the demos.</li>
                 <li>Online channels that share news, events and opportunities, and connect people in the field.</li>
-                <li>The Hungarian representative of Euromersive.</li>
+                <li>The Hungarian representative of <a href="https://www.euromersive.eu" target="_blank" rel="noopener">Euromersive</a>.</li>
               </ul>
             </div>
           </div>
@@ -840,28 +843,28 @@ html[lang="hu"] h2{font-size:clamp(1.6rem,.9rem + 3.4vw,3.5rem)}
       </div>
       <div class="logos">
         <div class="logo-wall">
-          <img src="logos/eu.png" alt="Co-funded by the European Union (These Streets Remember)" style="--h:44px" loading="lazy">
-          <img src="logos/claims.png" alt="Claims Conference" style="--h:58px" loading="lazy">
-          <img src="logos/usembassy.png" alt="U.S. Embassy Hungary" style="--h:66px" loading="lazy">
-          <img src="logos/evz.png" alt="Foundation EVZ" style="--h:35px" loading="lazy">
-          <img src="logos/bmf.png" alt="German Federal Ministry of Finance" style="--h:80px" loading="lazy">
-          <img src="logos/bga.png" alt="Bethlen Gábor Alapkezelő" style="--h:64px" loading="lazy">
-          <img src="logos/hdke.png" alt="Holocaust Memorial Center Budapest" style="--h:64px" loading="lazy">
-          <img src="logos/sussex.png" alt="University of Sussex" style="--h:64px" loading="lazy">
-          <img src="logos/ldml.png" alt="Landecker Digital Memory Lab" style="--h:64px" loading="lazy">
-          <img src="logos/tar.png" alt="Foundation for the Jewish Heritage of Elizabethtown Museum" style="--h:58px" loading="lazy">
-          <img src="logos/mozaik.png" alt="JDC Mozaik Jewish Community Hub" style="--h:33px" loading="lazy">
-          <img src="logos/matchframe.png" alt="Match Frame Productions" style="--h:54px" loading="lazy">
-          <img src="logos/origo.png" alt="Origo Studios" style="--h:62px" loading="lazy">
-          <img src="logos/marom.png" alt="Marom Budapest" style="--h:64px" loading="lazy">
-          <img src="logos/propclub.png" alt="Propclub" style="--h:42px" loading="lazy">
-          <img src="logos/giff.png" alt="GIFF GDM" style="--h:50px" loading="lazy">
-          <img src="logos/idfa.png" alt="IDFA DocLab Forum, official selection 2022" style="--h:52px" loading="lazy">
-          <img src="logos/eastdoc.png" alt="East Doc Platform" style="--h:43px" loading="lazy">
-          <img src="logos/newimages.png" alt="NewImages Festival XR Development Market 2022, selected" style="--h:48px" loading="lazy">
-          <img src="logos/goeast.png" alt="goEast 2022, special mention, Merck Award for Innovation in XR" style="--h:58px" loading="lazy">
+          <a class="logo-link" href="https://commission.europa.eu/funding-and-tenders/find-funding/eu-funding-programmes/citizens-equality-rights-and-values-programme_en" target="_blank" rel="noopener"><img src="logos/eu.png" alt="Co-funded by the European Union (These Streets Remember)" style="--h:44px" loading="lazy"></a>
+          <a class="logo-link" href="https://www.claimscon.org" target="_blank" rel="noopener"><img src="logos/claims.png" alt="Claims Conference" style="--h:58px" loading="lazy"></a>
+          <a class="logo-link" href="https://hu.usembassy.gov" target="_blank" rel="noopener"><img src="logos/usembassy.png" alt="U.S. Embassy Hungary" style="--h:66px" loading="lazy"></a>
+          <a class="logo-link" href="https://www.stiftung-evz.de/en/" target="_blank" rel="noopener"><img src="logos/evz.png" alt="Foundation EVZ" style="--h:35px" loading="lazy"></a>
+          <a class="logo-link" href="https://www.bundesfinanzministerium.de/Web/EN/Home/home.html" target="_blank" rel="noopener"><img src="logos/bmf.png" alt="German Federal Ministry of Finance" style="--h:80px" loading="lazy"></a>
+          <a class="logo-link" href="https://bgazrt.hu" target="_blank" rel="noopener"><img src="logos/bga.png" alt="Bethlen Gábor Alapkezelő" style="--h:64px" loading="lazy"></a>
+          <a class="logo-link" href="https://www.hdke.hu/en" target="_blank" rel="noopener"><img src="logos/hdke.png" alt="Holocaust Memorial Center Budapest" style="--h:64px" loading="lazy"></a>
+          <a class="logo-link" href="https://www.sussex.ac.uk" target="_blank" rel="noopener"><img src="logos/sussex.png" alt="University of Sussex" style="--h:64px" loading="lazy"></a>
+          <a class="logo-link" href="https://www.digitalmemorylab.com" target="_blank" rel="noopener"><img src="logos/ldml.png" alt="Landecker Digital Memory Lab" style="--h:64px" loading="lazy"></a>
+          <a class="logo-link" href="https://www.erzsitt.hu" target="_blank" rel="noopener"><img src="logos/tar.png" alt="Foundation for the Jewish Heritage of Elizabethtown Museum" style="--h:58px" loading="lazy"></a>
+          <a class="logo-link" href="https://mozaikhub.hu" target="_blank" rel="noopener"><img src="logos/mozaik.png" alt="JDC Mozaik Jewish Community Hub" style="--h:33px" loading="lazy"></a>
+          <a class="logo-link" href="https://www.instagram.com/matchframeproductions/" target="_blank" rel="noopener"><img src="logos/matchframe.png" alt="Match Frame Productions" style="--h:54px" loading="lazy"></a>
+          <a class="logo-link" href="https://origostudios.com" target="_blank" rel="noopener"><img src="logos/origo.png" alt="Origo Studios" style="--h:62px" loading="lazy"></a>
+          <a class="logo-link" href="https://www.marom.hu" target="_blank" rel="noopener"><img src="logos/marom.png" alt="Marom Budapest" style="--h:64px" loading="lazy"></a>
+          <a class="logo-link" href="https://propclub.hu" target="_blank" rel="noopener"><img src="logos/propclub.png" alt="Propclub" style="--h:42px" loading="lazy"></a>
+          <a class="logo-link" href="https://www.giff.ch" target="_blank" rel="noopener"><img src="logos/giff.png" alt="GIFF GDM" style="--h:50px" loading="lazy"></a>
+          <a class="logo-link" href="https://www.idfa.nl/en/" target="_blank" rel="noopener"><img src="logos/idfa.png" alt="IDFA DocLab Forum, official selection 2022" style="--h:52px" loading="lazy"></a>
+          <a class="logo-link" href="https://dokweb.net/activities/east-doc-platform" target="_blank" rel="noopener"><img src="logos/eastdoc.png" alt="East Doc Platform" style="--h:43px" loading="lazy"></a>
+          <a class="logo-link" href="https://newimages-hub.com" target="_blank" rel="noopener"><img src="logos/newimages.png" alt="NewImages Festival XR Development Market 2022, selected" style="--h:48px" loading="lazy"></a>
+          <a class="logo-link" href="https://www.filmfestival-goeast.de/en/" target="_blank" rel="noopener"><img src="logos/goeast.png" alt="goEast 2022, special mention, Merck Award for Innovation in XR" style="--h:58px" loading="lazy"></a>
         </div>
-        <p class="partner-names">European partners in These Streets Remember: Galicia Jewish Museum (Kraków), Terraforming (Novi Sad), Žanis Lipke Memorial (Riga).</p>
+        <p class="partner-names">European partners in These Streets Remember: <a href="https://galiciajewishmuseum.org/en/" target="_blank" rel="noopener">Galicia Jewish Museum</a> (Kraków), <a href="https://terraforming.org/en/" target="_blank" rel="noopener">Terraforming</a> (Novi Sad), <a href="https://lipke.lv/en/" target="_blank" rel="noopener">Žanis Lipke Memorial</a> (Riga).</p>
       </div>
     </div>
   </section>
@@ -892,12 +895,12 @@ html[lang="hu"] h2{font-size:clamp(1.6rem,.9rem + 3.4vw,3.5rem)}
         <div class="col">
           <h3 class="h4">Selected workshops and talks</h3>
           <ul class="talks">
-            <li><span class="yr">2026</span><span><b>Warsaw Ghetto Museum</b>, Immersive Histories workshop, Warsaw</span></li>
-            <li><span class="yr">2026</span><span><b>Washington, DC</b>, talk co-presented with Nancy Gillette of the U.S. Holocaust Memorial Museum</span></li>
-            <li><span class="yr">2025</span><span><b>Claims Conference</b>, presentation and panel at the National Holocaust Museum, Amsterdam. Next: Film and New Media Forum, Berlin, November 2026</span></li>
-            <li><span class="yr">2025</span><span><b>University of Sussex</b>, workshop at the Connective Holocaust Commemoration Expo</span></li>
-            <li><span class="yr">2024</span><span><b>NYU Tisch School of the Arts</b>, artist talk, New York</span></li>
-            <li><span class="yr">2023</span><span><b>DOK Leipzig</b>, keynote at DOK Exchange XR</span></li>
+            <li><span class="yr">2026</span><span><b><a href="https://1943.pl/en/" target="_blank" rel="noopener">Warsaw Ghetto Museum</a></b>, Immersive Histories workshop, Warsaw</span></li>
+            <li><span class="yr">2026</span><span><b>Washington, DC</b>, talk co-presented with Nancy Gillette of the <a href="https://www.ushmm.org" target="_blank" rel="noopener">U.S. Holocaust Memorial Museum</a></span></li>
+            <li><span class="yr">2025</span><span><b><a href="https://www.claimscon.org" target="_blank" rel="noopener">Claims Conference</a></b>, presentation and panel at the National Holocaust Museum, Amsterdam. Next: Film and New Media Forum, Berlin, November 2026</span></li>
+            <li><span class="yr">2025</span><span><b><a href="https://www.sussex.ac.uk" target="_blank" rel="noopener">University of Sussex</a></b>, workshop at the Connective Holocaust Commemoration Expo</span></li>
+            <li><span class="yr">2024</span><span><b><a href="https://tisch.nyu.edu" target="_blank" rel="noopener">NYU Tisch School of the Arts</a></b>, artist talk, New York</span></li>
+            <li><span class="yr">2023</span><span><b><a href="https://www.dok-leipzig.de/en" target="_blank" rel="noopener">DOK Leipzig</a></b>, keynote at DOK Exchange XR</span></li>
           </ul>
           <a class="btn" href="https://www.barnaszasz.com/talks-workshops-consulting" target="_blank" rel="noopener">Full list of talks ↗</a>
         </div>
@@ -946,7 +949,7 @@ html[lang="hu"] h2{font-size:clamp(1.6rem,.9rem + 3.4vw,3.5rem)}
           <p>If These Streets Could Talk is in main production for its 2027 launch. Our main supporter matches the gifts we raise, so your support counts twice.</p>
           <ul class="facts">
             <li>Gifts fund concrete parts of the work: research and 3D reconstruction of a single address, LiDAR scans of the quarter, the education program, the open AR platform other cities can use, and the volumetric shoot that brings the characters to life.</li>
-            <li><b>Donors in the US</b> can give tax-deductibly through our fiscal sponsor, Edge of Discovery, a 501(c)(3) public charity.</li>
+            <li><b>Donors in the US</b> can give tax-deductibly through our fiscal sponsor, <a href="https://www.edgeofdiscovery.org" target="_blank" rel="noopener">Edge of Discovery</a>, a 501(c)(3) public charity.</li>
             <li><b>Considering a larger gift?</b> Meet Barna Szász for 30 minutes, in person or on Zoom.</li>
           </ul>
           <a class="btn primary" href="mailto:hello@parallelstories.org?subject=Supporting%20If%20These%20Streets%20Could%20Talk">Write to us about giving</a>
@@ -1059,15 +1062,16 @@ html[lang="hu"] h2{font-size:clamp(1.6rem,.9rem + 3.4vw,3.5rem)}
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var touch = window.matchMedia && window.matchMedia('(hover: none)').matches;
   document.querySelectorAll('.lens').forEach(function(h){
-    var text = h.textContent, words = text.split(' ');
-    h.setAttribute('aria-label', text);
-    h.textContent = '';
+    // a linked title keeps its link: the letters are rebuilt inside it
+    var host = h.querySelector('a') || h, text = host.textContent, words = text.split(' ');
+    host.setAttribute('aria-label', text);
+    host.textContent = '';
     var letters = [];
     words.forEach(function(word, i){
       var w = document.createElement('span'); w.className = 'w'; w.setAttribute('aria-hidden','true');
       for (var j = 0; j < word.length; j++){ var c = document.createElement('span'); c.className = 'ch'; c.textContent = word[j]; w.appendChild(c); letters.push(c); }
-      h.appendChild(w);
-      if (i < words.length - 1) h.appendChild(document.createTextNode(' '));
+      host.appendChild(w);
+      if (i < words.length - 1) host.appendChild(document.createTextNode(' '));
     });
     var centres = [], last = [], R = 0;
     // measure once (and on resize / font load), never inside the animation frame
