@@ -248,34 +248,6 @@ h4{font-variation-settings:"wdth" 100;font-weight:700;font-size:1.0625rem;line-h
 .top .wordmark{height:56px;transition:height .3s ease}
 .top .wrap{transition:padding .3s ease}
 .top.scrolled .wordmark{height:32px}
-/* Header logo in the motif's inks, kept quiet: a soft band of "passing light" drifts slowly and
-   continuously back and forth across the logo (the script moves --sweep along a smooth random path),
-   and only inside the band do the cyan (up-left) and red-orange (down-right) copies separate.
-   Hover shows the whole logo in the three inks, but closer and lighter so the black stays crisp.
-   The layers use the logo itself as a mask (--mark is set by the script); the band is a second mask. */
-@property --sweep{syntax:"<percentage>";inherits:true;initial-value:-60%}
-.mark{position:relative;display:inline-flex;isolation:isolate;--mo:3px;--sweep:-60%}
-.mark .wordmark{position:relative}
-.mark::before,.mark::after,.mark .lc{content:"";position:absolute;inset:0;z-index:-1;opacity:0;mix-blend-mode:multiply;
-  --band:linear-gradient(100deg, transparent calc(var(--sweep) - 34%), #000 var(--sweep), transparent calc(var(--sweep) + 34%));
-  -webkit-mask:var(--mark) center/contain no-repeat, var(--band);-webkit-mask-composite:source-in;
-  mask:var(--mark) center/contain no-repeat, var(--band);mask-composite:intersect;
-  transition:opacity .3s ease,transform .3s ease}
-.mark::before{background:var(--layer-a);transform:translate(calc(var(--mo) * -1),calc(var(--mo) * -1))}
-.mark::after{background:var(--layer-b);transform:translate(var(--mo),var(--mo))}
-.mark .lc{background:var(--layer-c);-webkit-mask:var(--mark) center/contain no-repeat;mask:var(--mark) center/contain no-repeat}
-.top:not(.scrolled) .mark.sweeping::before,.top:not(.scrolled) .mark.sweeping::after{opacity:.55}
-@media (hover:hover){
-  .top:not(.scrolled) .mark.ready:hover::before,.top:not(.scrolled) .mark.ready:hover::after{-webkit-mask:var(--mark) center/contain no-repeat;mask:var(--mark) center/contain no-repeat}
-  /* close, light offsets: the logo's strokes are thinner than the headline's, so wide or strong
-     color copies blur it */
-  .top:not(.scrolled) .mark.ready:hover::before{transform:translate(calc(var(--mo) * -.7),calc(var(--mo) * -.7));opacity:.4}
-  .top:not(.scrolled) .mark.ready:hover::after{transform:translate(calc(var(--mo) * .7),calc(var(--mo) * .7));opacity:.4}
-  .top:not(.scrolled) .mark.ready:hover .lc{transform:translate(calc(var(--mo) * .55),calc(var(--mo) * -.45));opacity:.35}
-}
-:root[data-theme="dark"] .mark::before,:root[data-theme="dark"] .mark::after,:root[data-theme="dark"] .mark .lc{mix-blend-mode:screen}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .mark::before,:root:not([data-theme="light"]) .mark::after,:root:not([data-theme="light"]) .mark .lc{mix-blend-mode:screen}}
-@media (prefers-reduced-motion: reduce){.mark::before,.mark::after,.mark .lc{transition:none}}
 .top.scrolled .wrap{padding-block:8px}
 html{scroll-padding-top:72px}
 @media (prefers-reduced-motion: reduce){.top .wordmark,.top .wrap{transition:none}}
@@ -284,7 +256,7 @@ html{scroll-padding-top:72px}
 .nav{display:flex;gap:4px 14px;font-family:var(--font-label);font-size:.78rem;letter-spacing:.03em}
 .nav a{text-decoration:none;padding:12px 2px;white-space:nowrap}
 .nav .lang{border:1px solid var(--line);padding:4px 8px;align-self:center;margin-left:4px}
-@media (max-width:440px){.nav .opt{display:none}.mark{--mo:2.4px}.top .wordmark{height:42px}.top.scrolled .wordmark{height:26px}}
+@media (max-width:440px){.nav .opt{display:none}.top .wordmark{height:42px}.top.scrolled .wordmark{height:26px}}
 
 /* ---- sections ---- */
 main > section > .wrap{padding-block:var(--section-gap) 0;display:grid;gap:clamp(28px,4vw,44px)}
@@ -698,7 +670,7 @@ html[lang="hu"] h2{font-size:clamp(1.6rem,.9rem + 3.4vw,3.5rem)}
 <body>
 <header class="top">
   <div class="wrap">
-    <a href="#top" class="mark" aria-label="Párhuzamos Történetek, vissza az oldal tetejére"><span class="lc" aria-hidden="true"></span><img class="wordmark" src="../logos/ps-wordmark.png" alt="Párhuzamos Történetek" width="520" height="207"></a>
+    <a href="#top" aria-label="Párhuzamos Történetek, vissza az oldal tetejére"><img class="wordmark" src="../logos/ps-wordmark.png" alt="Párhuzamos Történetek" width="520" height="207"></a>
     <nav class="nav" aria-label="Főmenü">
       <a href="#projects" class="opt2">Projektek</a>
       <a href="#work">Együttműködés</a>
@@ -1236,26 +1208,6 @@ html[lang="hu"] h2{font-size:clamp(1.6rem,.9rem + 3.4vw,3.5rem)}
   var on = false;
   function update(){ var y = window.scrollY; if (!on && y > 60){ on = true; top.classList.add('scrolled'); } else if (on && y < 10){ on = false; top.classList.remove('scrolled'); } }
   update(); window.addEventListener('scroll', update, { passive: true });
-})();
-// Header logo colors: give the ink layers the logo's own shape as a mask (works on every page depth),
-// then let the band of light drift across it slowly and continuously, along a smooth random path
-// (three slow waves with random phases, so it never repeats in an obvious rhythm).
-(function(){
-  var m = document.querySelector('.top .mark'), img = m && m.querySelector('img'), top = document.querySelector('.top'); if (!img) return;
-  function set(){ m.style.setProperty('--mark', 'url("' + (img.currentSrc || img.src) + '")'); m.classList.add('ready'); }
-  if (img.complete) set(); else img.addEventListener('load', set);
-  if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  m.classList.add('sweeping');
-  var ph = [Math.random() * 6.3, Math.random() * 6.3, Math.random() * 6.3], raf = 0;
-  function frame(now){
-    raf = requestAnimationFrame(frame);
-    if (top.classList.contains('scrolled') || document.hidden) return;
-    var t = now / 1000;
-    var n = .5 * Math.sin(t * .55 + ph[0]) + .3 * Math.sin(t * .34 + ph[1]) + .2 * Math.sin(t * .21 + ph[2]);   // -1..1
-    // stays between 12% and 88% of the logo, so part of the band is always on it
-    m.style.setProperty('--sweep', (50 + n * 38).toFixed(1) + '%');
-  }
-  raf = requestAnimationFrame(frame);
 })();
 </script>
 
