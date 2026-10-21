@@ -257,7 +257,7 @@ h4{font-variation-settings:"wdth" 100;font-weight:700;font-size:1.0625rem;line-h
 .mark{position:relative;display:inline-flex;isolation:isolate;--mo:3px;--sweep:-60%}
 .mark .wordmark{position:relative}
 .mark::before,.mark::after,.mark .lc{content:"";position:absolute;inset:0;z-index:-1;opacity:0;mix-blend-mode:multiply;
-  --band:linear-gradient(100deg, transparent calc(var(--sweep) - 28%), #000 var(--sweep), transparent calc(var(--sweep) + 28%));
+  --band:linear-gradient(100deg, transparent calc(var(--sweep) - 34%), #000 var(--sweep), transparent calc(var(--sweep) + 34%));
   -webkit-mask:var(--mark) center/contain no-repeat, var(--band);-webkit-mask-composite:source-in;
   mask:var(--mark) center/contain no-repeat, var(--band);mask-composite:intersect;
   transition:opacity .3s ease,transform .3s ease}
@@ -1251,8 +1251,9 @@ html[lang="hu"] h2{font-size:clamp(1.6rem,.9rem + 3.4vw,3.5rem)}
     raf = requestAnimationFrame(frame);
     if (top.classList.contains('scrolled') || document.hidden) return;
     var t = now / 1000;
-    var n = .5 * Math.sin(t * .21 + ph[0]) + .3 * Math.sin(t * .13 + ph[1]) + .2 * Math.sin(t * .083 + ph[2]);   // -1..1
-    m.style.setProperty('--sweep', (50 + n * 75).toFixed(1) + '%');
+    var n = .5 * Math.sin(t * .55 + ph[0]) + .3 * Math.sin(t * .34 + ph[1]) + .2 * Math.sin(t * .21 + ph[2]);   // -1..1
+    // stays between 12% and 88% of the logo, so part of the band is always on it
+    m.style.setProperty('--sweep', (50 + n * 38).toFixed(1) + '%');
   }
   raf = requestAnimationFrame(frame);
 })();
