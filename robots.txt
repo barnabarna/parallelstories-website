@@ -1,6 +1,6 @@
 # Everyone is welcome, including AI assistants and search crawlers.
 User-agent: *
 Allow: /
-Disallow: /reports/
+Disallow: /reports/*.pdf
 
 Sitemap: https://parallelstories.org/sitemap.xml

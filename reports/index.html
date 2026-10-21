@@ -100,7 +100,10 @@ p{margin:0}
 .pw{font-family:"IBM Plex Mono",ui-monospace,Menlo,monospace;border:1px solid var(--line);padding:12px 14px}
 .pw b{color:var(--accent)}
 ul{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
-li{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid var(--line)}
+li{border-bottom:1px solid var(--line)}
+/* the whole row is the link (large tap target) */
+li a{display:flex;justify-content:space-between;gap:16px;padding:14px 0;text-decoration:none}
+li a b{font-weight:400;text-decoration:underline;text-underline-offset:3px}
 li span{font-family:"IBM Plex Mono",ui-monospace,Menlo,monospace;color:var(--muted);font-variant-numeric:tabular-nums}
 a{color:inherit;text-underline-offset:3px}
 a:hover{color:var(--accent)}
@@ -110,16 +113,16 @@ a:hover{color:var(--accent)}
 </head>
 <body>
 <main>
-  <p class="label"><a href="../">← Parallel Stories</a></p>
+  <p class="label"><a href="../">← Parallel Stories</a> · <a href="../hu/" lang="hu">← Magyar változat</a></p>
   <h1>Official annual reports</h1>
   <p lang="hu">Párhuzamos Történetek Kulturális Egyesület – beszámolók</p>
   <p>The annual reports of Parallel Stories Cultural Organization, as filed with the Hungarian authorities. The files are in Hungarian.</p>
   <p class="pw">Password / Jelszó: <b>ptke23</b></p>
   <ul>
-    <li><a href="ptke-beszamolo-2025.pdf" target="_blank" rel="noopener">Beszámoló 2025</a><span>PDF</span></li>
-    <li><a href="ptke-beszamolo-2024.pdf" target="_blank" rel="noopener">Beszámoló 2024</a><span>PDF</span></li>
-    <li><a href="ptke-beszamolo-2023.pdf" target="_blank" rel="noopener">Beszámoló 2023</a><span>PDF</span></li>
-    <li><a href="ptke-beszamolo-2022.pdf" target="_blank" rel="noopener">Beszámoló 2022</a><span>PDF</span></li>
+    <li><a href="ptke-beszamolo-2025.pdf" target="_blank" rel="noopener"><b>Beszámoló 2025</b><span>PDF</span></a></li>
+    <li><a href="ptke-beszamolo-2024.pdf" target="_blank" rel="noopener"><b>Beszámoló 2024</b><span>PDF</span></a></li>
+    <li><a href="ptke-beszamolo-2023.pdf" target="_blank" rel="noopener"><b>Beszámoló 2023</b><span>PDF</span></a></li>
+    <li><a href="ptke-beszamolo-2022.pdf" target="_blank" rel="noopener"><b>Beszámoló 2022</b><span>PDF</span></a></li>
   </ul>
   <p class="label">Registry no. 01-02-0013002 · Tax no. 18264038-1-42</p>
 </main>
