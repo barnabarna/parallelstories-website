@@ -246,9 +246,10 @@ h4{font-variation-settings:"wdth" 100;font-weight:700;font-size:1.0625rem;line-h
 .top .wordmark{height:56px;transition:height .3s ease}
 .top .wrap{transition:padding .3s ease}
 .top.scrolled .wordmark{height:32px}
-/* Header logo in the motif's inks, kept quiet: at rest the logo is plain black. Every few seconds a
-   soft band of "passing light" slides slowly across it, and only inside the band do the cyan (up-left)
-   and red-orange (down-right) copies separate, then it settles back. Hover shows all three inks.
+/* Header logo in the motif's inks, kept quiet: a soft band of "passing light" drifts slowly and
+   continuously back and forth across the logo (the script moves --sweep along a smooth random path),
+   and only inside the band do the cyan (up-left) and red-orange (down-right) copies separate.
+   Hover shows the whole logo in the three inks, but closer and lighter so the black stays crisp.
    The layers use the logo itself as a mask (--mark is set by the script); the band is a second mask. */
 @property --sweep{syntax:"<percentage>";inherits:true;initial-value:-60%}
 .mark{position:relative;display:inline-flex;isolation:isolate;--mo:3px;--sweep:-60%}
@@ -261,18 +262,14 @@ h4{font-variation-settings:"wdth" 100;font-weight:700;font-size:1.0625rem;line-h
 .mark::before{background:var(--layer-a);transform:translate(calc(var(--mo) * -1),calc(var(--mo) * -1))}
 .mark::after{background:var(--layer-b);transform:translate(var(--mo),var(--mo))}
 .mark .lc{background:var(--layer-c);-webkit-mask:var(--mark) center/contain no-repeat;mask:var(--mark) center/contain no-repeat}
-.top:not(.scrolled) .mark.ready::before,.top:not(.scrolled) .mark.ready::after{opacity:.6}
-@media (prefers-reduced-motion: no-preference){
-  .top:not(.scrolled) .mark.ready{animation:pass 9s ease-in-out 1.2s infinite}
-}
-/* one slow pass (about 3 s), then about 6 s of plain black */
-@keyframes pass{0%{--sweep:-60%}34%{--sweep:160%}100%{--sweep:160%}}
+.top:not(.scrolled) .mark.sweeping::before,.top:not(.scrolled) .mark.sweeping::after{opacity:.55}
 @media (hover:hover){
-  .top:not(.scrolled) .mark.ready:hover{animation-play-state:paused}
   .top:not(.scrolled) .mark.ready:hover::before,.top:not(.scrolled) .mark.ready:hover::after{-webkit-mask:var(--mark) center/contain no-repeat;mask:var(--mark) center/contain no-repeat}
-  .top:not(.scrolled) .mark.ready:hover::before{transform:translate(calc(var(--mo) * -1.7),calc(var(--mo) * -1.7));opacity:.75}
-  .top:not(.scrolled) .mark.ready:hover::after{transform:translate(calc(var(--mo) * 1.7),calc(var(--mo) * 1.7));opacity:.75}
-  .top:not(.scrolled) .mark.ready:hover .lc{transform:translate(calc(var(--mo) * 1.35),calc(var(--mo) * -1.1));opacity:.7}
+  /* close, light offsets: the logo's strokes are thinner than the headline's, so wide or strong
+     color copies blur it */
+  .top:not(.scrolled) .mark.ready:hover::before{transform:translate(calc(var(--mo) * -.7),calc(var(--mo) * -.7));opacity:.4}
+  .top:not(.scrolled) .mark.ready:hover::after{transform:translate(calc(var(--mo) * .7),calc(var(--mo) * .7));opacity:.4}
+  .top:not(.scrolled) .mark.ready:hover .lc{transform:translate(calc(var(--mo) * .55),calc(var(--mo) * -.45));opacity:.35}
 }
 :root[data-theme="dark"] .mark::before,:root[data-theme="dark"] .mark::after,:root[data-theme="dark"] .mark .lc{mix-blend-mode:screen}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .mark::before,:root:not([data-theme="light"]) .mark::after,:root:not([data-theme="light"]) .mark .lc{mix-blend-mode:screen}}
@@ -1239,11 +1236,24 @@ html[lang="hu"] h2{font-size:clamp(1.6rem,.9rem + 3.4vw,3.5rem)}
   function update(){ var y = window.scrollY; if (!on && y > 60){ on = true; top.classList.add('scrolled'); } else if (on && y < 10){ on = false; top.classList.remove('scrolled'); } }
   update(); window.addEventListener('scroll', update, { passive: true });
 })();
-// Header logo colors: give the ink layers the logo's own shape as a mask (works on every page depth).
+// Header logo colors: give the ink layers the logo's own shape as a mask (works on every page depth),
+// then let the band of light drift across it slowly and continuously, along a smooth random path
+// (three slow waves with random phases, so it never repeats in an obvious rhythm).
 (function(){
-  var m = document.querySelector('.top .mark'), img = m && m.querySelector('img'); if (!img) return;
+  var m = document.querySelector('.top .mark'), img = m && m.querySelector('img'), top = document.querySelector('.top'); if (!img) return;
   function set(){ m.style.setProperty('--mark', 'url("' + (img.currentSrc || img.src) + '")'); m.classList.add('ready'); }
   if (img.complete) set(); else img.addEventListener('load', set);
+  if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  m.classList.add('sweeping');
+  var ph = [Math.random() * 6.3, Math.random() * 6.3, Math.random() * 6.3], raf = 0;
+  function frame(now){
+    raf = requestAnimationFrame(frame);
+    if (top.classList.contains('scrolled') || document.hidden) return;
+    var t = now / 1000;
+    var n = .5 * Math.sin(t * .21 + ph[0]) + .3 * Math.sin(t * .13 + ph[1]) + .2 * Math.sin(t * .083 + ph[2]);   // -1..1
+    m.style.setProperty('--sweep', (50 + n * 75).toFixed(1) + '%');
+  }
+  raf = requestAnimationFrame(frame);
 })();
 </script>
 
