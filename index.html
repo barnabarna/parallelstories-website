@@ -721,8 +721,19 @@ html[lang="hu"] .facts-dl{grid-template-columns:minmax(0,9.5rem) minmax(0,1fr)}
 .top .wrap > a:first-child{flex:none}
 h1,h2,h3{overflow-wrap:break-word;hyphens:auto}
 main > section > .wrap > *,.work-grid > *,.about-grid > *{min-width:0}
-@media (max-width:440px){.nav{gap:4px 10px;font-size:.72rem}}
-@media (max-width:420px){.nav .opt2{display:none}}
+/* phones: four menu items don't fit beside the logo, so the menu gets its own row under it;
+   HU/EN stays in the top-right corner */
+@media (max-width:440px){
+  .top .wrap{flex-wrap:wrap;row-gap:4px;position:relative}
+  .top .wrap{padding-block:8px 4px}
+  .nav{order:3;width:100%;justify-content:space-between;gap:4px 10px;font-size:.72rem}
+  .nav a{padding:5px 2px}
+  .nav .lang{position:absolute;right:max(16px, env(safe-area-inset-right, 0px));top:15px;margin:0;padding:4px 8px}
+  .top.scrolled .nav .lang{top:5px}
+  .top.scrolled .wrap{padding-block:4px 2px}
+  html{scroll-padding-top:96px}
+}
+
 html[lang="hu"] h2:not(.h4){font-size:clamp(1.6rem,.9rem + 3.4vw,3.5rem)}
 @media (max-width:600px){.hero h1{font-size:1.95rem;font-variation-settings:"wdth" 112}}
 @media (max-width:600px){html[lang="hu"] .hero h1{font-size:1.9rem}}
@@ -844,10 +855,10 @@ html[lang="hu"] h2:not(.h4){font-size:clamp(1.6rem,.9rem + 3.4vw,3.5rem)}
   <div class="wrap">
     <a href="#top" aria-label="Parallel Stories, back to top"><img class="wordmark" src="logos/ps-wordmark.png" alt="Parallel Stories" width="520" height="207"></a>
     <nav class="nav" aria-label="Sections">
-      <a href="#projects" class="opt2">Projects</a>
+      <a href="#projects">Projects</a>
       <a href="#work">Work with us</a>
-      <a href="#support" class="opt">Support</a>
-      <a href="#contact">Contact</a>
+      <a href="#support">Support</a>
+      <a href="#contact" class="opt">Contact</a>
       <a href="hu/" class="lang" lang="hu" hreflang="hu" title="Magyar változat">HU</a>
     </nav>
   </div>
@@ -857,17 +868,17 @@ html[lang="hu"] h2:not(.h4){font-size:clamp(1.6rem,.9rem + 3.4vw,3.5rem)}
 <a class="skip" href="#about">Skip to content</a>
   <div class="hero">
     <div class="wrap">
-      <p class="meta">Parallel Stories Cultural Organization · <span class="nw">Budapest</span></p>
+      <p class="meta">Parallel Stories Cultural Organization · Nonprofit · <span class="nw">Budapest</span></p>
       <h1 id="headline" class="lens">Exploring new ways of storytelling to engage local communities and shape public conversations.</h1>
       <p class="lead hero-sub">Together with international experts, we use augmented reality to rethink how we connect with stories, cultural heritage and contemporary issues.</p>
-      <figure class="hero-figure">
-        <div class="layered"><span class="lc" aria-hidden="true"></span><img src="img/01-hero-its-ar-on-ipad.jpg" srcset="img/01-hero-its-ar-on-ipad-800.jpg 800w, img/01-hero-its-ar-on-ipad.jpg 1600w" sizes="(max-width: 700px) 100vw, 1080px" alt="A visitor holds an iPad on a Budapest street. On the screen, two characters from the past stand in the same street." width="1600" height="711" fetchpriority="high"></div>
-        <figcaption class="credit">A scene from the Two Breads prototype of If These Streets Could Talk, on a Budapest street. Photo: Parallel Stories</figcaption>
-      </figure>
       <div class="hero-cta">
         <a class="btn primary" href="#contact">Get in touch</a>
         <span class="muted">Planning an AR project, or want to support our work?</span>
       </div>
+      <figure class="hero-figure">
+        <div class="layered"><span class="lc" aria-hidden="true"></span><img src="img/01-hero-its-ar-on-ipad.jpg" srcset="img/01-hero-its-ar-on-ipad-800.jpg 800w, img/01-hero-its-ar-on-ipad.jpg 1600w" sizes="(max-width: 700px) 100vw, 1080px" alt="A visitor holds an iPad on a Budapest street. On the screen, two characters from the past stand in the same street." width="1600" height="711" fetchpriority="high"></div>
+        <figcaption class="credit">A scene from the Two Breads prototype of If These Streets Could Talk, on a Budapest street. Photo: Parallel Stories</figcaption>
+      </figure>
       <div class="proof" role="list" aria-label="Highlights">
         <div role="listitem"><span class="big">140+</span><p>professionals at the launch of our four-country EU project, with speakers from the MIT Open Documentary Lab, the Auschwitz-Birkenau Memorial and Museum and UCL.</p></div>
         <div role="listitem"><span class="big">1st</span><p>AR storytelling class at Stanford University, co-created by our founder, Barna Szász. It has been our sandbox for years, and our methods grew out of that continuous experimenting.</p></div>
@@ -897,7 +908,7 @@ html[lang="hu"] h2:not(.h4){font-size:clamp(1.6rem,.9rem + 3.4vw,3.5rem)}
         <div class="about-text">
           <p class="lead">Parallel Stories Cultural Organization (Párhuzamos Történetek Kulturális Egyesület) promotes new, story-based ways to understand and better our society. We work mostly with augmented reality. An AR layer changes how we think, feel and behave in a real place. It also reaches new audiences in new ways.</p>
           <p>We work hand in hand with the communities whose stories we tell, and we create with them. We care about what we tell, but just as much about how we tell it.</p>
-          <p>Founder Barna Szász co-created Stanford University's first AR storytelling class. We work closely with Prof. Victoria Grace Richardson-Walden, founder of the <a href="https://www.digitalmemorylab.com" target="_blank" rel="noopener">Landecker Digital Memory Lab</a>, and with creative producers Noémi Szakonyi and Máté Vincze of <a href="https://www.instagram.com/matchframeproductions/" target="_blank" rel="noopener">Match Frame Productions</a>.</p>
+          <p>We work closely with Prof. Victoria Grace Richardson-Walden, founder of the <a href="https://www.digitalmemorylab.com" target="_blank" rel="noopener">Landecker Digital Memory Lab</a>, and with creative producers Noémi Szakonyi and Máté Vincze of <a href="https://www.instagram.com/matchframeproductions/" target="_blank" rel="noopener">Match Frame Productions</a>.</p>
           <p>From single workshops to long-term international projects, we share what we learn. That includes our research, our upcoming guidebook, the EU co-funded These Streets Remember project, and workshops in Europe and the US.</p>
         </div>
         <figure style="display:grid;gap:8px">
@@ -964,7 +975,7 @@ html[lang="hu"] h2:not(.h4){font-size:clamp(1.6rem,.9rem + 3.4vw,3.5rem)}
           <div class="project-head">
             <p class="meta">Extension of If These Streets Could Talk · Budapest · Kraków · Novi Sad · Riga · <span class="nw">2026–2028</span></p>
             <h3 id="tsr-h" class="lens">These Streets Remember</h3>
-            <p class="lead">We bring our method to partners in three more cities. In each city, local teams take part in a workshop series and develop their own AR pilot for a neighborhood they know. Parallel Stories coordinates the project.</p>
+            <p class="lead">We take our method to partners in three more cities, to bring local Holocaust histories to light with AR. In each city, local teams take part in a workshop series and develop their own AR pilot for a neighborhood they know. Parallel Stories coordinates the project.</p>
           </div>
           <figure class="tsr-hall">
             <img src="img/21-tsr-conference-hall.jpg" srcset="img/21-tsr-conference-hall-800.jpg 800w, img/21-tsr-conference-hall.jpg 1600w" sizes="(max-width: 700px) 100vw, 1080px" alt="Barna Szász speaks in the Holocaust Memorial Center's former synagogue hall, with These Streets Remember banners and a scene from If These Streets Could Talk on the screen." width="1600" height="1067" loading="lazy">
@@ -1051,7 +1062,8 @@ html[lang="hu"] h2:not(.h4){font-size:clamp(1.6rem,.9rem + 3.4vw,3.5rem)}
           <a class="logo-link" href="https://newimages-hub.com" target="_blank" rel="noopener"><img width="520" height="233" src="logos/newimages.png" alt="NewImages Festival XR Development Market 2022, selected" style="--h:48px" loading="lazy"></a>
           <a class="logo-link" href="https://www.filmfestival-goeast.de/en/" target="_blank" rel="noopener"><img width="371" height="260" src="logos/goeast.png" alt="goEast 2022, special mention, Merck Award for Innovation in XR" style="--h:58px" loading="lazy"></a>
         </div>
-        <p class="partner-names">European partners in These Streets Remember: <a href="https://galiciajewishmuseum.org/en/" target="_blank" rel="noopener">Galicia Jewish Museum</a> (Kraków), <a href="https://terraforming.org/en/" target="_blank" rel="noopener">Terraforming</a> (Novi Sad), <a href="https://lipke.lv/en/" target="_blank" rel="noopener">Žanis Lipke Memorial</a> (Riga).</p>
+        <p class="partner-names">Our partners and funders: Bethlen Gábor Alapkezelő, Claims Conference, Csányi5 (Erzsébetváros Jewish History Collection), European Union, Foundation EVZ, Galicia Jewish Museum, German Federal Ministry of Finance, Holocaust Memorial Center, JDC Mozaik, Landecker Digital Memory Lab, Marom Budapest, Match Frame Productions, Origo Studios, Propclub, Terraforming, University of Sussex, U.S. Embassy in Hungary and Žanis Lipke Memorial.</p>
+        <p class="partner-names">If These Streets Could Talk was selected for the IDFA DocLab Forum and the NewImages XR Development Market, and received a special mention for the Merck Award for Innovation in XR at goEast (all in 2022).</p>
       </div>
     </div>
   </section>
@@ -1103,7 +1115,7 @@ html[lang="hu"] h2:not(.h4){font-size:clamp(1.6rem,.9rem + 3.4vw,3.5rem)}
       </div>
       <div class="work-grid">
         <div style="display:grid;gap:22px;min-width:0">
-          <p>We help museums, memorial sites, universities and festivals use AR well. Recent hosts include the Warsaw Ghetto Museum, the Claims Conference and the University of Sussex. We work in English and Hungarian, in person or online.</p>
+          <p>We help museums, memorial sites, universities and festivals use AR well. We work in English and Hungarian, in person or online.</p>
           <ul class="offers">
             <li><h3 class="h4">Workshops</h3><p>Hands-on, from one day to a full series. Your team leaves with a concept for your own site.</p></li>
             <li><h3 class="h4">Consulting</h3><p>For anyone considering immersive media, from small organizations taking their first step to foundations and public bodies that fund this work. We know what makes these technologies meaningful, so resources go into work that engages and resonates with its audience.</p></li>
@@ -1206,6 +1218,8 @@ html[lang="hu"] h2:not(.h4){font-size:clamp(1.6rem,.9rem + 3.4vw,3.5rem)}
     <div style="display:grid;gap:10px;min-width:0">
       <h2 class="h4">Key facts</h2>
       <dl class="facts-dl">
+        <dt>What we do</dt><dd>Augmented reality (AR) storytelling for education, cultural heritage and community engagement: our own projects, plus workshops, consulting and talks for museums, memorial sites, universities, festivals and funders.</dd>
+        <dt>Where</dt><dd>Based in Budapest, Hungary. We work across Europe and in the US, in English and Hungarian.</dd>
         <dt>Type</dt><dd>Nonprofit association (egyesület), Budapest</dd>
         <dt>Registry no.</dt><dd>01-02-0013002</dd>
         <dt>Tax no.</dt><dd>18264038-1-42</dd>

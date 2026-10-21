@@ -722,8 +722,19 @@ html[lang="hu"] .facts-dl{grid-template-columns:minmax(0,9.5rem) minmax(0,1fr)}
 .top .wrap > a:first-child{flex:none}
 h1,h2,h3{overflow-wrap:break-word;hyphens:auto}
 main > section > .wrap > *,.work-grid > *,.about-grid > *{min-width:0}
-@media (max-width:440px){.nav{gap:4px 10px;font-size:.72rem}}
-@media (max-width:420px){.nav .opt2{display:none}}
+/* phones: four menu items don't fit beside the logo, so the menu gets its own row under it;
+   HU/EN stays in the top-right corner */
+@media (max-width:440px){
+  .top .wrap{flex-wrap:wrap;row-gap:4px;position:relative}
+  .top .wrap{padding-block:8px 4px}
+  .nav{order:3;width:100%;justify-content:space-between;gap:4px 10px;font-size:.72rem}
+  .nav a{padding:5px 2px}
+  .nav .lang{position:absolute;right:max(16px, env(safe-area-inset-right, 0px));top:15px;margin:0;padding:4px 8px}
+  .top.scrolled .nav .lang{top:5px}
+  .top.scrolled .wrap{padding-block:4px 2px}
+  html{scroll-padding-top:96px}
+}
+
 html[lang="hu"] h2:not(.h4){font-size:clamp(1.6rem,.9rem + 3.4vw,3.5rem)}
 @media (max-width:600px){.hero h1{font-size:1.95rem;font-variation-settings:"wdth" 112}}
 @media (max-width:600px){html[lang="hu"] .hero h1{font-size:1.9rem}}
@@ -844,10 +855,10 @@ html[lang="hu"] h2:not(.h4){font-size:clamp(1.6rem,.9rem + 3.4vw,3.5rem)}
   <div class="wrap">
     <a href="#top" aria-label="Párhuzamos Történetek, vissza az oldal tetejére"><img class="wordmark" src="../logos/ps-wordmark.png" alt="Párhuzamos Történetek" width="520" height="207"></a>
     <nav class="nav" aria-label="Főmenü">
-      <a href="#projects" class="opt2">Projektek</a>
+      <a href="#projects">Projektek</a>
       <a href="#work">Együttműködés</a>
-      <a href="#support" class="opt">Támogatás</a>
-      <a href="#contact">Kapcsolat</a>
+      <a href="#support">Támogatás</a>
+      <a href="#contact" class="opt">Kapcsolat</a>
       <a href="../" class="lang" lang="en" hreflang="en" title="Angol nyelvű változat">EN</a>
     </nav>
   </div>
@@ -857,17 +868,17 @@ html[lang="hu"] h2:not(.h4){font-size:clamp(1.6rem,.9rem + 3.4vw,3.5rem)}
 <a class="skip" href="#about">Ugrás a tartalomra</a>
   <div class="hero">
     <div class="wrap">
-      <p class="meta">Párhuzamos Történetek Kulturális Egyesület · <span class="nw">Budapest</span></p>
+      <p class="meta">Párhuzamos Történetek Kulturális Egyesület · Nonprofit · <span class="nw">Budapest</span></p>
       <h1 id="headline" class="lens">A történetmesélés új formáit kutatjuk, hogy bevonjuk a helyi közösségeket, és formáljuk a közbeszédet.</h1>
       <p class="lead hero-sub">Vezető nemzetközi szakértőkkel együtt, a kiterjesztett valóság (AR) segítségével gondoljuk újra, hogyan kapcsolódunk történelemhez, kulturális örökséghez és kortárs kérdésekhez.</p>
-      <figure class="hero-figure">
-        <div class="layered"><span class="lc" aria-hidden="true"></span><img src="../img/01-hero-its-ar-on-ipad.jpg" srcset="../img/01-hero-its-ar-on-ipad-800.jpg 800w, ../img/01-hero-its-ar-on-ipad.jpg 1600w" sizes="(max-width: 700px) 100vw, 1080px" alt="Egy látogató iPadet tart egy budapesti utcán. A képernyőn két múltbeli szereplő áll ugyanabban az utcában." width="1600" height="711" fetchpriority="high"></div>
-        <figcaption class="credit">Jelenet az If These Streets Could Talk Két kenyér című prototípusából, egy budapesti utcán. Fotó: Párhuzamos Történetek</figcaption>
-      </figure>
       <div class="hero-cta">
         <a class="btn primary" href="#contact">Írj nekünk</a>
         <span class="muted">AR-projektet tervezel, vagy támogatnád a munkánkat?</span>
       </div>
+      <figure class="hero-figure">
+        <div class="layered"><span class="lc" aria-hidden="true"></span><img src="../img/01-hero-its-ar-on-ipad.jpg" srcset="../img/01-hero-its-ar-on-ipad-800.jpg 800w, ../img/01-hero-its-ar-on-ipad.jpg 1600w" sizes="(max-width: 700px) 100vw, 1080px" alt="Egy látogató iPadet tart egy budapesti utcán. A képernyőn két múltbeli szereplő áll ugyanabban az utcában." width="1600" height="711" fetchpriority="high"></div>
+        <figcaption class="credit">Jelenet az If These Streets Could Talk Két kenyér című prototípusából, egy budapesti utcán. Fotó: Párhuzamos Történetek</figcaption>
+      </figure>
       <div class="proof" role="list" aria-label="Kiemelt adatok">
         <div role="listitem"><span class="big">140+</span><p>szakember vett részt négy országot összekötő uniós projektünk nyitókonferenciáján, ahol többek között az MIT Open Documentary Lab, az Auschwitz-Birkenau Állami Múzeum és a UCL munkatársai adtak elő.</p></div>
         <div role="listitem"><span class="big">Az első</span><p>AR-történetmesélési kurzus a Stanford Egyetemen, amelynek alapítónk, Szász Barna az egyik megalkotója. Évek óta ez a kísérleti terepünk, és módszereink ebből a folyamatos kísérletezésből nőttek ki.</p></div>
@@ -897,7 +908,7 @@ html[lang="hu"] h2:not(.h4){font-size:clamp(1.6rem,.9rem + 3.4vw,3.5rem)}
         <div class="about-text">
           <p class="lead">A Párhuzamos Történetek Kulturális Egyesület (Parallel Stories Cultural Organization) új, történeteken alapuló megközelítéseket népszerűsít, hogy jobban megértsük és jobbá tegyük a társadalmunkat. Leginkább kiterjesztett valósággal dolgozunk. Egy AR-réteg megváltoztatja, hogyan gondolkodunk, mit érzünk és hogyan viselkedünk egy valós helyen. Emellett új módon, új közönségeket is elér.</p>
           <p>Szorosan együttműködünk azokkal a közösségekkel, akiknek a történetét elmeséljük, és velük együtt alkotunk. Fontos, hogy mit mesélünk el, de ugyanilyen fontos, hogy hogyan.</p>
-          <p>Alapítónk, Szász Barna egyik megalkotója a Stanford Egyetem első AR-történetmesélési kurzusának. Szorosan együttműködünk Prof. Victoria Grace Richardson-Waldennel, a <a href="https://www.digitalmemorylab.com" target="_blank" rel="noopener">Landecker Digital Memory Lab</a> alapítójával, valamint Szakonyi Noémi és Vincze Máté kreatív producerekkel (<a href="https://www.instagram.com/matchframeproductions/" target="_blank" rel="noopener">Match Frame Productions</a>).</p>
+          <p>Szorosan együttműködünk Prof. Victoria Grace Richardson-Waldennel, a <a href="https://www.digitalmemorylab.com" target="_blank" rel="noopener">Landecker Digital Memory Lab</a> alapítójával, valamint Szakonyi Noémi és Vincze Máté kreatív producerekkel (<a href="https://www.instagram.com/matchframeproductions/" target="_blank" rel="noopener">Match Frame Productions</a>).</p>
           <p>Az egyszeri workshopoktól a hosszú távú nemzetközi projektekig megosztjuk, amit tanulunk: a kutatásainkat, a hamarosan megjelenő kézikönyvünket, az EU által társfinanszírozott These Streets Remember projektet és a workshopjainkat Európában és az Egyesült Államokban.</p>
         </div>
         <figure style="display:grid;gap:8px">
@@ -964,7 +975,7 @@ html[lang="hu"] h2:not(.h4){font-size:clamp(1.6rem,.9rem + 3.4vw,3.5rem)}
           <div class="project-head">
             <p class="meta">Az If These Streets Could Talk kiterjesztése · Budapest · Krakkó · Újvidék · Riga · <span class="nw">2026–2028</span></p>
             <h3 id="tsr-h" class="lens">These Streets Remember</h3>
-            <p class="lead">Módszerünket további három város partnereihez visszük el. Minden városban helyi csapatok vesznek részt egy workshopsorozaton, és saját kísérleti AR-projektet fejlesztenek egy általuk jól ismert városrészre. A projektet a Párhuzamos Történetek koordinálja.</p>
+            <p class="lead">Módszerünket további három város partnereihez visszük el, hogy a kiterjesztett valóság segítségével felszínre hozzuk a helyi holokauszttörténeteket. Minden városban helyi csapatok vesznek részt egy workshopsorozaton, és saját kísérleti AR-projektet fejlesztenek egy általuk jól ismert városrészre. A projektet a Párhuzamos Történetek koordinálja.</p>
           </div>
           <figure class="tsr-hall">
             <img src="../img/21-tsr-conference-hall.jpg" srcset="../img/21-tsr-conference-hall-800.jpg 800w, ../img/21-tsr-conference-hall.jpg 1600w" sizes="(max-width: 700px) 100vw, 1080px" alt="Szász Barna előad a Holokauszt Emlékközpont egykori zsinagógatermében; mellette a These Streets Remember molinói, a vásznon egy jelenet a Ha ezek az utcák mesélhetnének-ből." width="1600" height="1067" loading="lazy">
@@ -1051,7 +1062,8 @@ html[lang="hu"] h2:not(.h4){font-size:clamp(1.6rem,.9rem + 3.4vw,3.5rem)}
           <a class="logo-link" href="https://newimages-hub.com" target="_blank" rel="noopener"><img width="520" height="233" src="../logos/newimages.png" alt="NewImages Festival XR Development Market 2022, beválogatva" style="--h:48px" loading="lazy"></a>
           <a class="logo-link" href="https://www.filmfestival-goeast.de/en/" target="_blank" rel="noopener"><img width="371" height="260" src="../logos/goeast.png" alt="goEast 2022, külön dicséret, Merck Award for Innovation in XR" style="--h:58px" loading="lazy"></a>
         </div>
-        <p class="partner-names">A These Streets Remember európai partnerei: <a href="https://galiciajewishmuseum.org/en/" target="_blank" rel="noopener">Galicia Jewish Museum</a> (Krakkó), <a href="https://terraforming.org/en/" target="_blank" rel="noopener">Terraforming</a> (Újvidék), <a href="https://lipke.lv/en/" target="_blank" rel="noopener">Žanis Lipke Memorial</a> (Riga).</p>
+        <p class="partner-names">Partnereink és támogatóink: Bethlen Gábor Alapkezelő, Claims Conference, Csányi5 – Erzsébetvárosi Zsidó Történeti Tár, az Egyesült Államok budapesti nagykövetsége, Európai Unió, Foundation EVZ, Galicia Jewish Museum, Holokauszt Emlékközpont, JDC Mozaik, Landecker Digital Memory Lab, Marom Budapest, Match Frame Productions, a német Szövetségi Pénzügyminisztérium, Origo Filmstúdió, Propclub, Sussexi Egyetem, Terraforming és Žanis Lipke Memorial.</p>
+        <p class="partner-names">A Ha ezek az utcák mesélhetnének bekerült az IDFA DocLab Forum és a NewImages XR Development Market válogatásába, a goEast fesztiválon pedig elismerő említést kapott a Merck Award for Innovation in XR díj versenyében (mindhárom 2022-ben).</p>
       </div>
     </div>
   </section>
@@ -1103,7 +1115,7 @@ html[lang="hu"] h2:not(.h4){font-size:clamp(1.6rem,.9rem + 3.4vw,3.5rem)}
       </div>
       <div class="work-grid">
         <div style="display:grid;gap:22px;min-width:0">
-          <p>Segítünk múzeumoknak, emlékhelyeknek, egyetemeknek és fesztiváloknak abban, hogy jól használják az AR-t. Legutóbb többek között a Varsói Gettó Múzeummal, a Claims Conference-szel és a Sussexi Egyetemmel dolgoztunk. Magyarul és angolul, személyesen vagy online is dolgozunk.</p>
+          <p>Segítünk múzeumoknak, emlékhelyeknek, egyetemeknek és fesztiváloknak abban, hogy jól használják az AR-t. Magyarul és angolul, személyesen vagy online is dolgozunk.</p>
           <ul class="offers">
             <li><h3 class="h4">Workshopok</h3><p>Gyakorlati alkalmak, egy naptól a teljes sorozatig. A csapatotok a saját helyszínetekre szabott koncepcióval távozik.</p></li>
             <li><h3 class="h4">Tanácsadás</h3><p>Mindenkinek, aki az immerzív médiában gondolkodik, az első lépéseiket tevő kis szervezetektől az ilyen munkát támogató alapítványokig és állami szervekig. Tudjuk, mitől lesz ezeknek a technológiáknak értelmes a használata, így az erőforrások olyan munkába kerülnek, amely megszólítja és megérinti a közönségét.</p></li>
@@ -1206,6 +1218,8 @@ html[lang="hu"] h2:not(.h4){font-size:clamp(1.6rem,.9rem + 3.4vw,3.5rem)}
     <div style="display:grid;gap:10px;min-width:0">
       <h2 class="h4">Röviden</h2>
       <dl class="facts-dl">
+        <dt>Mivel foglalkozunk</dt><dd>Kiterjesztett valóságon (AR) alapuló történetmesélés az oktatásban, a kulturális örökség feltárásában és a közösségek bevonásában: saját projektek, valamint workshopok, tanácsadás és előadások múzeumoknak, emlékhelyeknek, egyetemeknek, fesztiváloknak és támogatóknak.</dd>
+        <dt>Hol</dt><dd>Budapesten működünk; Európa-szerte és az Egyesült Államokban dolgozunk, magyarul és angolul.</dd>
         <dt>Jogi forma</dt><dd>Egyesület, Budapest</dd>
         <dt>Nyilvántartási szám</dt><dd>01-02-0013002</dd>
         <dt>Adószám</dt><dd>18264038-1-42</dd>
