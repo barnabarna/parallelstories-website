@@ -33,10 +33,13 @@ input:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline
   <p class="err" id="e" role="alert"></p>
 </form>
 <script>
-// the encrypted content lives in data.json next to this page and is fetched with a unique query each time,
-// so GitHub Pages' 10-minute cache never serves an old version after an update
+// the encrypted content lives in data.json next to this page and is fetched fresh on every visit
 var P=null;
-async function load(){if(!P){var r=await fetch("data.json?"+Date.now(),{cache:"no-store"});if(!r.ok)throw new Error("load");P=await r.json()}return P}
+// GitHub Pages caches every file for 10 minutes and ignores query strings, so read the newest copy through the GitHub API
+// (not behind that cache; 60 requests an hour per visitor); fall back to the copy next to this page
+async function get(url,opt){var r=await fetch(url,opt);if(!r.ok)throw new Error("load");return r.json()}
+async function load(){if(!P){try{P=await get("https://api.github.com/repos/barnabarna/parallelstories-website/contents/kapacitas/data.json",{cache:"no-store",headers:{Accept:"application/vnd.github.raw+json"}})}
+  catch(x){P=await get("data.json?"+Date.now(),{cache:"no-store"})}}return P}
 function u(b){return Uint8Array.from(atob(b),function(c){return c.charCodeAt(0)})}
 async function open_(pw){
   await load();
